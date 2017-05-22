@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A3B1717227594EA1AD8793E /* libPods-PLLock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 265A59C5BE6F3DFCB1DA4194 /* libPods-PLLock.a */; };
 		C96BCEDE1ED3311200648F8D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C96BCEDD1ED3311200648F8D /* main.m */; };
 		C96BCEE11ED3311200648F8D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C96BCEE01ED3311200648F8D /* AppDelegate.m */; };
 		C96BCEE41ED3311200648F8D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C96BCEE31ED3311200648F8D /* ViewController.m */; };
@@ -15,6 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		265A59C5BE6F3DFCB1DA4194 /* libPods-PLLock.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PLLock.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CD2A521C16450001B17061D /* Pods-PLLock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PLLock.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PLLock/Pods-PLLock.debug.xcconfig"; sourceTree = "<group>"; };
+		C7830B2618AA47CBC99592DF /* Pods-PLLock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PLLock.release.xcconfig"; path = "Pods/Target Support Files/Pods-PLLock/Pods-PLLock.release.xcconfig"; sourceTree = "<group>"; };
 		C96BCED91ED3311200648F8D /* PLLock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PLLock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C96BCEDD1ED3311200648F8D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C96BCEDF1ED3311200648F8D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -31,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A3B1717227594EA1AD8793E /* libPods-PLLock.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		20222735E3E4E74A735BB901 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				265A59C5BE6F3DFCB1DA4194 /* libPods-PLLock.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9504C2B51C7F0BDDF94F6434 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7CD2A521C16450001B17061D /* Pods-PLLock.debug.xcconfig */,
+				C7830B2618AA47CBC99592DF /* Pods-PLLock.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		C96BCED01ED3311200648F8D = {
 			isa = PBXGroup;
 			children = (
 				C96BCEDB1ED3311200648F8D /* PLLock */,
 				C96BCEDA1ED3311200648F8D /* Products */,
+				9504C2B51C7F0BDDF94F6434 /* Pods */,
+				20222735E3E4E74A735BB901 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,9 +107,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C96BCEF01ED3311200648F8D /* Build configuration list for PBXNativeTarget "PLLock" */;
 			buildPhases = (
+				5D547E35E7A352403629D8F0 /* [CP] Check Pods Manifest.lock */,
 				C96BCED51ED3311200648F8D /* Sources */,
 				C96BCED61ED3311200648F8D /* Frameworks */,
 				C96BCED71ED3311200648F8D /* Resources */,
+				E1A7DC7D327661E919BCC8E7 /* [CP] Embed Pods Frameworks */,
+				39BC1C9487FFCD7EE48EEB88 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -141,6 +168,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		39BC1C9487FFCD7EE48EEB88 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PLLock/Pods-PLLock-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5D547E35E7A352403629D8F0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E1A7DC7D327661E919BCC8E7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PLLock/Pods-PLLock-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C96BCED51ED3311200648F8D /* Sources */ = {
@@ -208,7 +283,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -251,7 +326,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -261,6 +336,7 @@
 		};
 		C96BCEF11ED3311200648F8D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7CD2A521C16450001B17061D /* Pods-PLLock.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
@@ -273,6 +349,7 @@
 		};
 		C96BCEF21ED3311200648F8D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C7830B2618AA47CBC99592DF /* Pods-PLLock.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
@@ -302,6 +379,7 @@
 				C96BCEF21ED3311200648F8D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
