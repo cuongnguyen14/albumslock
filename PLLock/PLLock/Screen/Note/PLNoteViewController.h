@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  PLNoteViewController.h
 //  PLLock
 //
 //  Created by CuongNguyen on 5/22/17.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface PLNoteViewController : UIViewController
 
 @end
-

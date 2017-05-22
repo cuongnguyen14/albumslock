@@ -10,9 +10,29 @@
 		4A3B1717227594EA1AD8793E /* libPods-PLLock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 265A59C5BE6F3DFCB1DA4194 /* libPods-PLLock.a */; };
 		C96BCEDE1ED3311200648F8D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C96BCEDD1ED3311200648F8D /* main.m */; };
 		C96BCEE11ED3311200648F8D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C96BCEE01ED3311200648F8D /* AppDelegate.m */; };
-		C96BCEE41ED3311200648F8D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C96BCEE31ED3311200648F8D /* ViewController.m */; };
 		C96BCEE91ED3311200648F8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C96BCEE81ED3311200648F8D /* Assets.xcassets */; };
 		C96BCEEC1ED3311200648F8D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C96BCEEA1ED3311200648F8D /* LaunchScreen.storyboard */; };
+		C96BCEFB1ED334E600648F8D /* PLRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C96BCEF91ED334E600648F8D /* PLRootViewController.m */; };
+		C96BCEFC1ED334E600648F8D /* PLRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C96BCEFA1ED334E600648F8D /* PLRootViewController.xib */; };
+		C972649D1ED342EB00D185E1 /* PLAlbumsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C972649B1ED342EB00D185E1 /* PLAlbumsViewController.m */; };
+		C972649E1ED342EB00D185E1 /* PLAlbumsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C972649C1ED342EB00D185E1 /* PLAlbumsViewController.xib */; };
+		C97264A71ED3439700D185E1 /* PLLeftMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C97264A51ED3439700D185E1 /* PLLeftMenuTableViewController.m */; };
+		C97264A81ED3439700D185E1 /* PLLeftMenuTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C97264A61ED3439700D185E1 /* PLLeftMenuTableViewController.xib */; };
+		C97264AC1ED343A900D185E1 /* PLRightTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C97264AA1ED343A900D185E1 /* PLRightTableTableViewController.m */; };
+		C97264AD1ED343A900D185E1 /* PLRightTableTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C97264AB1ED343A900D185E1 /* PLRightTableTableViewController.xib */; };
+		C97264B11ED343FF00D185E1 /* PLSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C97264AF1ED343FF00D185E1 /* PLSettingsViewController.m */; };
+		C97264B21ED343FF00D185E1 /* PLSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C97264B01ED343FF00D185E1 /* PLSettingsViewController.xib */; };
+		C97264B61ED3440F00D185E1 /* PLAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C97264B41ED3440F00D185E1 /* PLAccountViewController.m */; };
+		C97264B71ED3440F00D185E1 /* PLAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C97264B51ED3440F00D185E1 /* PLAccountViewController.xib */; };
+		C97264BB1ED3443800D185E1 /* PLNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C97264B91ED3443800D185E1 /* PLNoteViewController.m */; };
+		C97264BC1ED3443800D185E1 /* PLNoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C97264BA1ED3443800D185E1 /* PLNoteViewController.xib */; };
+		C97264C51ED344AD00D185E1 /* CNBaseColorKit.m in Sources */ = {isa = PBXBuildFile; fileRef = C97264C01ED344AD00D185E1 /* CNBaseColorKit.m */; };
+		C97264C61ED344AD00D185E1 /* UIColor+HDExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C97264C21ED344AD00D185E1 /* UIColor+HDExtensions.m */; };
+		C97264C71ED344AD00D185E1 /* CNThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C97264C41ED344AD00D185E1 /* CNThemeManager.m */; };
+		C97264CA1ED346D500D185E1 /* PLApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = C97264C91ED346D500D185E1 /* PLApplication.m */; };
+		C97264D21ED349E100D185E1 /* UIImage+CNImage.m in Sources */ = {isa = PBXBuildFile; fileRef = C97264CD1ED349E100D185E1 /* UIImage+CNImage.m */; };
+		C97264D31ED349E100D185E1 /* UIView+CNView.m in Sources */ = {isa = PBXBuildFile; fileRef = C97264CF1ED349E100D185E1 /* UIView+CNView.m */; };
+		C97264D41ED349E100D185E1 /* UIViewController+Extra.m in Sources */ = {isa = PBXBuildFile; fileRef = C97264D11ED349E100D185E1 /* UIViewController+Extra.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,11 +43,45 @@
 		C96BCEDD1ED3311200648F8D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C96BCEDF1ED3311200648F8D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C96BCEE01ED3311200648F8D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C96BCEE21ED3311200648F8D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		C96BCEE31ED3311200648F8D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		C96BCEE81ED3311200648F8D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C96BCEEB1ED3311200648F8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C96BCEED1ED3311200648F8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C96BCEF81ED334E600648F8D /* PLRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLRootViewController.h; sourceTree = "<group>"; };
+		C96BCEF91ED334E600648F8D /* PLRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLRootViewController.m; sourceTree = "<group>"; };
+		C96BCEFA1ED334E600648F8D /* PLRootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLRootViewController.xib; sourceTree = "<group>"; };
+		C96BCEFD1ED3372F00648F8D /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		C972649A1ED342EB00D185E1 /* PLAlbumsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLAlbumsViewController.h; sourceTree = "<group>"; };
+		C972649B1ED342EB00D185E1 /* PLAlbumsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLAlbumsViewController.m; sourceTree = "<group>"; };
+		C972649C1ED342EB00D185E1 /* PLAlbumsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLAlbumsViewController.xib; sourceTree = "<group>"; };
+		C97264A41ED3439700D185E1 /* PLLeftMenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLLeftMenuTableViewController.h; sourceTree = "<group>"; };
+		C97264A51ED3439700D185E1 /* PLLeftMenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLLeftMenuTableViewController.m; sourceTree = "<group>"; };
+		C97264A61ED3439700D185E1 /* PLLeftMenuTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLLeftMenuTableViewController.xib; sourceTree = "<group>"; };
+		C97264A91ED343A900D185E1 /* PLRightTableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLRightTableTableViewController.h; sourceTree = "<group>"; };
+		C97264AA1ED343A900D185E1 /* PLRightTableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLRightTableTableViewController.m; sourceTree = "<group>"; };
+		C97264AB1ED343A900D185E1 /* PLRightTableTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLRightTableTableViewController.xib; sourceTree = "<group>"; };
+		C97264AE1ED343FF00D185E1 /* PLSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLSettingsViewController.h; sourceTree = "<group>"; };
+		C97264AF1ED343FF00D185E1 /* PLSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLSettingsViewController.m; sourceTree = "<group>"; };
+		C97264B01ED343FF00D185E1 /* PLSettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLSettingsViewController.xib; sourceTree = "<group>"; };
+		C97264B31ED3440F00D185E1 /* PLAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLAccountViewController.h; sourceTree = "<group>"; };
+		C97264B41ED3440F00D185E1 /* PLAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLAccountViewController.m; sourceTree = "<group>"; };
+		C97264B51ED3440F00D185E1 /* PLAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLAccountViewController.xib; sourceTree = "<group>"; };
+		C97264B81ED3443800D185E1 /* PLNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLNoteViewController.h; sourceTree = "<group>"; };
+		C97264B91ED3443800D185E1 /* PLNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLNoteViewController.m; sourceTree = "<group>"; };
+		C97264BA1ED3443800D185E1 /* PLNoteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLNoteViewController.xib; sourceTree = "<group>"; };
+		C97264BF1ED344AD00D185E1 /* CNBaseColorKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNBaseColorKit.h; sourceTree = "<group>"; };
+		C97264C01ED344AD00D185E1 /* CNBaseColorKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNBaseColorKit.m; sourceTree = "<group>"; };
+		C97264C11ED344AD00D185E1 /* UIColor+HDExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HDExtensions.h"; sourceTree = "<group>"; };
+		C97264C21ED344AD00D185E1 /* UIColor+HDExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HDExtensions.m"; sourceTree = "<group>"; };
+		C97264C31ED344AD00D185E1 /* CNThemeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNThemeManager.h; sourceTree = "<group>"; };
+		C97264C41ED344AD00D185E1 /* CNThemeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNThemeManager.m; sourceTree = "<group>"; };
+		C97264C81ED346D500D185E1 /* PLApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLApplication.h; sourceTree = "<group>"; };
+		C97264C91ED346D500D185E1 /* PLApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLApplication.m; sourceTree = "<group>"; };
+		C97264CC1ED349E100D185E1 /* UIImage+CNImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CNImage.h"; sourceTree = "<group>"; };
+		C97264CD1ED349E100D185E1 /* UIImage+CNImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CNImage.m"; sourceTree = "<group>"; };
+		C97264CE1ED349E100D185E1 /* UIView+CNView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CNView.h"; sourceTree = "<group>"; };
+		C97264CF1ED349E100D185E1 /* UIView+CNView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CNView.m"; sourceTree = "<group>"; };
+		C97264D01ED349E100D185E1 /* UIViewController+Extra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Extra.h"; sourceTree = "<group>"; };
+		C97264D11ED349E100D185E1 /* UIViewController+Extra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Extra.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,14 +134,19 @@
 		C96BCEDB1ED3311200648F8D /* PLLock */ = {
 			isa = PBXGroup;
 			children = (
+				C96BCEF31ED334D000648F8D /* Screen */,
+				C96BCEF51ED334D000648F8D /* ThirdParty */,
+				C96BCEF61ED334D000648F8D /* Common */,
+				C96BCEF71ED334D000648F8D /* Resources */,
 				C96BCEDF1ED3311200648F8D /* AppDelegate.h */,
 				C96BCEE01ED3311200648F8D /* AppDelegate.m */,
-				C96BCEE21ED3311200648F8D /* ViewController.h */,
-				C96BCEE31ED3311200648F8D /* ViewController.m */,
 				C96BCEE81ED3311200648F8D /* Assets.xcassets */,
 				C96BCEEA1ED3311200648F8D /* LaunchScreen.storyboard */,
 				C96BCEED1ED3311200648F8D /* Info.plist */,
 				C96BCEDC1ED3311200648F8D /* Supporting Files */,
+				C96BCEFD1ED3372F00648F8D /* PrefixHeader.pch */,
+				C97264C81ED346D500D185E1 /* PLApplication.h */,
+				C97264C91ED346D500D185E1 /* PLApplication.m */,
 			);
 			path = PLLock;
 			sourceTree = "<group>";
@@ -98,6 +157,147 @@
 				C96BCEDD1ED3311200648F8D /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C96BCEF31ED334D000648F8D /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				C972649F1ED3437100D185E1 /* Note */,
+				C97264A01ED3437100D185E1 /* Account */,
+				C97264A11ED3437100D185E1 /* Setting */,
+				C97264A21ED3437100D185E1 /* RightMenu */,
+				C97264A31ED3437100D185E1 /* LeftMenu */,
+				C97264991ED342D600D185E1 /* Albums */,
+				C96BCEF41ED334D000648F8D /* Root */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		C96BCEF41ED334D000648F8D /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				C96BCEF81ED334E600648F8D /* PLRootViewController.h */,
+				C96BCEF91ED334E600648F8D /* PLRootViewController.m */,
+				C96BCEFA1ED334E600648F8D /* PLRootViewController.xib */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		C96BCEF51ED334D000648F8D /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ThirdParty;
+			sourceTree = "<group>";
+		};
+		C96BCEF61ED334D000648F8D /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				C97264CB1ED349E100D185E1 /* Ultilities */,
+				C97264BD1ED344AD00D185E1 /* UI */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		C96BCEF71ED334D000648F8D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C97264991ED342D600D185E1 /* Albums */ = {
+			isa = PBXGroup;
+			children = (
+				C972649A1ED342EB00D185E1 /* PLAlbumsViewController.h */,
+				C972649B1ED342EB00D185E1 /* PLAlbumsViewController.m */,
+				C972649C1ED342EB00D185E1 /* PLAlbumsViewController.xib */,
+			);
+			path = Albums;
+			sourceTree = "<group>";
+		};
+		C972649F1ED3437100D185E1 /* Note */ = {
+			isa = PBXGroup;
+			children = (
+				C97264B81ED3443800D185E1 /* PLNoteViewController.h */,
+				C97264B91ED3443800D185E1 /* PLNoteViewController.m */,
+				C97264BA1ED3443800D185E1 /* PLNoteViewController.xib */,
+			);
+			path = Note;
+			sourceTree = "<group>";
+		};
+		C97264A01ED3437100D185E1 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				C97264B31ED3440F00D185E1 /* PLAccountViewController.h */,
+				C97264B41ED3440F00D185E1 /* PLAccountViewController.m */,
+				C97264B51ED3440F00D185E1 /* PLAccountViewController.xib */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		C97264A11ED3437100D185E1 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				C97264AE1ED343FF00D185E1 /* PLSettingsViewController.h */,
+				C97264AF1ED343FF00D185E1 /* PLSettingsViewController.m */,
+				C97264B01ED343FF00D185E1 /* PLSettingsViewController.xib */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		C97264A21ED3437100D185E1 /* RightMenu */ = {
+			isa = PBXGroup;
+			children = (
+				C97264A91ED343A900D185E1 /* PLRightTableTableViewController.h */,
+				C97264AA1ED343A900D185E1 /* PLRightTableTableViewController.m */,
+				C97264AB1ED343A900D185E1 /* PLRightTableTableViewController.xib */,
+			);
+			path = RightMenu;
+			sourceTree = "<group>";
+		};
+		C97264A31ED3437100D185E1 /* LeftMenu */ = {
+			isa = PBXGroup;
+			children = (
+				C97264A41ED3439700D185E1 /* PLLeftMenuTableViewController.h */,
+				C97264A51ED3439700D185E1 /* PLLeftMenuTableViewController.m */,
+				C97264A61ED3439700D185E1 /* PLLeftMenuTableViewController.xib */,
+			);
+			path = LeftMenu;
+			sourceTree = "<group>";
+		};
+		C97264BD1ED344AD00D185E1 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				C97264BE1ED344AD00D185E1 /* Color */,
+				C97264C31ED344AD00D185E1 /* CNThemeManager.h */,
+				C97264C41ED344AD00D185E1 /* CNThemeManager.m */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		C97264BE1ED344AD00D185E1 /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				C97264BF1ED344AD00D185E1 /* CNBaseColorKit.h */,
+				C97264C01ED344AD00D185E1 /* CNBaseColorKit.m */,
+				C97264C11ED344AD00D185E1 /* UIColor+HDExtensions.h */,
+				C97264C21ED344AD00D185E1 /* UIColor+HDExtensions.m */,
+			);
+			path = Color;
+			sourceTree = "<group>";
+		};
+		C97264CB1ED349E100D185E1 /* Ultilities */ = {
+			isa = PBXGroup;
+			children = (
+				C97264CC1ED349E100D185E1 /* UIImage+CNImage.h */,
+				C97264CD1ED349E100D185E1 /* UIImage+CNImage.m */,
+				C97264CE1ED349E100D185E1 /* UIView+CNView.h */,
+				C97264CF1ED349E100D185E1 /* UIView+CNView.m */,
+				C97264D01ED349E100D185E1 /* UIViewController+Extra.h */,
+				C97264D11ED349E100D185E1 /* UIViewController+Extra.m */,
+			);
+			path = Ultilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,7 +335,8 @@
 				TargetAttributes = {
 					C96BCED81ED3311200648F8D = {
 						CreatedOnToolsVersion = 8.3.2;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = KXEN64YE4M;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -162,7 +363,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C97264BC1ED3443800D185E1 /* PLNoteViewController.xib in Resources */,
+				C97264A81ED3439700D185E1 /* PLLeftMenuTableViewController.xib in Resources */,
 				C96BCEEC1ED3311200648F8D /* LaunchScreen.storyboard in Resources */,
+				C96BCEFC1ED334E600648F8D /* PLRootViewController.xib in Resources */,
+				C97264B21ED343FF00D185E1 /* PLSettingsViewController.xib in Resources */,
+				C97264B71ED3440F00D185E1 /* PLAccountViewController.xib in Resources */,
+				C97264AD1ED343A900D185E1 /* PLRightTableTableViewController.xib in Resources */,
+				C972649E1ED342EB00D185E1 /* PLAlbumsViewController.xib in Resources */,
 				C96BCEE91ED3311200648F8D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -222,9 +430,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C96BCEE41ED3311200648F8D /* ViewController.m in Sources */,
+				C97264D21ED349E100D185E1 /* UIImage+CNImage.m in Sources */,
+				C96BCEFB1ED334E600648F8D /* PLRootViewController.m in Sources */,
 				C96BCEE11ED3311200648F8D /* AppDelegate.m in Sources */,
+				C97264D31ED349E100D185E1 /* UIView+CNView.m in Sources */,
+				C97264B11ED343FF00D185E1 /* PLSettingsViewController.m in Sources */,
+				C97264C61ED344AD00D185E1 /* UIColor+HDExtensions.m in Sources */,
+				C972649D1ED342EB00D185E1 /* PLAlbumsViewController.m in Sources */,
+				C97264C71ED344AD00D185E1 /* CNThemeManager.m in Sources */,
+				C97264B61ED3440F00D185E1 /* PLAccountViewController.m in Sources */,
+				C97264CA1ED346D500D185E1 /* PLApplication.m in Sources */,
+				C97264AC1ED343A900D185E1 /* PLRightTableTableViewController.m in Sources */,
+				C97264BB1ED3443800D185E1 /* PLNoteViewController.m in Sources */,
+				C97264A71ED3439700D185E1 /* PLLeftMenuTableViewController.m in Sources */,
 				C96BCEDE1ED3311200648F8D /* main.m in Sources */,
+				C97264C51ED344AD00D185E1 /* CNBaseColorKit.m in Sources */,
+				C97264D41ED349E100D185E1 /* UIViewController+Extra.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,11 +560,14 @@
 			baseConfigurationReference = 7CD2A521C16450001B17061D /* Pods-PLLock.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = KXEN64YE4M;
+				GCC_PREFIX_HEADER = PLLock/PrefixHeader.pch;
 				INFOPLIST_FILE = PLLock/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = HCB.PLLock;
+				PRODUCT_BUNDLE_IDENTIFIER = io.hdapps2.HCB.PLLock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "94d0ad31-6690-49ad-a1d5-bba3cacbcf78";
+				PROVISIONING_PROFILE_SPECIFIER = ForEveryoneDev;
 			};
 			name = Debug;
 		};
@@ -352,11 +576,14 @@
 			baseConfigurationReference = C7830B2618AA47CBC99592DF /* Pods-PLLock.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = KXEN64YE4M;
+				GCC_PREFIX_HEADER = PLLock/PrefixHeader.pch;
 				INFOPLIST_FILE = PLLock/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = HCB.PLLock;
+				PRODUCT_BUNDLE_IDENTIFIER = io.hdapps2.HCB.PLLock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "94d0ad31-6690-49ad-a1d5-bba3cacbcf78";
+				PROVISIONING_PROFILE_SPECIFIER = ForEveryoneDev;
 			};
 			name = Release;
 		};
