@@ -6,7 +6,7 @@
 //  Copyright © 2017 CuongNguyen. All rights reserved.
 //
 
-#import "UIView+MST.h"
+#import "UIView+CNView.h"
 
 @implementation UIView (MST)
 

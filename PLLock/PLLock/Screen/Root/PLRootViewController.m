@@ -38,7 +38,7 @@
     sideMenuController.leftViewSwipeGestureEnabled = YES;
     
     sideMenuController.rightViewWidth = [UIScreen mainScreen].bounds.size.width * scaleRatio;
-    sideMenuController.leftViewPresentationStyle = LGSideMenuPresentationStyleSlideBelow;
+    sideMenuController.rightViewPresentationStyle = LGSideMenuPresentationStyleSlideBelow;
     sideMenuController.rightViewSwipeGestureEnabled = YES;
 
     

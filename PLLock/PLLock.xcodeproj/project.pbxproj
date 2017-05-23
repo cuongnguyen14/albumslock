@@ -30,9 +30,25 @@
 		C97264C61ED344AD00D185E1 /* UIColor+HDExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C97264C21ED344AD00D185E1 /* UIColor+HDExtensions.m */; };
 		C97264C71ED344AD00D185E1 /* CNThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C97264C41ED344AD00D185E1 /* CNThemeManager.m */; };
 		C97264CA1ED346D500D185E1 /* PLApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = C97264C91ED346D500D185E1 /* PLApplication.m */; };
-		C97264D21ED349E100D185E1 /* UIImage+CNImage.m in Sources */ = {isa = PBXBuildFile; fileRef = C97264CD1ED349E100D185E1 /* UIImage+CNImage.m */; };
-		C97264D31ED349E100D185E1 /* UIView+CNView.m in Sources */ = {isa = PBXBuildFile; fileRef = C97264CF1ED349E100D185E1 /* UIView+CNView.m */; };
-		C97264D41ED349E100D185E1 /* UIViewController+Extra.m in Sources */ = {isa = PBXBuildFile; fileRef = C97264D11ED349E100D185E1 /* UIViewController+Extra.m */; };
+		C97264EF1ED358DC00D185E1 /* UIView+CNView.m in Sources */ = {isa = PBXBuildFile; fileRef = C97264E91ED358DC00D185E1 /* UIView+CNView.m */; };
+		C97264F01ED358DC00D185E1 /* UIViewController+Extra.m in Sources */ = {isa = PBXBuildFile; fileRef = C97264EB1ED358DC00D185E1 /* UIViewController+Extra.m */; };
+		C97264F11ED358DC00D185E1 /* UIImage+CNImage.m in Sources */ = {isa = PBXBuildFile; fileRef = C97264ED1ED358DC00D185E1 /* UIImage+CNImage.m */; };
+		C97264F41ED358F300D185E1 /* PLActionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C97264F31ED358F300D185E1 /* PLActionButton.m */; };
+		C97264F81ED35CDA00D185E1 /* Camera.png in Resources */ = {isa = PBXBuildFile; fileRef = C97264F51ED35CDA00D185E1 /* Camera.png */; };
+		C97264F91ED35CDA00D185E1 /* Camera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C97264F61ED35CDA00D185E1 /* Camera@2x.png */; };
+		C97264FA1ED35CDA00D185E1 /* Camera@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C97264F71ED35CDA00D185E1 /* Camera@3x.png */; };
+		C97264FE1ED35CE300D185E1 /* Circle_Highlighted-1.png in Resources */ = {isa = PBXBuildFile; fileRef = C97264FB1ED35CE300D185E1 /* Circle_Highlighted-1.png */; };
+		C97264FF1ED35CE300D185E1 /* Circle_Highlighted-2.png in Resources */ = {isa = PBXBuildFile; fileRef = C97264FC1ED35CE300D185E1 /* Circle_Highlighted-2.png */; };
+		C97265001ED35CE300D185E1 /* Circle_Highlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = C97264FD1ED35CE300D185E1 /* Circle_Highlighted.png */; };
+		C97265041ED35CEC00D185E1 /* Circle_Normal-1.png in Resources */ = {isa = PBXBuildFile; fileRef = C97265011ED35CEC00D185E1 /* Circle_Normal-1.png */; };
+		C97265051ED35CEC00D185E1 /* Circle_Normal-2.png in Resources */ = {isa = PBXBuildFile; fileRef = C97265021ED35CEC00D185E1 /* Circle_Normal-2.png */; };
+		C97265061ED35CEC00D185E1 /* Circle_Normal.png in Resources */ = {isa = PBXBuildFile; fileRef = C97265031ED35CEC00D185E1 /* Circle_Normal.png */; };
+		C972650A1ED35CF600D185E1 /* Message.png in Resources */ = {isa = PBXBuildFile; fileRef = C97265071ED35CF600D185E1 /* Message.png */; };
+		C972650B1ED35CF600D185E1 /* Message@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C97265081ED35CF600D185E1 /* Message@2x.png */; };
+		C972650C1ED35CF600D185E1 /* Message@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C97265091ED35CF600D185E1 /* Message@3x.png */; };
+		C97265101ED35CFE00D185E1 /* Picture.png in Resources */ = {isa = PBXBuildFile; fileRef = C972650D1ED35CFE00D185E1 /* Picture.png */; };
+		C97265111ED35CFE00D185E1 /* Picture@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C972650E1ED35CFE00D185E1 /* Picture@2x.png */; };
+		C97265121ED35CFE00D185E1 /* Picture@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C972650F1ED35CFE00D185E1 /* Picture@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,12 +92,29 @@
 		C97264C41ED344AD00D185E1 /* CNThemeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNThemeManager.m; sourceTree = "<group>"; };
 		C97264C81ED346D500D185E1 /* PLApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLApplication.h; sourceTree = "<group>"; };
 		C97264C91ED346D500D185E1 /* PLApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLApplication.m; sourceTree = "<group>"; };
-		C97264CC1ED349E100D185E1 /* UIImage+CNImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CNImage.h"; sourceTree = "<group>"; };
-		C97264CD1ED349E100D185E1 /* UIImage+CNImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CNImage.m"; sourceTree = "<group>"; };
-		C97264CE1ED349E100D185E1 /* UIView+CNView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CNView.h"; sourceTree = "<group>"; };
-		C97264CF1ED349E100D185E1 /* UIView+CNView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CNView.m"; sourceTree = "<group>"; };
-		C97264D01ED349E100D185E1 /* UIViewController+Extra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Extra.h"; sourceTree = "<group>"; };
-		C97264D11ED349E100D185E1 /* UIViewController+Extra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Extra.m"; sourceTree = "<group>"; };
+		C97264E91ED358DC00D185E1 /* UIView+CNView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CNView.m"; sourceTree = "<group>"; };
+		C97264EA1ED358DC00D185E1 /* UIViewController+Extra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Extra.h"; sourceTree = "<group>"; };
+		C97264EB1ED358DC00D185E1 /* UIViewController+Extra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Extra.m"; sourceTree = "<group>"; };
+		C97264EC1ED358DC00D185E1 /* UIView+CNView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CNView.h"; sourceTree = "<group>"; };
+		C97264ED1ED358DC00D185E1 /* UIImage+CNImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CNImage.m"; sourceTree = "<group>"; };
+		C97264EE1ED358DC00D185E1 /* UIImage+CNImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CNImage.h"; sourceTree = "<group>"; };
+		C97264F21ED358F300D185E1 /* PLActionButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLActionButton.h; sourceTree = "<group>"; };
+		C97264F31ED358F300D185E1 /* PLActionButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLActionButton.m; sourceTree = "<group>"; };
+		C97264F51ED35CDA00D185E1 /* Camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Camera.png; sourceTree = "<group>"; };
+		C97264F61ED35CDA00D185E1 /* Camera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Camera@2x.png"; sourceTree = "<group>"; };
+		C97264F71ED35CDA00D185E1 /* Camera@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Camera@3x.png"; sourceTree = "<group>"; };
+		C97264FB1ED35CE300D185E1 /* Circle_Highlighted-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Circle_Highlighted-1.png"; sourceTree = "<group>"; };
+		C97264FC1ED35CE300D185E1 /* Circle_Highlighted-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Circle_Highlighted-2.png"; sourceTree = "<group>"; };
+		C97264FD1ED35CE300D185E1 /* Circle_Highlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Circle_Highlighted.png; sourceTree = "<group>"; };
+		C97265011ED35CEC00D185E1 /* Circle_Normal-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Circle_Normal-1.png"; sourceTree = "<group>"; };
+		C97265021ED35CEC00D185E1 /* Circle_Normal-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Circle_Normal-2.png"; sourceTree = "<group>"; };
+		C97265031ED35CEC00D185E1 /* Circle_Normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Circle_Normal.png; sourceTree = "<group>"; };
+		C97265071ED35CF600D185E1 /* Message.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Message.png; sourceTree = "<group>"; };
+		C97265081ED35CF600D185E1 /* Message@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Message@2x.png"; sourceTree = "<group>"; };
+		C97265091ED35CF600D185E1 /* Message@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Message@3x.png"; sourceTree = "<group>"; };
+		C972650D1ED35CFE00D185E1 /* Picture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Picture.png; sourceTree = "<group>"; };
+		C972650E1ED35CFE00D185E1 /* Picture@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Picture@2x.png"; sourceTree = "<group>"; };
+		C972650F1ED35CFE00D185E1 /* Picture@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Picture@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,7 +226,8 @@
 		C96BCEF61ED334D000648F8D /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				C97264CB1ED349E100D185E1 /* Ultilities */,
+				C97264DF1ED3589B00D185E1 /* ActionButton */,
+				C97264D51ED34B8800D185E1 /* Utilities */,
 				C97264BD1ED344AD00D185E1 /* UI */,
 			);
 			path = Common;
@@ -202,6 +236,21 @@
 		C96BCEF71ED334D000648F8D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C972650D1ED35CFE00D185E1 /* Picture.png */,
+				C972650E1ED35CFE00D185E1 /* Picture@2x.png */,
+				C972650F1ED35CFE00D185E1 /* Picture@3x.png */,
+				C97265071ED35CF600D185E1 /* Message.png */,
+				C97265081ED35CF600D185E1 /* Message@2x.png */,
+				C97265091ED35CF600D185E1 /* Message@3x.png */,
+				C97265011ED35CEC00D185E1 /* Circle_Normal-1.png */,
+				C97265021ED35CEC00D185E1 /* Circle_Normal-2.png */,
+				C97265031ED35CEC00D185E1 /* Circle_Normal.png */,
+				C97264FB1ED35CE300D185E1 /* Circle_Highlighted-1.png */,
+				C97264FC1ED35CE300D185E1 /* Circle_Highlighted-2.png */,
+				C97264FD1ED35CE300D185E1 /* Circle_Highlighted.png */,
+				C97264F51ED35CDA00D185E1 /* Camera.png */,
+				C97264F61ED35CDA00D185E1 /* Camera@2x.png */,
+				C97264F71ED35CDA00D185E1 /* Camera@3x.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -287,17 +336,26 @@
 			path = Color;
 			sourceTree = "<group>";
 		};
-		C97264CB1ED349E100D185E1 /* Ultilities */ = {
+		C97264D51ED34B8800D185E1 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				C97264CC1ED349E100D185E1 /* UIImage+CNImage.h */,
-				C97264CD1ED349E100D185E1 /* UIImage+CNImage.m */,
-				C97264CE1ED349E100D185E1 /* UIView+CNView.h */,
-				C97264CF1ED349E100D185E1 /* UIView+CNView.m */,
-				C97264D01ED349E100D185E1 /* UIViewController+Extra.h */,
-				C97264D11ED349E100D185E1 /* UIViewController+Extra.m */,
+				C97264E91ED358DC00D185E1 /* UIView+CNView.m */,
+				C97264EA1ED358DC00D185E1 /* UIViewController+Extra.h */,
+				C97264EB1ED358DC00D185E1 /* UIViewController+Extra.m */,
+				C97264EC1ED358DC00D185E1 /* UIView+CNView.h */,
+				C97264ED1ED358DC00D185E1 /* UIImage+CNImage.m */,
+				C97264EE1ED358DC00D185E1 /* UIImage+CNImage.h */,
 			);
-			path = Ultilities;
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		C97264DF1ED3589B00D185E1 /* ActionButton */ = {
+			isa = PBXGroup;
+			children = (
+				C97264F21ED358F300D185E1 /* PLActionButton.h */,
+				C97264F31ED358F300D185E1 /* PLActionButton.m */,
+			);
+			path = ActionButton;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -364,13 +422,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				C97264BC1ED3443800D185E1 /* PLNoteViewController.xib in Resources */,
+				C97265001ED35CE300D185E1 /* Circle_Highlighted.png in Resources */,
 				C97264A81ED3439700D185E1 /* PLLeftMenuTableViewController.xib in Resources */,
+				C972650C1ED35CF600D185E1 /* Message@3x.png in Resources */,
+				C97264F81ED35CDA00D185E1 /* Camera.png in Resources */,
+				C97264F91ED35CDA00D185E1 /* Camera@2x.png in Resources */,
+				C972650A1ED35CF600D185E1 /* Message.png in Resources */,
+				C97264FF1ED35CE300D185E1 /* Circle_Highlighted-2.png in Resources */,
+				C97265061ED35CEC00D185E1 /* Circle_Normal.png in Resources */,
+				C972650B1ED35CF600D185E1 /* Message@2x.png in Resources */,
+				C97265051ED35CEC00D185E1 /* Circle_Normal-2.png in Resources */,
+				C97264FA1ED35CDA00D185E1 /* Camera@3x.png in Resources */,
+				C97264FE1ED35CE300D185E1 /* Circle_Highlighted-1.png in Resources */,
 				C96BCEEC1ED3311200648F8D /* LaunchScreen.storyboard in Resources */,
 				C96BCEFC1ED334E600648F8D /* PLRootViewController.xib in Resources */,
 				C97264B21ED343FF00D185E1 /* PLSettingsViewController.xib in Resources */,
+				C97265121ED35CFE00D185E1 /* Picture@3x.png in Resources */,
 				C97264B71ED3440F00D185E1 /* PLAccountViewController.xib in Resources */,
 				C97264AD1ED343A900D185E1 /* PLRightTableTableViewController.xib in Resources */,
+				C97265101ED35CFE00D185E1 /* Picture.png in Resources */,
 				C972649E1ED342EB00D185E1 /* PLAlbumsViewController.xib in Resources */,
+				C97265111ED35CFE00D185E1 /* Picture@2x.png in Resources */,
+				C97265041ED35CEC00D185E1 /* Circle_Normal-1.png in Resources */,
 				C96BCEE91ED3311200648F8D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -430,22 +503,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C97264D21ED349E100D185E1 /* UIImage+CNImage.m in Sources */,
+				C97264F01ED358DC00D185E1 /* UIViewController+Extra.m in Sources */,
 				C96BCEFB1ED334E600648F8D /* PLRootViewController.m in Sources */,
 				C96BCEE11ED3311200648F8D /* AppDelegate.m in Sources */,
-				C97264D31ED349E100D185E1 /* UIView+CNView.m in Sources */,
 				C97264B11ED343FF00D185E1 /* PLSettingsViewController.m in Sources */,
 				C97264C61ED344AD00D185E1 /* UIColor+HDExtensions.m in Sources */,
+				C97264EF1ED358DC00D185E1 /* UIView+CNView.m in Sources */,
 				C972649D1ED342EB00D185E1 /* PLAlbumsViewController.m in Sources */,
 				C97264C71ED344AD00D185E1 /* CNThemeManager.m in Sources */,
 				C97264B61ED3440F00D185E1 /* PLAccountViewController.m in Sources */,
 				C97264CA1ED346D500D185E1 /* PLApplication.m in Sources */,
 				C97264AC1ED343A900D185E1 /* PLRightTableTableViewController.m in Sources */,
 				C97264BB1ED3443800D185E1 /* PLNoteViewController.m in Sources */,
+				C97264F41ED358F300D185E1 /* PLActionButton.m in Sources */,
+				C97264F11ED358DC00D185E1 /* UIImage+CNImage.m in Sources */,
 				C97264A71ED3439700D185E1 /* PLLeftMenuTableViewController.m in Sources */,
 				C96BCEDE1ED3311200648F8D /* main.m in Sources */,
 				C97264C51ED344AD00D185E1 /* CNBaseColorKit.m in Sources */,
-				C97264D41ED349E100D185E1 /* UIViewController+Extra.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
