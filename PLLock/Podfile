@@ -9,6 +9,7 @@ pod 'iConsole', '1.5.3'
 pod 'TZImagePickerController', '1.7.9'
 pod 'SVProgressHUD', '2.1.2'
 pod 'LGPlusButtonsView', '1.1.1'
+pod 'GCDWebServer/WebUploader'
 
 
 pod 'FBAudienceNetwork'

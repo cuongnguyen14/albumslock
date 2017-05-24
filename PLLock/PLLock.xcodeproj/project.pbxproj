@@ -49,6 +49,14 @@
 		C97265101ED35CFE00D185E1 /* Picture.png in Resources */ = {isa = PBXBuildFile; fileRef = C972650D1ED35CFE00D185E1 /* Picture.png */; };
 		C97265111ED35CFE00D185E1 /* Picture@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C972650E1ED35CFE00D185E1 /* Picture@2x.png */; };
 		C97265121ED35CFE00D185E1 /* Picture@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C972650F1ED35CFE00D185E1 /* Picture@3x.png */; };
+		C99244CB1ED5F726005C94D1 /* PLAlbumModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C99244CA1ED5F726005C94D1 /* PLAlbumModel.m */; };
+		C99244DA1ED5F7A9005C94D1 /* CNComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = C99244CF1ED5F7A9005C94D1 /* CNComponent.m */; };
+		C99244DB1ED5F7A9005C94D1 /* CNFileComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = C99244D31ED5F7A9005C94D1 /* CNFileComponent.m */; };
+		C99244DC1ED5F7A9005C94D1 /* CNFolderComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = C99244D61ED5F7A9005C94D1 /* CNFolderComponent.m */; };
+		C99244DD1ED5F7A9005C94D1 /* CNFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C99244D81ED5F7A9005C94D1 /* CNFileManager.m */; };
+		C99244DF1ED5FB57005C94D1 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C99244DE1ED5FB57005C94D1 /* AssetsLibrary.framework */; };
+		C99244E41ED6009E005C94D1 /* PLAlbumCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C99244E21ED6009D005C94D1 /* PLAlbumCollectionViewCell.m */; };
+		C99244E51ED6009E005C94D1 /* PLAlbumCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C99244E31ED6009E005C94D1 /* PLAlbumCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -115,6 +123,22 @@
 		C972650D1ED35CFE00D185E1 /* Picture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Picture.png; sourceTree = "<group>"; };
 		C972650E1ED35CFE00D185E1 /* Picture@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Picture@2x.png"; sourceTree = "<group>"; };
 		C972650F1ED35CFE00D185E1 /* Picture@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Picture@3x.png"; sourceTree = "<group>"; };
+		C99244C91ED5F726005C94D1 /* PLAlbumModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLAlbumModel.h; sourceTree = "<group>"; };
+		C99244CA1ED5F726005C94D1 /* PLAlbumModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLAlbumModel.m; sourceTree = "<group>"; };
+		C99244CE1ED5F7A9005C94D1 /* CNComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNComponent.h; sourceTree = "<group>"; };
+		C99244CF1ED5F7A9005C94D1 /* CNComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNComponent.m; sourceTree = "<group>"; };
+		C99244D01ED5F7A9005C94D1 /* CNComponentPrivateMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNComponentPrivateMethod.h; sourceTree = "<group>"; };
+		C99244D21ED5F7A9005C94D1 /* CNFileComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNFileComponent.h; sourceTree = "<group>"; };
+		C99244D31ED5F7A9005C94D1 /* CNFileComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNFileComponent.m; sourceTree = "<group>"; };
+		C99244D51ED5F7A9005C94D1 /* CNFolderComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNFolderComponent.h; sourceTree = "<group>"; };
+		C99244D61ED5F7A9005C94D1 /* CNFolderComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNFolderComponent.m; sourceTree = "<group>"; };
+		C99244D71ED5F7A9005C94D1 /* CNFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNFileManager.h; sourceTree = "<group>"; };
+		C99244D81ED5F7A9005C94D1 /* CNFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNFileManager.m; sourceTree = "<group>"; };
+		C99244D91ED5F7A9005C94D1 /* CNFileManagerDelagate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNFileManagerDelagate.h; sourceTree = "<group>"; };
+		C99244DE1ED5FB57005C94D1 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		C99244E11ED6009D005C94D1 /* PLAlbumCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLAlbumCollectionViewCell.h; sourceTree = "<group>"; };
+		C99244E21ED6009D005C94D1 /* PLAlbumCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLAlbumCollectionViewCell.m; sourceTree = "<group>"; };
+		C99244E31ED6009E005C94D1 /* PLAlbumCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLAlbumCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +146,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C99244DF1ED5FB57005C94D1 /* AssetsLibrary.framework in Frameworks */,
 				4A3B1717227594EA1AD8793E /* libPods-PLLock.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -132,6 +157,7 @@
 		20222735E3E4E74A735BB901 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C99244DE1ED5FB57005C94D1 /* AssetsLibrary.framework */,
 				265A59C5BE6F3DFCB1DA4194 /* libPods-PLLock.a */,
 			);
 			name = Frameworks;
@@ -167,6 +193,7 @@
 		C96BCEDB1ED3311200648F8D /* PLLock */ = {
 			isa = PBXGroup;
 			children = (
+				C99244C81ED5F717005C94D1 /* Model */,
 				C96BCEF31ED334D000648F8D /* Screen */,
 				C96BCEF51ED334D000648F8D /* ThirdParty */,
 				C96BCEF61ED334D000648F8D /* Common */,
@@ -226,6 +253,7 @@
 		C96BCEF61ED334D000648F8D /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				C99244CC1ED5F7A9005C94D1 /* FileManager */,
 				C97264DF1ED3589B00D185E1 /* ActionButton */,
 				C97264D51ED34B8800D185E1 /* Utilities */,
 				C97264BD1ED344AD00D185E1 /* UI */,
@@ -258,6 +286,7 @@
 		C97264991ED342D600D185E1 /* Albums */ = {
 			isa = PBXGroup;
 			children = (
+				C99244E01ED60085005C94D1 /* View */,
 				C972649A1ED342EB00D185E1 /* PLAlbumsViewController.h */,
 				C972649B1ED342EB00D185E1 /* PLAlbumsViewController.m */,
 				C972649C1ED342EB00D185E1 /* PLAlbumsViewController.xib */,
@@ -358,6 +387,66 @@
 			path = ActionButton;
 			sourceTree = "<group>";
 		};
+		C99244C81ED5F717005C94D1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C99244C91ED5F726005C94D1 /* PLAlbumModel.h */,
+				C99244CA1ED5F726005C94D1 /* PLAlbumModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C99244CC1ED5F7A9005C94D1 /* FileManager */ = {
+			isa = PBXGroup;
+			children = (
+				C99244CD1ED5F7A9005C94D1 /* Components */,
+				C99244D71ED5F7A9005C94D1 /* CNFileManager.h */,
+				C99244D81ED5F7A9005C94D1 /* CNFileManager.m */,
+				C99244D91ED5F7A9005C94D1 /* CNFileManagerDelagate.h */,
+			);
+			path = FileManager;
+			sourceTree = "<group>";
+		};
+		C99244CD1ED5F7A9005C94D1 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				C99244CE1ED5F7A9005C94D1 /* CNComponent.h */,
+				C99244CF1ED5F7A9005C94D1 /* CNComponent.m */,
+				C99244D01ED5F7A9005C94D1 /* CNComponentPrivateMethod.h */,
+				C99244D11ED5F7A9005C94D1 /* FileComponent */,
+				C99244D41ED5F7A9005C94D1 /* FolderComponent */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		C99244D11ED5F7A9005C94D1 /* FileComponent */ = {
+			isa = PBXGroup;
+			children = (
+				C99244D21ED5F7A9005C94D1 /* CNFileComponent.h */,
+				C99244D31ED5F7A9005C94D1 /* CNFileComponent.m */,
+			);
+			path = FileComponent;
+			sourceTree = "<group>";
+		};
+		C99244D41ED5F7A9005C94D1 /* FolderComponent */ = {
+			isa = PBXGroup;
+			children = (
+				C99244D51ED5F7A9005C94D1 /* CNFolderComponent.h */,
+				C99244D61ED5F7A9005C94D1 /* CNFolderComponent.m */,
+			);
+			path = FolderComponent;
+			sourceTree = "<group>";
+		};
+		C99244E01ED60085005C94D1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C99244E11ED6009D005C94D1 /* PLAlbumCollectionViewCell.h */,
+				C99244E21ED6009D005C94D1 /* PLAlbumCollectionViewCell.m */,
+				C99244E31ED6009E005C94D1 /* PLAlbumCollectionViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -434,6 +523,7 @@
 				C97265051ED35CEC00D185E1 /* Circle_Normal-2.png in Resources */,
 				C97264FA1ED35CDA00D185E1 /* Camera@3x.png in Resources */,
 				C97264FE1ED35CE300D185E1 /* Circle_Highlighted-1.png in Resources */,
+				C99244E51ED6009E005C94D1 /* PLAlbumCollectionViewCell.xib in Resources */,
 				C96BCEEC1ED3311200648F8D /* LaunchScreen.storyboard in Resources */,
 				C96BCEFC1ED334E600648F8D /* PLRootViewController.xib in Resources */,
 				C97264B21ED343FF00D185E1 /* PLSettingsViewController.xib in Resources */,
@@ -504,22 +594,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				C97264F01ED358DC00D185E1 /* UIViewController+Extra.m in Sources */,
+				C99244CB1ED5F726005C94D1 /* PLAlbumModel.m in Sources */,
 				C96BCEFB1ED334E600648F8D /* PLRootViewController.m in Sources */,
 				C96BCEE11ED3311200648F8D /* AppDelegate.m in Sources */,
 				C97264B11ED343FF00D185E1 /* PLSettingsViewController.m in Sources */,
 				C97264C61ED344AD00D185E1 /* UIColor+HDExtensions.m in Sources */,
+				C99244E41ED6009E005C94D1 /* PLAlbumCollectionViewCell.m in Sources */,
 				C97264EF1ED358DC00D185E1 /* UIView+CNView.m in Sources */,
 				C972649D1ED342EB00D185E1 /* PLAlbumsViewController.m in Sources */,
 				C97264C71ED344AD00D185E1 /* CNThemeManager.m in Sources */,
 				C97264B61ED3440F00D185E1 /* PLAccountViewController.m in Sources */,
+				C99244DC1ED5F7A9005C94D1 /* CNFolderComponent.m in Sources */,
 				C97264CA1ED346D500D185E1 /* PLApplication.m in Sources */,
 				C97264AC1ED343A900D185E1 /* PLRightTableTableViewController.m in Sources */,
 				C97264BB1ED3443800D185E1 /* PLNoteViewController.m in Sources */,
 				C97264F41ED358F300D185E1 /* PLActionButton.m in Sources */,
 				C97264F11ED358DC00D185E1 /* UIImage+CNImage.m in Sources */,
+				C99244DB1ED5F7A9005C94D1 /* CNFileComponent.m in Sources */,
 				C97264A71ED3439700D185E1 /* PLLeftMenuTableViewController.m in Sources */,
 				C96BCEDE1ED3311200648F8D /* main.m in Sources */,
 				C97264C51ED344AD00D185E1 /* CNBaseColorKit.m in Sources */,
+				C99244DA1ED5F7A9005C94D1 /* CNComponent.m in Sources */,
+				C99244DD1ED5F7A9005C94D1 /* CNFileManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

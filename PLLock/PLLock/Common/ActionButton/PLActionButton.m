@@ -22,7 +22,7 @@
         button.position = LGPlusButtonsViewPositionBottomRight;
         button.showHideOnScroll = YES;
         button.plusButtonAnimationType = LGPlusButtonAnimationTypeRotate;
-        button.appearingAnimationType = LGPlusButtonsAppearingAnimationTypeCrossDissolve;
+        button.appearingAnimationType = LGPlusButtonsAppearingAnimationTypeCrossDissolveAndSlideVertical;
         
         [button setButtonsAdjustsImageWhenHighlighted:NO];
         [button setButtonsBackgroundColor:[UIColor colorWithRed:0.f green:0.5 blue:1.f alpha:1.f] forState:UIControlStateNormal];

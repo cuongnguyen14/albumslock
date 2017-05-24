@@ -3,7 +3,7 @@
 //  Musitube
 //
 //  Created by CuongNguyenNgoc on 1/19/16.
-//  Copyright © 2016 HDapps. All rights reserved.
+//  Copyright © 2016 CNLabs. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
