@@ -17,4 +17,6 @@
 
 @property (nonatomic, strong) CNThemeManager *theme;
 
+-(void)setupApplication;
+
 @end

@@ -10,6 +10,19 @@
 
 @implementation CNFolderComponent
 
+- (instancetype)initWithFullFileName:(NSString *)name
+                              parent:(CNComponent *)parent
+                          folderType:(FolderType)type
+                           tintColor:(UIColor *)color
+{
+    self = [super initWithFullFileName:name parent:parent];
+    if (self) {
+        self.folderType = type;
+        self.tintColor = color;
+    }
+    return self;
+}
+
 - (TypeComponent)type {
     return ComponentTypeFolder;
 }
@@ -24,8 +37,19 @@
     return [allContentsInDirectory count];
 }
 
+- (NSDate*)dateCreated {
+    NSError *attributesError;
+    NSDictionary *fileAttributes = [[NSFileManager defaultManager] attributesOfItemAtPath:[self absolutePath] error:&attributesError];
+    NSDate *fileCreationDate = [fileAttributes objectForKey:NSFileCreationDate];
+    
+    return fileCreationDate;
+}
+
 - (id)copy {
-    return [[self.class alloc] initWithFullFileName:self.fullFileName parent:self.parent];
+    return [[self.class alloc] initWithFullFileName:self.fullFileName
+                                             parent:self.parent
+                                         folderType:self.folderType
+                                          tintColor:self.tintColor];
 }
 
 @end

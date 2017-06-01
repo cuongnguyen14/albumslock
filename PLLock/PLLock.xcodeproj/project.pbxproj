@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		4A3B1717227594EA1AD8793E /* libPods-PLLock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 265A59C5BE6F3DFCB1DA4194 /* libPods-PLLock.a */; };
+		C907FA191EE0AAC800FE8475 /* PLAlbumDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C907FA171EE0AAC800FE8475 /* PLAlbumDetailsViewController.m */; };
+		C907FA1A1EE0AAC800FE8475 /* PLAlbumDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C907FA181EE0AAC800FE8475 /* PLAlbumDetailsViewController.xib */; };
+		C907FA1F1EE0AB3300FE8475 /* PLAlbumDetailsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C907FA1D1EE0AB3300FE8475 /* PLAlbumDetailsCollectionViewCell.m */; };
+		C907FA201EE0AB3300FE8475 /* PLAlbumDetailsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C907FA1E1EE0AB3300FE8475 /* PLAlbumDetailsCollectionViewCell.xib */; };
 		C96BCEDE1ED3311200648F8D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C96BCEDD1ED3311200648F8D /* main.m */; };
 		C96BCEE11ED3311200648F8D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C96BCEE01ED3311200648F8D /* AppDelegate.m */; };
 		C96BCEE91ED3311200648F8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C96BCEE81ED3311200648F8D /* Assets.xcassets */; };
@@ -63,6 +67,12 @@
 		265A59C5BE6F3DFCB1DA4194 /* libPods-PLLock.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PLLock.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CD2A521C16450001B17061D /* Pods-PLLock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PLLock.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PLLock/Pods-PLLock.debug.xcconfig"; sourceTree = "<group>"; };
 		C7830B2618AA47CBC99592DF /* Pods-PLLock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PLLock.release.xcconfig"; path = "Pods/Target Support Files/Pods-PLLock/Pods-PLLock.release.xcconfig"; sourceTree = "<group>"; };
+		C907FA161EE0AAC800FE8475 /* PLAlbumDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLAlbumDetailsViewController.h; sourceTree = "<group>"; };
+		C907FA171EE0AAC800FE8475 /* PLAlbumDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLAlbumDetailsViewController.m; sourceTree = "<group>"; };
+		C907FA181EE0AAC800FE8475 /* PLAlbumDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLAlbumDetailsViewController.xib; sourceTree = "<group>"; };
+		C907FA1C1EE0AB3300FE8475 /* PLAlbumDetailsCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLAlbumDetailsCollectionViewCell.h; sourceTree = "<group>"; };
+		C907FA1D1EE0AB3300FE8475 /* PLAlbumDetailsCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLAlbumDetailsCollectionViewCell.m; sourceTree = "<group>"; };
+		C907FA1E1EE0AB3300FE8475 /* PLAlbumDetailsCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLAlbumDetailsCollectionViewCell.xib; sourceTree = "<group>"; };
 		C96BCED91ED3311200648F8D /* PLLock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PLLock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C96BCEDD1ED3311200648F8D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C96BCEDF1ED3311200648F8D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -170,6 +180,27 @@
 				C7830B2618AA47CBC99592DF /* Pods-PLLock.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		C907FA151EE0AAA500FE8475 /* AlbumDetails */ = {
+			isa = PBXGroup;
+			children = (
+				C907FA1B1EE0AB1000FE8475 /* View */,
+				C907FA161EE0AAC800FE8475 /* PLAlbumDetailsViewController.h */,
+				C907FA171EE0AAC800FE8475 /* PLAlbumDetailsViewController.m */,
+				C907FA181EE0AAC800FE8475 /* PLAlbumDetailsViewController.xib */,
+			);
+			path = AlbumDetails;
+			sourceTree = "<group>";
+		};
+		C907FA1B1EE0AB1000FE8475 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C907FA1C1EE0AB3300FE8475 /* PLAlbumDetailsCollectionViewCell.h */,
+				C907FA1D1EE0AB3300FE8475 /* PLAlbumDetailsCollectionViewCell.m */,
+				C907FA1E1EE0AB3300FE8475 /* PLAlbumDetailsCollectionViewCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		C96BCED01ED3311200648F8D = {
@@ -286,6 +317,7 @@
 		C97264991ED342D600D185E1 /* Albums */ = {
 			isa = PBXGroup;
 			children = (
+				C907FA151EE0AAA500FE8475 /* AlbumDetails */,
 				C99244E01ED60085005C94D1 /* View */,
 				C972649A1ED342EB00D185E1 /* PLAlbumsViewController.h */,
 				C972649B1ED342EB00D185E1 /* PLAlbumsViewController.m */,
@@ -512,6 +544,7 @@
 			files = (
 				C97264BC1ED3443800D185E1 /* PLNoteViewController.xib in Resources */,
 				C97265001ED35CE300D185E1 /* Circle_Highlighted.png in Resources */,
+				C907FA1A1EE0AAC800FE8475 /* PLAlbumDetailsViewController.xib in Resources */,
 				C97264A81ED3439700D185E1 /* PLLeftMenuTableViewController.xib in Resources */,
 				C972650C1ED35CF600D185E1 /* Message@3x.png in Resources */,
 				C97264F81ED35CDA00D185E1 /* Camera.png in Resources */,
@@ -528,6 +561,7 @@
 				C96BCEFC1ED334E600648F8D /* PLRootViewController.xib in Resources */,
 				C97264B21ED343FF00D185E1 /* PLSettingsViewController.xib in Resources */,
 				C97265121ED35CFE00D185E1 /* Picture@3x.png in Resources */,
+				C907FA201EE0AB3300FE8475 /* PLAlbumDetailsCollectionViewCell.xib in Resources */,
 				C97264B71ED3440F00D185E1 /* PLAccountViewController.xib in Resources */,
 				C97264AD1ED343A900D185E1 /* PLRightTableTableViewController.xib in Resources */,
 				C97265101ED35CFE00D185E1 /* Picture.png in Resources */,
@@ -604,6 +638,7 @@
 				C972649D1ED342EB00D185E1 /* PLAlbumsViewController.m in Sources */,
 				C97264C71ED344AD00D185E1 /* CNThemeManager.m in Sources */,
 				C97264B61ED3440F00D185E1 /* PLAccountViewController.m in Sources */,
+				C907FA191EE0AAC800FE8475 /* PLAlbumDetailsViewController.m in Sources */,
 				C99244DC1ED5F7A9005C94D1 /* CNFolderComponent.m in Sources */,
 				C97264CA1ED346D500D185E1 /* PLApplication.m in Sources */,
 				C97264AC1ED343A900D185E1 /* PLRightTableTableViewController.m in Sources */,
@@ -616,6 +651,7 @@
 				C97264C51ED344AD00D185E1 /* CNBaseColorKit.m in Sources */,
 				C99244DA1ED5F7A9005C94D1 /* CNComponent.m in Sources */,
 				C99244DD1ED5F7A9005C94D1 /* CNFileManager.m in Sources */,
+				C907FA1F1EE0AB3300FE8475 /* PLAlbumDetailsCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

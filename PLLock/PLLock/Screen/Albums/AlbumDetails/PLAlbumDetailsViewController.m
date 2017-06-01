@@ -1,54 +1,80 @@
 //
-//  PLAlbumsViewController.m
+//  PLAlbumDetailsViewController.m
 //  PLLock
 //
-//  Created by CuongNguyen on 5/22/17.
+//  Created by CuongNguyen on 6/2/17.
 //  Copyright © 2017 CuongNguyen. All rights reserved.
 //
 
-#import "PLAlbumsViewController.h"
-#import "TZImagePickerController.h"
-#import "PLActionButton.h"
-#import "PLAlbumCollectionViewCell.h"
 #import "PLAlbumDetailsViewController.h"
+#import "PLAlbumDetailsCollectionViewCell.h"
+#import "PLActionButton.h"
+#import "TZImagePickerController.h"
 
-@interface PLAlbumsViewController () <TZImagePickerControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
+@interface PLAlbumDetailsViewController () <TZImagePickerControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (nonatomic) CNFolderComponent *parent;
 
+@property (nonatomic) NSArray<CNFileComponent *> *data;
 @property (nonatomic, strong) PLActionButton *actionButton;
-@property (nonatomic) NSArray<CNFolderComponent *> *data;
 
 @end
 
-@implementation PLAlbumsViewController
+@implementation PLAlbumDetailsViewController
+
+- (instancetype)initWithFolder:(CNFolderComponent *)folder
+{
+    self = [super init];
+    if (self) {
+        self.parent = folder;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;
     
     self.view.backgroundColor = [UIColor whiteColor];
     self.collectionView.backgroundColor = self.view.backgroundColor;
-    
-    [self setupActionButton];
-    
-    [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([PLAlbumCollectionViewCell class]) bundle:nil] forCellWithReuseIdentifier:@"kCellReuseID"];
+        
+    [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([PLAlbumDetailsCollectionViewCell class]) bundle:nil] forCellWithReuseIdentifier:@"kCellReuseID"];
 
-    [self getAllFolder];
+    [self setupActionButton];
+
+    [self loadData];
 }
 
--(void)getAllFolder {
-    NSArray *allFolder = [sFileManager componentForComponent:[sFileManager rootComponent] mode:NO];
+-(void)loadData {
+    NSArray *allFile = [sFileManager componentForComponent:self.parent mode:YES];
     NSSortDescriptor *date = [[NSSortDescriptor alloc] initWithKey:@"dateCreated" ascending:YES];
-    self.data = [allFolder sortedArrayUsingDescriptors:[NSArray arrayWithObjects:date, nil]];
+    self.data = [allFile sortedArrayUsingDescriptors:[NSArray arrayWithObjects:date, nil]];
     [self.collectionView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)dealloc {
+    
+    @try {
+        [self.actionButton.observedScrollView removeObserver:self forKeyPath:@"contentInset"];
+        [self.actionButton.observedScrollView removeObserver:self forKeyPath:@"contentOffset"];
+        [self.actionButton.observedScrollView removeObserver:self forKeyPath:@"contentSize"];
+
+    } @catch (NSException *exception) {
+        
+    } @finally {
+        
+    }
+    
+    [self.actionButton removeFromSuperview];
+    self.actionButton = nil;
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -59,9 +85,9 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    PLAlbumCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"kCellReuseID" forIndexPath:indexPath];
+    PLAlbumDetailsCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"kCellReuseID" forIndexPath:indexPath];
     
-    CNFolderComponent *model = [self.data objectAtIndex:indexPath.row];
+    CNFileComponent *model = [self.data objectAtIndex:indexPath.row];
     
     [cell setupUIWith:model];
     
@@ -71,25 +97,32 @@
 #pragma mark - UICollectionViewDelegateFlowLayout
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    int padding = 15;
-    return CGSizeMake(self.view.bounds.size.width/2 - padding,
-                      self.view.bounds.size.width/2 - padding);
+    int padding = 50/4;
+    return CGSizeMake(self.view.bounds.size.width/4 - padding,
+                      self.view.bounds.size.width/4 - padding);
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     [collectionView deselectItemAtIndexPath:indexPath animated:NO];
-
-    CNFolderComponent *model = [self.data objectAtIndex:indexPath.row];
-    PLAlbumDetailsViewController *controller = [[PLAlbumDetailsViewController alloc] initWithFolder:model];
-    [self.navigationController pushViewController:controller animated:YES];
     
 }
-
 
 #pragma mark TZImagePickerControllerDelegate
 
 - (void)imagePickerController:(TZImagePickerController *)picker didFinishPickingPhotos:(NSArray<UIImage *> *)photos sourceAssets:(NSArray *)assets isSelectOriginalPhoto:(BOOL)isSelectOriginalPhoto {
     
+    [picker showProgressHUD];
+
+    for (UIImage *image in photos) {
+        NSString *imageName = [NSString stringWithFormat:@"%f.png", [[NSDate date] timeIntervalSince1970]];
+        NSString *filePath = [[self.parent absolutePath] stringByAppendingPathComponent:imageName];
+        [UIImagePNGRepresentation(image) writeToFile:filePath atomically:YES];
+    }
+    
+    [picker hideProgressHUD];
+    
+    [self loadData];
+
 }
 
 - (void)imagePickerController:(TZImagePickerController *)picker didFinishPickingPhotos:(NSArray<UIImage *> *)photos sourceAssets:(NSArray *)assets isSelectOriginalPhoto:(BOOL)isSelectOriginalPhoto infos:(NSArray<NSDictionary *> *)infos {

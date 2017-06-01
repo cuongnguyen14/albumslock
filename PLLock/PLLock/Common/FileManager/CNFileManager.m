@@ -179,20 +179,31 @@
 }
 
 - (NSArray * _Nonnull)componentForComponent:(CNComponent * _Nonnull)component mode:(BOOL)getAll {
-    NSArray *allPathComponents = [[NSFileManager defaultManager] contentsOfDirectoryAtURL:[NSURL fileURLWithPath:[component absolutePath]]
-                                                               includingPropertiesForKeys:@[NSURLNameKey,NSURLIsDirectoryKey]
-                                                                                  options:NSDirectoryEnumerationSkipsHiddenFiles error:nil];
+    
+    NSArray *allPathComponents = [[NSFileManager defaultManager]
+                                  contentsOfDirectoryAtURL:[NSURL fileURLWithPath:[component absolutePath]]
+                                  includingPropertiesForKeys:@[NSURLNameKey,
+                                                               NSURLIsDirectoryKey]
+                                  options:NSDirectoryEnumerationSkipsHiddenFiles error:nil];
+    
     NSMutableArray *listComponentInComponent = [NSMutableArray new];
     NSNumber *isDir = nil;
     for (NSURL *item in allPathComponents) {
         NSString *fileName = nil;
+        
         [item getResourceValue:&fileName forKey:NSURLNameKey error:nil];
         [item getResourceValue:&isDir forKey:NSURLIsDirectoryKey error:nil];
-        
+
         CNComponent *componentItem = nil;
         if (getAll) {
             if ([isDir boolValue]) {
                 componentItem = [[CNFolderComponent alloc] initWithFullFileName:fileName parent:component];
+                
+                ////
+                [self updateTypeAndTintColor:(CNFolderComponent *)componentItem];
+                ////
+                
+                
                 [listComponentInComponent insertObject:componentItem atIndex:0];
             } else {
                 componentItem = [[CNFileComponent alloc] initWithFullFileName:fileName parent:component];
@@ -200,6 +211,11 @@
             }
         } else if ([isDir boolValue]) {
             componentItem = [[CNFolderComponent alloc] initWithFullFileName:fileName parent:component];
+            
+            ////
+            [self updateTypeAndTintColor:(CNFolderComponent *)componentItem];
+            ////
+
             [listComponentInComponent addObject:componentItem];
         }
     }
@@ -381,7 +397,7 @@
         
         CNComponent *oldComponent = [[CNComponent alloc] initWithFullFileName:component.fullFileName parent:component.parent];
         component.fullFileName = newFullName;
-        // ADDED BY DONG-NV - USE TO UPDATE PATCH ON DOWNLOADED FILE
+
         if (component.type == ComponentTypeFolder) {
             [self fileManagerCallDelegateActionWithType:CNFileManagerActionTypeUpdate effectiveComponent:@[component, oldComponent] falureComponent:nil];
         }
@@ -495,4 +511,28 @@
     }
 }
 
+#pragma mark 
+
+-(void)updateTypeAndTintColor:(CNFolderComponent *)folder {
+    
+    if ([folder.fullFileName isEqualToString:@"PHOTOS"]) {
+        folder.folderType = FolderTypePhoto;
+        folder.tintColor = [UIColor redColor];
+        return;
+    }
+    if ([folder.fullFileName isEqualToString:@"VIDEOS"]) {
+        folder.folderType = FolderTypeVideo;
+        folder.tintColor = [UIColor blueColor];
+        return;
+    }
+    if ([folder.fullFileName isEqualToString:@"ITUNES ALBUM"]) {
+        folder.folderType = FolderTypeiTunes;
+        folder.tintColor = [UIColor yellowColor];
+        return;
+    }
+    
+    folder.folderType = FolderTypeUser;
+    folder.tintColor = [UIColor purpleColor];
+
+}
 @end

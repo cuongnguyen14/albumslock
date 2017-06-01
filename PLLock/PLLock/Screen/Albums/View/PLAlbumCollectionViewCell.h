@@ -10,4 +10,6 @@
 
 @interface PLAlbumCollectionViewCell : UICollectionViewCell
 
+-(void)setupUIWith:(CNFolderComponent *)folder;
+
 @end

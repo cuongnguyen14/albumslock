@@ -23,7 +23,10 @@
 - (instancetype)initWithFullFileName:(NSString *)fullFileName parent:(CNComponent *)parent {
     self = [super initWithFullFileName:fullFileName parent:parent];
     if (self) {
-        
+        NSString *extension = [fullFileName pathExtension];
+        if ([extension isEqualToString:@"png"]) {
+            self.type = ComponentTypePhoto;
+        }
     }
     return self;
 }
@@ -66,7 +69,9 @@
     
     return fileCreationDate;
 }
+
 - (id)copy {
     return [[self.class alloc] initWithFullFileName:self.fullFileName parent:self.parent];
 }
+
 @end

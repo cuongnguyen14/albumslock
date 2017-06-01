@@ -8,6 +8,21 @@
 
 #import "CNComponent.h"
 
+typedef enum : NSUInteger {
+    FolderTypeiTunes,
+    FolderTypePhoto,
+    FolderTypeVideo,
+    FolderTypeUser
+} FolderType;
+
 @interface CNFolderComponent : CNComponent
+
+- (instancetype)initWithFullFileName:(NSString *)name
+                              parent:(CNComponent *)parent
+                          folderType:(FolderType)type
+                           tintColor:(UIColor *)color;
+
+@property (nonatomic) FolderType folderType;
+@property (nonatomic) UIColor *tintColor;
 
 @end

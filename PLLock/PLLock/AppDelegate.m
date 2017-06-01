@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "PLRootViewController.h"
+#import "PLApplication.h"
+
 
 @interface AppDelegate ()
 
@@ -18,6 +20,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
+    [sApplication setupApplication];
+    
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = [PLRootViewController rootViewController];
     [self.window makeKeyAndVisible];

@@ -28,4 +28,30 @@
     return self;
 }
 
+-(void)setupApplication {
+    
+    [sFileManager createFolderAtComponent:[sFileManager rootComponent] nameFolder:@"ITUNES ALBUM"];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [sFileManager createFolderAtComponent:[sFileManager rootComponent] nameFolder:@"PHOTOS"];
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [sFileManager createFolderAtComponent:[sFileManager rootComponent] nameFolder:@"VIDEOS"];
+            
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{                
+                [sFileManager createFolderAtComponent:[sFileManager rootComponent] nameFolder:@"User Folder 1"];
+                [sFileManager createFolderAtComponent:[sFileManager rootComponent] nameFolder:@"User Folder 2"];
+                [sFileManager createFolderAtComponent:[sFileManager rootComponent] nameFolder:@"User Folder 3"];
+                [sFileManager createFolderAtComponent:[sFileManager rootComponent] nameFolder:@"User Folder 4"];
+                [sFileManager createFolderAtComponent:[sFileManager rootComponent] nameFolder:@"User Folder 5"];
+                [sFileManager createFolderAtComponent:[sFileManager rootComponent] nameFolder:@"User Folder 6"];
+                [sFileManager createFolderAtComponent:[sFileManager rootComponent] nameFolder:@"User Folder 7"];
+            });
+        });
+        
+    });
+    
+    
+
+}
 @end
