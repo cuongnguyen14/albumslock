@@ -44,6 +44,11 @@
     return [[self.parent relativePath] stringByAppendingPathComponent:self.fullFileName];
 }
 
+- (NSString *)thumbnailPath {
+    NSString *name = [NSString stringWithFormat:@".%@", self.fullFileName];
+    return [[self.parent absolutePath] stringByAppendingPathComponent:name];
+}
+
 - (TypeComponent)type {
     //for subclass
     return ComponentTypeInvalidate;

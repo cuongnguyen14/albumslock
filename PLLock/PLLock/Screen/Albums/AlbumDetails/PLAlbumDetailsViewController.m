@@ -10,13 +10,18 @@
 #import "PLAlbumDetailsCollectionViewCell.h"
 #import "PLActionButton.h"
 #import "TZImagePickerController.h"
+#import <Photos/Photos.h>
+#import "MWPhotoBrowser.h"
+#import "MWPhotoBrowserPrivate.h"
 
-@interface PLAlbumDetailsViewController () <TZImagePickerControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
+@interface PLAlbumDetailsViewController () <TZImagePickerControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, MWPhotoBrowserDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic) CNFolderComponent *parent;
 
 @property (nonatomic) NSArray<CNFileComponent *> *data;
+@property (nonatomic) NSArray<MWPhoto *> *viewData;
+
 @property (nonatomic, strong) PLActionButton *actionButton;
 
 @end
@@ -34,17 +39,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;
     
     self.view.backgroundColor = [UIColor whiteColor];
     self.collectionView.backgroundColor = self.view.backgroundColor;
-        
+    
     [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([PLAlbumDetailsCollectionViewCell class]) bundle:nil] forCellWithReuseIdentifier:@"kCellReuseID"];
-
+    
     [self setupActionButton];
-
+    
     [self loadData];
 }
 
@@ -66,7 +71,7 @@
         [self.actionButton.observedScrollView removeObserver:self forKeyPath:@"contentInset"];
         [self.actionButton.observedScrollView removeObserver:self forKeyPath:@"contentOffset"];
         [self.actionButton.observedScrollView removeObserver:self forKeyPath:@"contentSize"];
-
+        
     } @catch (NSException *exception) {
         
     } @finally {
@@ -97,7 +102,7 @@
 #pragma mark - UICollectionViewDelegateFlowLayout
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    int padding = 50/4;
+    int padding = 8;
     return CGSizeMake(self.view.bounds.size.width/4 - padding,
                       self.view.bounds.size.width/4 - padding);
 }
@@ -105,24 +110,50 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     [collectionView deselectItemAtIndexPath:indexPath animated:NO];
     
+    NSMutableArray *viewPhoto = [NSMutableArray new];
+    for (CNFileComponent *file in self.data) {
+        MWPhoto *photo = [[MWPhoto alloc] initWithURL:[NSURL fileURLWithPath:file.absolutePath]];
+        [viewPhoto addObject:photo];
+    }
+    self.viewData = [viewPhoto mutableCopy];
+    
+    
+    MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithDelegate:self];
+
+    browser.displayActionButton = YES; // Show action button to allow sharing, copying, etc (defaults to YES)
+    browser.displayNavArrows = NO; // Whether to display left and right nav arrows on toolbar (defaults to NO)
+    browser.zoomPhotosToFill = YES; // Images that almost fill the screen will be initially zoomed to fill (defaults to YES)
+    browser.alwaysShowControls = NO; // Allows to control whether the bars and controls are always visible or whether they fade away to show the photo full (defaults to NO)
+    browser.enableGrid = NO; // Whether to allow the viewing of all the photo thumbnails on a grid (defaults to YES)
+    browser.startOnGrid = NO; // Whether to start on the grid of thumbnails instead of the first photo (defaults to NO)
+    browser.autoPlayOnAppear = NO; // Auto-play first video
+        
+    // Optionally set the current visible photo before displaying
+    [browser setCurrentPhotoIndex:indexPath.row];
+    
+    browser.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    
+    // Present
+    [self.navigationController pushViewController:browser animated:YES];
+
 }
 
 #pragma mark TZImagePickerControllerDelegate
 
 - (void)imagePickerController:(TZImagePickerController *)picker didFinishPickingPhotos:(NSArray<UIImage *> *)photos sourceAssets:(NSArray *)assets isSelectOriginalPhoto:(BOOL)isSelectOriginalPhoto {
     
-    [picker showProgressHUD];
-
-    for (UIImage *image in photos) {
-        NSString *imageName = [NSString stringWithFormat:@"%f.png", [[NSDate date] timeIntervalSince1970]];
-        NSString *filePath = [[self.parent absolutePath] stringByAppendingPathComponent:imageName];
-        [UIImagePNGRepresentation(image) writeToFile:filePath atomically:YES];
-    }
+    UIViewController *root = [[[UIApplication sharedApplication].delegate window] rootViewController];
+    [MBProgressHUD showHUDAddedTo:root.view animated:YES];
     
-    [picker hideProgressHUD];
-    
-    [self loadData];
-
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        weakify(self);
+        [sImport import:photos assets:assets destination:self.parent completedBlock:^(NSError *error) {
+            if (!error) {
+                [self_weak_ loadData];
+                [MBProgressHUD hideHUDForView:root.view animated:YES];
+            }
+        }];
+    });
 }
 
 - (void)imagePickerController:(TZImagePickerController *)picker didFinishPickingPhotos:(NSArray<UIImage *> *)photos sourceAssets:(NSArray *)assets isSelectOriginalPhoto:(BOOL)isSelectOriginalPhoto infos:(NSArray<NSDictionary *> *)infos {
@@ -176,8 +207,10 @@
                  
                  TZImagePickerController *imagePickerVc = [[TZImagePickerController alloc] initWithMaxImagesCount:9999999 delegate:self_weak_];
                  imagePickerVc.allowTakePicture = NO;
-                 imagePickerVc.allowPickingOriginalPhoto = NO;
-                 imagePickerVc.allowPreview = YES;
+                 imagePickerVc.allowPickingOriginalPhoto = YES;
+                 imagePickerVc.allowPreview = NO;
+                 imagePickerVc.allowPickingVideo = NO;
+                 imagePickerVc.hideWhenCanNotSelect = YES;
                  [self_weak_ presentViewController:imagePickerVc animated:YES completion:nil];
                  
              }];
@@ -197,6 +230,16 @@
     
     self.actionButton.observedScrollView = self.collectionView;
     [self.view addSubview:self.actionButton];
+}
+
+#pragma mark 
+
+- (NSUInteger)numberOfPhotosInPhotoBrowser:(MWPhotoBrowser *)photoBrowser {
+    return [self.viewData count];
+}
+
+- (id <MWPhoto>)photoBrowser:(MWPhotoBrowser *)photoBrowser photoAtIndex:(NSUInteger)index {
+    return [self.viewData objectAtIndex:index];
 }
 
 @end

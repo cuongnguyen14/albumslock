@@ -41,4 +41,8 @@ typedef NS_ENUM(NSUInteger, TypeComponent) {
 - (NSDate *)dateCreated;
 - (void)updateParent:(CNComponent *)parent;
 
+
+///
+- (NSString *)thumbnailPath;
+
 @end

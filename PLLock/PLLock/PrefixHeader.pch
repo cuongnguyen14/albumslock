@@ -18,5 +18,7 @@
 #import "CNFileManager.h"
 #import "CNFileComponent.h"
 #import "CNFolderComponent.h"
+#import "PLImportPhotoManager.h"
+#import "MBProgressHUD.h"
 
 #endif /* PrefixHeader_pch */

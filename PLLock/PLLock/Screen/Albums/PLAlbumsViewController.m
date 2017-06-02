@@ -41,8 +41,17 @@
 
 -(void)getAllFolder {
     NSArray *allFolder = [sFileManager componentForComponent:[sFileManager rootComponent] mode:NO];
-    NSSortDescriptor *date = [[NSSortDescriptor alloc] initWithKey:@"dateCreated" ascending:YES];
-    self.data = [allFolder sortedArrayUsingDescriptors:[NSArray arrayWithObjects:date, nil]];
+//    NSSortDescriptor *date = [[NSSortDescriptor alloc] initWithKey:@"dateCreated" ascending:YES];
+//    self.data = [allFolder sortedArrayUsingDescriptors:[NSArray arrayWithObjects:date, nil]];
+
+    self.data = [allFolder sortedArrayUsingComparator:^NSComparisonResult(CNFolderComponent *obj1, CNFolderComponent *obj2) {
+        if ([obj1.dateCreated timeIntervalSince1970] - [obj2.dateCreated timeIntervalSince1970] > 0) {
+            return NSOrderedDescending;
+        } else {
+            return NSOrderedAscending;
+        }
+    }];
+    
     [self.collectionView reloadData];
 }
 

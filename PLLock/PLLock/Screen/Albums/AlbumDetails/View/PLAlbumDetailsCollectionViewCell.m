@@ -25,7 +25,7 @@
 
 -(void)setupUIWith:(CNFileComponent *)file {
     if (file.type == ComponentTypePhoto) {
-        [self.imgArtwork setImageWithURL:[NSURL fileURLWithPath:file.absolutePath] placeholderImage:nil];
+        [self.imgArtwork setImageWithURL:[NSURL fileURLWithPath:file.thumbnailPath] placeholderImage:nil];
     }
 }
 
