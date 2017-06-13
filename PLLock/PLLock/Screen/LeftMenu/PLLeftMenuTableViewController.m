@@ -7,8 +7,12 @@
 //
 
 #import "PLLeftMenuTableViewController.h"
+#import "PLLeftMenuItem.h"
+#import "PLLeftMenuTableViewCell.h"
 
 @interface PLLeftMenuTableViewController ()
+
+@property (nonatomic) NSMutableArray *data;
 
 @end
 
@@ -16,13 +20,24 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor greenColor];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self initData];
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"PLLeftMenuTableViewCell" bundle:nil] forCellReuseIdentifier:@"ReusedCell"];
+    
+    [self.tableView setContentInset:UIEdgeInsetsMake(50, 0, 0, 10)];
+}
+
+-(void)initData {
+    self.data = [NSMutableArray new];
+    
+    PLLeftMenuItem *categories = [[PLLeftMenuItem alloc] initWithIconName:@"" title:@"CATEGORIES"];
+    PLLeftMenuItem *account = [[PLLeftMenuItem alloc] initWithIconName:@"" title:@"ACCOUNT MANAGER"];
+    PLLeftMenuItem *note = [[PLLeftMenuItem alloc] initWithIconName:@"" title:@"NOTE MANAGER"];
+    PLLeftMenuItem *browser = [[PLLeftMenuItem alloc] initWithIconName:@"" title:@"PRIVATE BROWSER"];
+    PLLeftMenuItem *setting = [[PLLeftMenuItem alloc] initWithIconName:@"" title:@"SETTINGS"];
+    
+    [self.data addObjectsFromArray:@[categories, account, note, browser, setting]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,74 +48,47 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return self.data.count;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
-    // Configure the cell...
+    PLLeftMenuTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ReusedCell"];
+    PLLeftMenuItem *model = [self.data objectAtIndex:indexPath.row];
+    [cell displayWithModel:model];
     
     return cell;
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.tableView.bounds.size.width, 38)];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(25, 0, self.tableView.bounds.size.width - 25, 38)];
+    label.text = @"DRAWERS";
+    [view addSubview:label];
+    label.textColor = MakeColor(255, 26, 85, 1);
+    view.backgroundColor = MakeColor(241, 242, 242, 1);
+    return view;
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 38;
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    return 48;
 }
-*/
 
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
-/*
-#pragma mark - Table view delegate
-
-// In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Navigation logic may go here, for example:
-    // Create the next view controller.
-    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:<#@"Nib name"#> bundle:nil];
-    
-    // Pass the selected object to the new view controller.
-    
-    // Push the view controller.
-    [self.navigationController pushViewController:detailViewController animated:YES];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if ([self.delegate respondsToSelector:@selector(PLLeftMenuViewController:didSelectMenuType:)]) {
+        [self.delegate PLLeftMenuViewController:self didSelectMenuType:indexPath.row];
+    }
 }
-*/
 
 /*
 #pragma mark - Navigation

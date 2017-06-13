@@ -57,6 +57,14 @@
 		C907FA8A1EE153C700FE8475 /* MWZoomingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C907FA5D1EE153C700FE8475 /* MWZoomingScrollView.m */; };
 		C907FA8B1EE153C700FE8475 /* UIImage+MWPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = C907FA5F1EE153C700FE8475 /* UIImage+MWPhotoBrowser.m */; };
 		C907FA8C1EE153C700FE8475 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = C907FA601EE153C700FE8475 /* README.md */; };
+		C957A8C81EF0049E0035C3BF /* PLLeftMenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C957A8C61EF0049E0035C3BF /* PLLeftMenuTableViewCell.m */; };
+		C957A8C91EF0049E0035C3BF /* PLLeftMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C957A8C71EF0049E0035C3BF /* PLLeftMenuTableViewCell.xib */; };
+		C957A8CD1EF005CE0035C3BF /* PLLeftMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C957A8CC1EF005CE0035C3BF /* PLLeftMenuItem.m */; };
+		C957A8D11EF00DD20035C3BF /* PLNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C957A8D01EF00DD20035C3BF /* PLNavigationViewController.m */; };
+		C957A8D41EF00FB50035C3BF /* btn_left_menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C957A8D21EF00FB50035C3BF /* btn_left_menu@2x.png */; };
+		C957A8D51EF00FB50035C3BF /* btn_left_menu@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C957A8D31EF00FB50035C3BF /* btn_left_menu@3x.png */; };
+		C957A8DA1EF013360035C3BF /* PLBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C957A8D81EF013360035C3BF /* PLBrowserViewController.m */; };
+		C957A8DB1EF013360035C3BF /* PLBrowserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C957A8D91EF013360035C3BF /* PLBrowserViewController.xib */; };
 		C96BCEDE1ED3311200648F8D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C96BCEDD1ED3311200648F8D /* main.m */; };
 		C96BCEE11ED3311200648F8D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C96BCEE01ED3311200648F8D /* AppDelegate.m */; };
 		C96BCEE91ED3311200648F8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C96BCEE81ED3311200648F8D /* Assets.xcassets */; };
@@ -176,6 +184,18 @@
 		C907FA5E1EE153C700FE8475 /* UIImage+MWPhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+MWPhotoBrowser.h"; sourceTree = "<group>"; };
 		C907FA5F1EE153C700FE8475 /* UIImage+MWPhotoBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+MWPhotoBrowser.m"; sourceTree = "<group>"; };
 		C907FA601EE153C700FE8475 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		C957A8C51EF0049E0035C3BF /* PLLeftMenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLLeftMenuTableViewCell.h; sourceTree = "<group>"; };
+		C957A8C61EF0049E0035C3BF /* PLLeftMenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLLeftMenuTableViewCell.m; sourceTree = "<group>"; };
+		C957A8C71EF0049E0035C3BF /* PLLeftMenuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLLeftMenuTableViewCell.xib; sourceTree = "<group>"; };
+		C957A8CB1EF005CE0035C3BF /* PLLeftMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLLeftMenuItem.h; sourceTree = "<group>"; };
+		C957A8CC1EF005CE0035C3BF /* PLLeftMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLLeftMenuItem.m; sourceTree = "<group>"; };
+		C957A8CF1EF00DD20035C3BF /* PLNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLNavigationViewController.h; sourceTree = "<group>"; };
+		C957A8D01EF00DD20035C3BF /* PLNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLNavigationViewController.m; sourceTree = "<group>"; };
+		C957A8D21EF00FB50035C3BF /* btn_left_menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_left_menu@2x.png"; sourceTree = "<group>"; };
+		C957A8D31EF00FB50035C3BF /* btn_left_menu@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_left_menu@3x.png"; sourceTree = "<group>"; };
+		C957A8D71EF013360035C3BF /* PLBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLBrowserViewController.h; sourceTree = "<group>"; };
+		C957A8D81EF013360035C3BF /* PLBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLBrowserViewController.m; sourceTree = "<group>"; };
+		C957A8D91EF013360035C3BF /* PLBrowserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLBrowserViewController.xib; sourceTree = "<group>"; };
 		C96BCED91ED3311200648F8D /* PLLock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PLLock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C96BCEDD1ED3311200648F8D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C96BCEDF1ED3311200648F8D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -402,6 +422,51 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
+		C957A8C31EF0044F0035C3BF /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		C957A8C41EF004620035C3BF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C957A8C51EF0049E0035C3BF /* PLLeftMenuTableViewCell.h */,
+				C957A8C61EF0049E0035C3BF /* PLLeftMenuTableViewCell.m */,
+				C957A8C71EF0049E0035C3BF /* PLLeftMenuTableViewCell.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		C957A8CA1EF005B60035C3BF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C957A8CB1EF005CE0035C3BF /* PLLeftMenuItem.h */,
+				C957A8CC1EF005CE0035C3BF /* PLLeftMenuItem.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		C957A8CE1EF00DBA0035C3BF /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				C957A8CF1EF00DD20035C3BF /* PLNavigationViewController.h */,
+				C957A8D01EF00DD20035C3BF /* PLNavigationViewController.m */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		C957A8D61EF013230035C3BF /* Browser */ = {
+			isa = PBXGroup;
+			children = (
+				C957A8D71EF013360035C3BF /* PLBrowserViewController.h */,
+				C957A8D81EF013360035C3BF /* PLBrowserViewController.m */,
+				C957A8D91EF013360035C3BF /* PLBrowserViewController.xib */,
+			);
+			path = Browser;
+			sourceTree = "<group>";
+		};
 		C96BCED01ED3311200648F8D = {
 			isa = PBXGroup;
 			children = (
@@ -452,6 +517,7 @@
 		C96BCEF31ED334D000648F8D /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				C957A8D61EF013230035C3BF /* Browser */,
 				C972649F1ED3437100D185E1 /* Note */,
 				C97264A01ED3437100D185E1 /* Account */,
 				C97264A11ED3437100D185E1 /* Setting */,
@@ -484,6 +550,7 @@
 		C96BCEF61ED334D000648F8D /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				C957A8CE1EF00DBA0035C3BF /* Navigation */,
 				C907FA211EE13E5300FE8475 /* ImportPhoto */,
 				C99244CC1ED5F7A9005C94D1 /* FileManager */,
 				C97264DF1ED3589B00D185E1 /* ActionButton */,
@@ -496,6 +563,8 @@
 		C96BCEF71ED334D000648F8D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C957A8D21EF00FB50035C3BF /* btn_left_menu@2x.png */,
+				C957A8D31EF00FB50035C3BF /* btn_left_menu@3x.png */,
 				C972650D1ED35CFE00D185E1 /* Picture.png */,
 				C972650E1ED35CFE00D185E1 /* Picture@2x.png */,
 				C972650F1ED35CFE00D185E1 /* Picture@3x.png */,
@@ -560,6 +629,7 @@
 		C97264A21ED3437100D185E1 /* RightMenu */ = {
 			isa = PBXGroup;
 			children = (
+				C957A8C31EF0044F0035C3BF /* View */,
 				C97264A91ED343A900D185E1 /* PLRightTableTableViewController.h */,
 				C97264AA1ED343A900D185E1 /* PLRightTableTableViewController.m */,
 				C97264AB1ED343A900D185E1 /* PLRightTableTableViewController.xib */,
@@ -570,6 +640,8 @@
 		C97264A31ED3437100D185E1 /* LeftMenu */ = {
 			isa = PBXGroup;
 			children = (
+				C957A8CA1EF005B60035C3BF /* Model */,
+				C957A8C41EF004620035C3BF /* View */,
 				C97264A41ED3439700D185E1 /* PLLeftMenuTableViewController.h */,
 				C97264A51ED3439700D185E1 /* PLLeftMenuTableViewController.m */,
 				C97264A61ED3439700D185E1 /* PLLeftMenuTableViewController.xib */,
@@ -744,6 +816,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C97264BC1ED3443800D185E1 /* PLNoteViewController.xib in Resources */,
+				C957A8DB1EF013360035C3BF /* PLBrowserViewController.xib in Resources */,
 				C97265001ED35CE300D185E1 /* Circle_Highlighted.png in Resources */,
 				C907FA6F1EE153C700FE8475 /* ImageSelectedSmallOn@2x.png in Resources */,
 				C907FA621EE153C700FE8475 /* ImageError.png in Resources */,
@@ -756,18 +829,21 @@
 				C97264A81ED3439700D185E1 /* PLLeftMenuTableViewController.xib in Resources */,
 				C972650C1ED35CF600D185E1 /* Message@3x.png in Resources */,
 				C907FA641EE153C700FE8475 /* ImageError@3x.png in Resources */,
+				C957A8C91EF0049E0035C3BF /* PLLeftMenuTableViewCell.xib in Resources */,
 				C97264F81ED35CDA00D185E1 /* Camera.png in Resources */,
 				C907FA7D1EE153C700FE8475 /* UIBarButtonItemGrid.png in Resources */,
 				C97264F91ED35CDA00D185E1 /* Camera@2x.png in Resources */,
 				C972650A1ED35CF600D185E1 /* Message.png in Resources */,
 				C907FA691EE153C700FE8475 /* ImageSelectedOn@2x.png in Resources */,
 				C907FA6B1EE153C700FE8475 /* ImageSelectedSmallOff.png in Resources */,
+				C957A8D51EF00FB50035C3BF /* btn_left_menu@3x.png in Resources */,
 				C907FA751EE153C700FE8475 /* PlayButtonOverlayLargeTap@2x.png in Resources */,
 				C97264FF1ED35CE300D185E1 /* Circle_Highlighted-2.png in Resources */,
 				C907FA6C1EE153C700FE8475 /* ImageSelectedSmallOff@2x.png in Resources */,
 				C907FA791EE153C700FE8475 /* UIBarButtonItemArrowLeft@3x.png in Resources */,
 				C907FA7C1EE153C700FE8475 /* UIBarButtonItemArrowRight@3x.png in Resources */,
 				C97265061ED35CEC00D185E1 /* Circle_Normal.png in Resources */,
+				C957A8D41EF00FB50035C3BF /* btn_left_menu@2x.png in Resources */,
 				C907FA7E1EE153C700FE8475 /* UIBarButtonItemGrid@2x.png in Resources */,
 				C907FA611EE153C700FE8475 /* LICENSE in Resources */,
 				C907FA651EE153C700FE8475 /* ImageSelectedOff.png in Resources */,
@@ -866,12 +942,14 @@
 				C907FA871EE153C700FE8475 /* MWPhotoBrowser.m in Sources */,
 				C907FA841EE153C700FE8475 /* MWGridCell.m in Sources */,
 				C99244CB1ED5F726005C94D1 /* PLAlbumModel.m in Sources */,
+				C957A8C81EF0049E0035C3BF /* PLLeftMenuTableViewCell.m in Sources */,
 				C96BCEFB1ED334E600648F8D /* PLRootViewController.m in Sources */,
 				C96BCEE11ED3311200648F8D /* AppDelegate.m in Sources */,
 				C907FA8C1EE153C700FE8475 /* README.md in Sources */,
 				C97264B11ED343FF00D185E1 /* PLSettingsViewController.m in Sources */,
 				C97264C61ED344AD00D185E1 /* UIColor+HDExtensions.m in Sources */,
 				C99244E41ED6009E005C94D1 /* PLAlbumCollectionViewCell.m in Sources */,
+				C957A8DA1EF013360035C3BF /* PLBrowserViewController.m in Sources */,
 				C97264EF1ED358DC00D185E1 /* UIView+CNView.m in Sources */,
 				C972649D1ED342EB00D185E1 /* PLAlbumsViewController.m in Sources */,
 				C97264C71ED344AD00D185E1 /* CNThemeManager.m in Sources */,
@@ -882,6 +960,7 @@
 				C907FA241EE13E6600FE8475 /* PLImportPhotoManager.m in Sources */,
 				C907FA861EE153C700FE8475 /* MWPhoto.m in Sources */,
 				C907FA881EE153C700FE8475 /* MWTapDetectingImageView.m in Sources */,
+				C957A8D11EF00DD20035C3BF /* PLNavigationViewController.m in Sources */,
 				C97264CA1ED346D500D185E1 /* PLApplication.m in Sources */,
 				C97264AC1ED343A900D185E1 /* PLRightTableTableViewController.m in Sources */,
 				C97264BB1ED3443800D185E1 /* PLNoteViewController.m in Sources */,
@@ -889,6 +968,7 @@
 				C97264F11ED358DC00D185E1 /* UIImage+CNImage.m in Sources */,
 				C99244DB1ED5F7A9005C94D1 /* CNFileComponent.m in Sources */,
 				C97264A71ED3439700D185E1 /* PLLeftMenuTableViewController.m in Sources */,
+				C957A8CD1EF005CE0035C3BF /* PLLeftMenuItem.m in Sources */,
 				C96BCEDE1ED3311200648F8D /* main.m in Sources */,
 				C97264C51ED344AD00D185E1 /* CNBaseColorKit.m in Sources */,
 				C99244DA1ED5F7A9005C94D1 /* CNComponent.m in Sources */,

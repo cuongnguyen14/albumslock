@@ -39,6 +39,23 @@
     [self getAllFolder];
 }
 
+-(void)dealloc {
+    
+    @try {
+        [self.actionButton.observedScrollView removeObserver:self forKeyPath:@"contentInset"];
+        [self.actionButton.observedScrollView removeObserver:self forKeyPath:@"contentOffset"];
+        [self.actionButton.observedScrollView removeObserver:self forKeyPath:@"contentSize"];
+        
+    } @catch (NSException *exception) {
+        
+    } @finally {
+        
+    }
+    
+    [self.actionButton removeFromSuperview];
+    self.actionButton = nil;
+}
+
 -(void)getAllFolder {
     NSArray *allFolder = [sFileManager componentForComponent:[sFileManager rootComponent] mode:NO];
 //    NSSortDescriptor *date = [[NSSortDescriptor alloc] initWithKey:@"dateCreated" ascending:YES];

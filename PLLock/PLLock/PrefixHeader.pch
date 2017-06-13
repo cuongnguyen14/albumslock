@@ -13,6 +13,7 @@
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
 #define weakify(_var_) typeof(_var_) __weak _var_ ## _weak_ = _var_
+#define MakeColor(r,g,b,a) [UIColor colorWithRed:r/255.f green:g/255.f blue:b/255.f alpha:a]
 
 #import "PLApplication.h"
 #import "CNFileManager.h"

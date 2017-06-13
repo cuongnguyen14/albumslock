@@ -16,6 +16,19 @@
 
 @interface PLAlbumDetailsViewController () <TZImagePickerControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, MWPhotoBrowserDelegate>
 
+@property (weak, nonatomic) IBOutlet UIView *headerView;
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundHeaderImageView;
+@property (weak, nonatomic) IBOutlet UIView *infoView;
+@property (weak, nonatomic) IBOutlet UIImageView *artworkView;
+@property (weak, nonatomic) IBOutlet UILabel *lbTitle;
+@property (weak, nonatomic) IBOutlet UILabel *lbSubtitle;
+@property (weak, nonatomic) IBOutlet UIView *actionView;
+@property (weak, nonatomic) IBOutlet UIButton *btn1;
+@property (weak, nonatomic) IBOutlet UIButton *btn2;
+@property (weak, nonatomic) IBOutlet UIButton *btn3;
+@property (weak, nonatomic) IBOutlet UIButton *btn4;
+
+
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic) CNFolderComponent *parent;
 
@@ -40,6 +53,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title = self.parent.fullFileName;
+    
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;
     
@@ -47,6 +62,8 @@
     self.collectionView.backgroundColor = self.view.backgroundColor;
     
     [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([PLAlbumDetailsCollectionViewCell class]) bundle:nil] forCellWithReuseIdentifier:@"kCellReuseID"];
+    
+    [self touchAtButton1:nil];
     
     [self setupActionButton];
     
@@ -101,11 +118,11 @@
 
 #pragma mark - UICollectionViewDelegateFlowLayout
 
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    int padding = 8;
-    return CGSizeMake(self.view.bounds.size.width/4 - padding,
-                      self.view.bounds.size.width/4 - padding);
-}
+//- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+//    int padding = 10;
+//    return CGSizeMake(self.view.bounds.size.width/3 - padding,
+//                      self.view.bounds.size.width/3 - padding);
+//}
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     [collectionView deselectItemAtIndexPath:indexPath animated:NO];
@@ -240,6 +257,34 @@
 
 - (id <MWPhoto>)photoBrowser:(MWPhotoBrowser *)photoBrowser photoAtIndex:(NSUInteger)index {
     return [self.viewData objectAtIndex:index];
+}
+
+#pragma mark - Button action
+- (IBAction)touchAtButton1:(id)sender {
+    int padding = 8;
+    CGSize size = CGSizeMake(self.view.bounds.size.width/4 - padding,
+                             self.view.bounds.size.width/4 - padding);
+    [self.collectionView performBatchUpdates:^{
+        ((UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout).itemSize = size;
+    } completion:nil];
+    
+}
+
+- (IBAction)touchAtButton2:(id)sender {
+    int padding = 10;
+    CGSize size = CGSizeMake(self.view.bounds.size.width/3 - padding,
+                             self.view.bounds.size.width/3 - padding);
+    
+    [self.collectionView performBatchUpdates:^{
+        ((UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout).itemSize = size;
+    } completion:nil];
+}
+
+- (IBAction)touchAtButton3:(id)sender {
+    
+}
+- (IBAction)touchAtButton4:(id)sender {
+    
 }
 
 @end

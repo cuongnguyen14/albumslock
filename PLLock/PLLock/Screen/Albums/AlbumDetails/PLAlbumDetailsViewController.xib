@@ -11,7 +11,18 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PLAlbumDetailsViewController">
             <connections>
+                <outlet property="actionView" destination="l2N-Qg-Vov" id="ADu-nN-uMd"/>
+                <outlet property="artworkView" destination="h4H-bX-FLK" id="tR7-1Z-DuR"/>
+                <outlet property="backgroundHeaderImageView" destination="UuS-kq-utG" id="cag-GY-NQk"/>
+                <outlet property="btn1" destination="7a5-rs-bc3" id="PXU-rL-Ikm"/>
+                <outlet property="btn2" destination="Sic-Cp-jA7" id="Wi2-RJ-kx2"/>
+                <outlet property="btn3" destination="T82-Ta-sKK" id="Jt0-lL-hLw"/>
+                <outlet property="btn4" destination="eof-ge-5sg" id="rj9-2p-fG9"/>
                 <outlet property="collectionView" destination="KbC-id-9mV" id="CRF-0u-WWQ"/>
+                <outlet property="headerView" destination="cCh-47-jTO" id="9hY-ZC-El6"/>
+                <outlet property="infoView" destination="QWb-yL-DMh" id="fjm-Fk-Am9"/>
+                <outlet property="lbSubtitle" destination="0Ii-h8-zhg" id="bZ8-bN-a5a"/>
+                <outlet property="lbTitle" destination="oXC-Dv-5eY" id="ycq-Vw-YGh"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,8 +31,83 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" misplaced="YES" id="cCh-47-jTO">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" id="UuS-kq-utG">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        </imageView>
+                        <view contentMode="scaleToFill" misplaced="YES" id="QWb-yL-DMh">
+                            <rect key="frame" x="8" y="68" width="260" height="65"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" id="h4H-bX-FLK">
+                                    <rect key="frame" x="0.0" y="0.0" width="65" height="65"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oXC-Dv-5eY">
+                                    <rect key="frame" x="73" y="12" width="179" height="21"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0Ii-h8-zhg">
+                                    <rect key="frame" x="73" y="33" width="179" height="21"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </view>
+                        <view contentMode="scaleToFill" misplaced="YES" id="l2N-Qg-Vov">
+                            <rect key="frame" x="207" y="116" width="170" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7a5-rs-bc3">
+                                    <rect key="frame" x="0.0" y="0.0" width="42" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="XX"/>
+                                    <connections>
+                                        <action selector="touchAtButton1:" destination="-1" eventType="touchUpInside" id="Uss-5w-OfG"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Sic-Cp-jA7">
+                                    <rect key="frame" x="42" y="0.0" width="42" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="XY"/>
+                                    <connections>
+                                        <action selector="touchAtButton2:" destination="-1" eventType="touchUpInside" id="N26-i9-FSn"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="T82-Ta-sKK">
+                                    <rect key="frame" x="84" y="0.0" width="42" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="XV"/>
+                                    <connections>
+                                        <action selector="touchAtButton3:" destination="-1" eventType="touchUpInside" id="V2e-gv-sLw"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="eof-ge-5sg">
+                                    <rect key="frame" x="126" y="0.0" width="42" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="XZ"/>
+                                    <connections>
+                                        <action selector="touchAtButton4:" destination="-1" eventType="touchUpInside" id="yu4-76-kDM"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.0" green="0.51551724139999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="none" id="KbC-id-9mV">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <rect key="frame" x="0.0" y="160" width="375" height="507"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <inset key="contentInset" minX="10" minY="10" maxX="10" maxY="10"/>
