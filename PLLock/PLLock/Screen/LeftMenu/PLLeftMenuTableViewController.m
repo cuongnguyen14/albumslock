@@ -31,11 +31,11 @@
 -(void)initData {
     self.data = [NSMutableArray new];
     
-    PLLeftMenuItem *categories = [[PLLeftMenuItem alloc] initWithIconName:@"" title:@"CATEGORIES"];
-    PLLeftMenuItem *account = [[PLLeftMenuItem alloc] initWithIconName:@"" title:@"ACCOUNT MANAGER"];
-    PLLeftMenuItem *note = [[PLLeftMenuItem alloc] initWithIconName:@"" title:@"NOTE MANAGER"];
-    PLLeftMenuItem *browser = [[PLLeftMenuItem alloc] initWithIconName:@"" title:@"PRIVATE BROWSER"];
-    PLLeftMenuItem *setting = [[PLLeftMenuItem alloc] initWithIconName:@"" title:@"SETTINGS"];
+    PLLeftMenuItem *categories = [[PLLeftMenuItem alloc] initWithIconName:@"categories" title:@"CATEGORIES"];
+    PLLeftMenuItem *account = [[PLLeftMenuItem alloc] initWithIconName:@"account" title:@"ACCOUNT MANAGER"];
+    PLLeftMenuItem *note = [[PLLeftMenuItem alloc] initWithIconName:@"notes" title:@"NOTE MANAGER"];
+    PLLeftMenuItem *browser = [[PLLeftMenuItem alloc] initWithIconName:@"browser-icon" title:@"PRIVATE BROWSER"];
+    PLLeftMenuItem *setting = [[PLLeftMenuItem alloc] initWithIconName:@"setting" title:@"SETTINGS"];
     
     [self.data addObjectsFromArray:@[categories, account, note, browser, setting]];
 }

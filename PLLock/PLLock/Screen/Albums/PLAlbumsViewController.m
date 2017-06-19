@@ -26,6 +26,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title = @"CATEGORIES";
+    
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;
     
@@ -75,6 +77,40 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)newFolderAlert {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"New Folder" message:nil preferredStyle:UIAlertControllerStyleAlert];
+    
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        textField.placeholder = @"Enter the folder name";
+        textField.textColor = [UIColor blueColor];
+        textField.clearButtonMode = UITextFieldViewModeWhileEditing;
+        textField.borderStyle = UITextBorderStyleNone;
+    }];
+    
+    UIAlertAction* ok = [UIAlertAction
+                         actionWithTitle:@"OK"
+                         style:UIAlertActionStyleDefault
+                         handler:^(UIAlertAction * action)
+                         {
+                             NSArray * textfields = alertController.textFields;
+                             UITextField * namefield = textfields[0];
+                             [alertController dismissViewControllerAnimated:YES completion:nil];
+                             [sFileManager createFolderAtComponent:[sFileManager rootComponent] nameFolder:namefield.text];
+
+                         }];
+    UIAlertAction* cancel = [UIAlertAction
+                             actionWithTitle:@"Cancel"
+                             style:UIAlertActionStyleDefault
+                             handler:^(UIAlertAction * action)
+                             {
+                                 [alertController dismissViewControllerAnimated:YES completion:nil];
+                             }];
+    [alertController addAction:ok];
+    [alertController addAction:cancel];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -140,7 +176,7 @@
     
     weakify(self);
     self.actionButton =
-    [PLActionButton plusButtonsViewWithNumberOfButtons:3
+    [PLActionButton plusButtonsViewWithNumberOfButtons:2
                                firstButtonIsPlusButton:YES
                                          showAfterInit:YES
                                          actionHandler:^(LGPlusButtonsView *plusButtonView,
@@ -155,35 +191,44 @@
              
          }
          
-         // Take a Photo
+         // New Folder
          if (index == 1) {
              [self_weak_.actionButton hideButtonsAnimated:YES completionHandler:^{
+                 [self_weak_ newFolderAlert];
              }];
          }
-         
-         // Choose From Gallery
-         if (index == 2) {
-             
-             
-             [self_weak_.actionButton hideButtonsAnimated:YES completionHandler:^{
-                 
-                 TZImagePickerController *imagePickerVc = [[TZImagePickerController alloc] initWithMaxImagesCount:9999999 delegate:self_weak_];
-                 imagePickerVc.allowTakePicture = NO;
-                 imagePickerVc.allowPickingOriginalPhoto = NO;
-                 imagePickerVc.allowPreview = YES;
-                 [self_weak_ presentViewController:imagePickerVc animated:YES completion:nil];
-                 
-             }];
-             
-         }
+
+//         // Take a Photo
+//         if (index == 2) {
+//             [self_weak_.actionButton hideButtonsAnimated:YES completionHandler:^{
+//                 [sImport takePhoto:self_weak_ destination:(CNFolderComponent *)[sFileManager rootComponent] completedBlock:^(NSError *error) {
+//                     
+//                 }];
+//             }];
+//         }
+//         
+//         // Choose From Gallery
+//         if (index == 3) {
+//             
+//             
+//             [self_weak_.actionButton hideButtonsAnimated:YES completionHandler:^{
+//                 
+//                 TZImagePickerController *imagePickerVc = [[TZImagePickerController alloc] initWithMaxImagesCount:9999999 delegate:self_weak_];
+//                 imagePickerVc.allowTakePicture = NO;
+//                 imagePickerVc.allowPickingOriginalPhoto = NO;
+//                 imagePickerVc.allowPreview = YES;
+//                 [self_weak_ presentViewController:imagePickerVc animated:YES completion:nil];
+//                 
+//             }];
+//             
+//         }
          
      }];
     
-    [self.actionButton setButtonsTitles:@[@"+", @"", @""] forState:UIControlStateNormal];
-    [self.actionButton setDescriptionsTexts:@[@"", @"Take a photo", @"Choose from gallery"]];
+    [self.actionButton setButtonsTitles:@[@"+", @""] forState:UIControlStateNormal];
+    [self.actionButton setDescriptionsTexts:@[@"", @"Create New Folder"]];
     [self.actionButton setButtonsImages:@[[NSNull new],
-                                          [UIImage imageNamed:@"Camera"],
-                                          [UIImage imageNamed:@"Picture"]]
+                                          [UIImage imageNamed:@"create-new-folder"]]
                                forState:UIControlStateNormal
                          forOrientation:LGPlusButtonsViewOrientationAll];
     

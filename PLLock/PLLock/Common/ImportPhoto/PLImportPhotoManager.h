@@ -20,5 +20,8 @@
   destination:(CNFolderComponent *)folder
 completedBlock:(void (^)(NSError *error))completedBlock;
 
+-(void)takePhoto:(UIViewController *)vc
+     destination:(CNFolderComponent *)folder
+  completedBlock:(void (^)(NSError *error))completedBlock;
 
 @end

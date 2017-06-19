@@ -39,6 +39,9 @@
 
 @property (nonatomic, strong) PLActionButton *actionButton;
 
+
+@property (nonatomic) BOOL isThreeColumn;
+@property (nonatomic) BOOL sortAcending;
 @end
 
 @implementation PLAlbumDetailsViewController
@@ -68,13 +71,18 @@
     
     [self setupActionButton];
     
-    [self loadData];
+    [self touchAtButton2:nil];
     
     [self setupHeaderView];
 }
 
 -(void)setupHeaderView {
     CNFileComponent *model = [self.data firstObject];
+    
+    if (model.thumbnailPath.length == 0) {
+        return;
+    }
+    
     [self.backgroundHeaderImageView setImageWithURL:[NSURL fileURLWithPath:model.thumbnailPath] placeholderImage:nil];
     [self.artworkView setImageWithURL:[NSURL fileURLWithPath:model.thumbnailPath] placeholderImage:nil];
     self.lbTitle.text = self.parent.fullFileName;
@@ -94,7 +102,7 @@
         UIVisualEffectView *blurEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
         blurEffectView.frame = self.view.bounds;
         blurEffectView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-        blurEffectView.alpha = 0.96;
+        blurEffectView.alpha = 0.99;
         [self.headerView insertSubview:blurEffectView aboveSubview:self.backgroundHeaderImageView];
     }
 
@@ -126,9 +134,9 @@
 
 }
 
--(void)loadData {
+-(void)loadData:(BOOL)acending {
     NSArray *allFile = [sFileManager componentForComponent:self.parent mode:YES];
-    NSSortDescriptor *date = [[NSSortDescriptor alloc] initWithKey:@"dateCreated" ascending:YES];
+    NSSortDescriptor *date = [[NSSortDescriptor alloc] initWithKey:@"dateCreated" ascending:acending];
     self.data = [allFile sortedArrayUsingDescriptors:[NSArray arrayWithObjects:date, nil]];
     [self.collectionView reloadData];
 }
@@ -222,7 +230,7 @@
         weakify(self);
         [sImport import:photos assets:assets destination:self.parent completedBlock:^(NSError *error) {
             if (!error) {
-                [self_weak_ loadData];
+                [self_weak_ loadData:_sortAcending];
                 [MBProgressHUD hideHUDForView:root.view animated:YES];
             }
         }];
@@ -269,12 +277,14 @@
          // Take a Photo
          if (index == 1) {
              [self_weak_.actionButton hideButtonsAnimated:YES completionHandler:^{
+                 [sImport takePhoto:self_weak_ destination:self_weak_.parent completedBlock:^(NSError *error) {
+                     [self_weak_ loadData:_sortAcending];
+                 }];
              }];
          }
          
          // Choose From Gallery
          if (index == 2) {
-             
              
              [self_weak_.actionButton hideButtonsAnimated:YES completionHandler:^{
                  
@@ -293,10 +303,10 @@
      }];
     
     [self.actionButton setButtonsTitles:@[@"+", @"", @""] forState:UIControlStateNormal];
-    [self.actionButton setDescriptionsTexts:@[@"", @"Take a photo", @"Choose from gallery"]];
+    [self.actionButton setDescriptionsTexts:@[@"", @"From Camera", @"From Library"]];
     [self.actionButton setButtonsImages:@[[NSNull new],
-                                          [UIImage imageNamed:@"Camera"],
-                                          [UIImage imageNamed:@"Picture"]]
+                                          [UIImage imageNamed:@"fromcamera"],
+                                          [UIImage imageNamed:@"from-library"]]
                                forState:UIControlStateNormal
                          forOrientation:LGPlusButtonsViewOrientationAll];
     
@@ -316,17 +326,7 @@
 }
 
 #pragma mark - Button action
-- (IBAction)touchAtButton1:(id)sender {
-    int padding = 8;
-    CGSize size = CGSizeMake(self.view.bounds.size.width/4 - padding,
-                             self.view.bounds.size.width/4 - padding);
-    [self.collectionView performBatchUpdates:^{
-        ((UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout).itemSize = size;
-    } completion:nil];
-    
-}
-
-- (IBAction)touchAtButton2:(id)sender {
+-(void)updateThreecolumn {
     int padding = 10;
     CGSize size = CGSizeMake(self.view.bounds.size.width/3 - padding,
                              self.view.bounds.size.width/3 - padding);
@@ -334,6 +334,29 @@
     [self.collectionView performBatchUpdates:^{
         ((UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout).itemSize = size;
     } completion:nil];
+}
+
+-(void)updateFourColumn {
+    int padding = 8;
+    CGSize size = CGSizeMake(self.view.bounds.size.width/4 - padding,
+                             self.view.bounds.size.width/4 - padding);
+    [self.collectionView performBatchUpdates:^{
+        ((UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout).itemSize = size;
+    } completion:nil];
+}
+- (IBAction)touchAtButton1:(id)sender {
+    if (_isThreeColumn == YES) {
+        [self updateFourColumn];
+        _isThreeColumn = NO;
+    } else {
+        [self updateThreecolumn];
+        _isThreeColumn = YES;
+    }
+    
+}
+
+- (IBAction)touchAtButton2:(id)sender {
+    [self loadData:!_sortAcending];
 }
 
 - (IBAction)touchAtButton3:(id)sender {

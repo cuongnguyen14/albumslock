@@ -24,5 +24,6 @@ typedef enum : NSUInteger {
 
 @property (nonatomic) FolderType folderType;
 @property (nonatomic) UIColor *tintColor;
+@property (nonatomic) NSString *iconName;
 
 @end

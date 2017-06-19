@@ -517,22 +517,42 @@
     
     if ([folder.fullFileName isEqualToString:@"PHOTOS"]) {
         folder.folderType = FolderTypePhoto;
-        folder.tintColor = [UIColor redColor];
+        folder.tintColor = MakeColor(172, 206, 35, 1);
+        folder.iconName = @"Photo-Icon";
         return;
     }
     if ([folder.fullFileName isEqualToString:@"VIDEOS"]) {
         folder.folderType = FolderTypeVideo;
-        folder.tintColor = [UIColor blueColor];
-        return;
-    }
-    if ([folder.fullFileName isEqualToString:@"ITUNES ALBUM"]) {
-        folder.folderType = FolderTypeiTunes;
-        folder.tintColor = [UIColor yellowColor];
+        folder.tintColor = MakeColor(255, 190, 0, 1);
+        folder.iconName = @"Video";
         return;
     }
     
+    if ([folder.fullFileName isEqualToString:@"ACCOUNTS"]) {
+        folder.folderType = FolderTypeiTunes;
+        folder.tintColor = MakeColor(0, 133, 219, 1);
+        folder.iconName = @"Accounts-Icon";
+        return;
+    }
+    
+    if ([folder.fullFileName isEqualToString:@"NOTES"]) {
+        folder.folderType = FolderTypeiTunes;
+        folder.tintColor = MakeColor(177, 20, 100, 1);
+        folder.iconName = @"notes-icon-large";
+        return;
+    }
+
+    if ([folder.fullFileName isEqualToString:@"ITUNES ALBUM"]) {
+        folder.folderType = FolderTypeiTunes;
+        folder.tintColor = MakeColor(254, 49, 67, 1);
+        folder.iconName = @"Itune-Icon";
+        return;
+    }
+
     folder.folderType = FolderTypeUser;
     folder.tintColor = [UIColor purpleColor];
+    folder.tintColor = MakeColor(13, 205, 192, 1);
+    folder.iconName = @"My-file-icon";
 
 }
 @end

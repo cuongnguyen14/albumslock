@@ -22,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    UIImage *image = [UIImage imageNamed:@"btn_left_menu"];
+    UIImage *image = [UIImage imageNamed:@"hamburger-menu"];
     self.leftBarButton = [[UIBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStylePlain target:self action:@selector(_touchOnLeftBarButtonItem:)];
     self.leftBarButton.tintColor = [UIColor lightGrayColor];
 

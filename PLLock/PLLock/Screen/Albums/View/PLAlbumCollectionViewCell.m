@@ -24,7 +24,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
-    self.backgroundColor = [UIColor lightGrayColor];
+    self.backgroundColor = [UIColor whiteColor];
 
     dispatch_async(dispatch_get_main_queue(), ^{
         CALayer * layer = [self layer];
@@ -38,10 +38,15 @@
     });
 }
 
+- (IBAction)touchOnMore:(id)sender {
+    
+}
+
 -(void)setupUIWith:(CNFolderComponent *)folder {
     self.lbTitle.text = folder.fullFileName;
     self.lbSubtitle.text = [NSString stringWithFormat:@"%ld %@", folder.size, folder.size > 1 ? @"items" : @"item"];
     self.viewBaged.backgroundColor = folder.tintColor;
+    self.imgArtwork.image = [UIImage imageNamed:folder.iconName];
 }
 
 @end

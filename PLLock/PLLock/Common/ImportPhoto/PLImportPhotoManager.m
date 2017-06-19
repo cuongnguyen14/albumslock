@@ -7,6 +7,7 @@
 //
 
 #import "PLImportPhotoManager.h"
+#import "SHPImagePickerController.h"
 
 @implementation PLImportPhotoManager
 
@@ -38,8 +39,25 @@ completedBlock:(void (^)(NSError *error))completedBlock {
         UIImage *image = photos[i];
         PHAsset *asset = assets[i];
         
+        [self __import:image assets:asset destination:folder completedBlock:^(NSError *error) {
+            if (i == photos.count - 1) {
+                if (completedBlock) {
+                    completedBlock(nil);
+                }
+            }
+        }];
+    }
+    
+}
+
+-(void)takePhoto:(UIViewController *)vc
+     destination:(CNFolderComponent *)folder
+  completedBlock:(void (^)(NSError *error))completedBlock {
+    
+    [SHPImagePickerController showImagePickerOfType:SHPImagePickerTypeCamera fromViewController:vc success:^(UIImage *image) {
+
         double timestamp = [[NSDate date] timeIntervalSince1970];
-        
+
         //Photo Name
         NSString *imageName = [NSString stringWithFormat:@"%f.png", timestamp];
         NSString *filePath = [[folder absolutePath] stringByAppendingPathComponent:imageName];
@@ -48,30 +66,54 @@ completedBlock:(void (^)(NSError *error))completedBlock {
         NSString *imageThumbnailName = [NSString stringWithFormat:@".%f.png", timestamp];
         NSString *thumbnailFilePath = [[folder absolutePath] stringByAppendingPathComponent:imageThumbnailName];
         
-        //1.Write a thumbnail
-        PHImageRequestOptions *options = [[PHImageRequestOptions alloc] init];
-        options.resizeMode = PHImageRequestOptionsResizeModeFast;
-        options.synchronous = YES;
-        CGSize retinaSquare = CGSizeMake(150, 150);
-        [[PHImageManager defaultManager] requestImageForAsset:(PHAsset *)asset
-                                                   targetSize:retinaSquare
-                                                  contentMode:PHImageContentModeAspectFill
-                                                      options:options
-                                                resultHandler:^(UIImage *result, NSDictionary *info) {
-                                                    
-                                                    [UIImagePNGRepresentation(result) writeToFile:thumbnailFilePath atomically:YES];
-                                                    
-                                                    //2. Write a Photo
-                                                    [UIImagePNGRepresentation(image) writeToFile:filePath atomically:YES];
-                                                    
-                                                    if (i == photos.count - 1) {
-                                                        if (completedBlock) {
-                                                            completedBlock(nil);
-                                                        }
-                                                    }
-                                                }];
-    }
+        //1.Write thumbnail
+        
+        [UIImagePNGRepresentation(image) writeToFile:thumbnailFilePath atomically:YES];
+        
+        //2. Write a Photo
+        BOOL success = [UIImagePNGRepresentation(image) writeToFile:filePath atomically:YES];
+
+        if (completedBlock) {
+            completedBlock(success ? nil : [NSError new]);
+        }
+
+    } autoDismiss:YES];
+}
+
+-(void)__import:(UIImage *)image
+       assets:(PHAsset *)asset
+  destination:(CNFolderComponent *)folder
+completedBlock:(void (^)(NSError *error))completedBlock {
+    double timestamp = [[NSDate date] timeIntervalSince1970];
     
+    //Photo Name
+    NSString *imageName = [NSString stringWithFormat:@"%f.png", timestamp];
+    NSString *filePath = [[folder absolutePath] stringByAppendingPathComponent:imageName];
+    
+    //Photo thumbnail name
+    NSString *imageThumbnailName = [NSString stringWithFormat:@".%f.png", timestamp];
+    NSString *thumbnailFilePath = [[folder absolutePath] stringByAppendingPathComponent:imageThumbnailName];
+    
+    //1.Write a thumbnail
+    PHImageRequestOptions *options = [[PHImageRequestOptions alloc] init];
+    options.resizeMode = PHImageRequestOptionsResizeModeFast;
+    options.synchronous = YES;
+    CGSize retinaSquare = CGSizeMake(150, 150);
+    [[PHImageManager defaultManager] requestImageForAsset:(PHAsset *)asset
+                                               targetSize:retinaSquare
+                                              contentMode:PHImageContentModeAspectFill
+                                                  options:options
+                                            resultHandler:^(UIImage *result, NSDictionary *info) {
+                                                
+                                                [UIImagePNGRepresentation(result) writeToFile:thumbnailFilePath atomically:YES];
+                                                
+                                                //2. Write a Photo
+                                                BOOL success = [UIImagePNGRepresentation(image) writeToFile:filePath atomically:YES];
+                                                
+                                                if (completedBlock) {
+                                                    completedBlock(success ? nil : [NSError new]);
+                                                }
+                                            }];
 }
 
 @end

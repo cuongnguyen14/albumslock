@@ -11,6 +11,7 @@ pod 'LGPlusButtonsView', '1.1.1'
 pod 'GCDWebServer/WebUploader'
 pod 'DACircularProgress', '2.3.1'
 pod 'SDWebImage', '3.8.2'
+pod 'SHPImagePickerController', '1.0.0'
 
 pod 'FBAudienceNetwork'
 pod 'Firebase/Core'

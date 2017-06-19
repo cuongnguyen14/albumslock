@@ -25,8 +25,10 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>$(PRODUCT_NAME) use Camera to take a photo</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>App need access your Photo Library</string>
+	<string>$(PRODUCT_NAME) need access your Photo Library</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>

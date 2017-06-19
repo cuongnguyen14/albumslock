@@ -18,13 +18,16 @@
                 <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="tFQ-wq-DDY">
-                        <rect key="frame" x="125" y="-8" width="25" height="25"/>
+                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="tFQ-wq-DDY">
+                        <rect key="frame" x="120" y="0.0" width="30" height="30"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                        <state key="normal" title="..."/>
+                        <state key="normal" image="3-cham.png"/>
+                        <connections>
+                            <action selector="touchOnMore:" destination="gTV-IL-0wX" eventType="touchUpInside" id="nzN-KX-K7a"/>
+                        </connections>
                     </button>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" id="ehn-v8-oix">
-                        <rect key="frame" x="35" y="22" width="80" height="80"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" id="ehn-v8-oix">
+                        <rect key="frame" x="40" y="23" width="70" height="70"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     </imageView>
                     <view contentMode="scaleToFill" misplaced="YES" id="cR3-wo-gjD">
@@ -66,6 +69,9 @@
             <point key="canvasLocation" x="-46" y="-48"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="3-cham.png" width="4" height="17"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
