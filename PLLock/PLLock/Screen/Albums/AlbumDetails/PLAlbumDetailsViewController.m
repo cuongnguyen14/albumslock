@@ -14,6 +14,8 @@
 #import "MWPhotoBrowser.h"
 #import "MWPhotoBrowserPrivate.h"
 
+#define NAVBAR_CHANGE_POINT 50
+
 @interface PLAlbumDetailsViewController () <TZImagePickerControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, MWPhotoBrowserDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *headerView;
@@ -53,7 +55,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = self.parent.fullFileName;
     
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;
@@ -68,6 +69,61 @@
     [self setupActionButton];
     
     [self loadData];
+    
+    [self setupHeaderView];
+}
+
+-(void)setupHeaderView {
+    CNFileComponent *model = [self.data firstObject];
+    [self.backgroundHeaderImageView setImageWithURL:[NSURL fileURLWithPath:model.thumbnailPath] placeholderImage:nil];
+    [self.artworkView setImageWithURL:[NSURL fileURLWithPath:model.thumbnailPath] placeholderImage:nil];
+    self.lbTitle.text = self.parent.fullFileName;
+    self.lbSubtitle.text = [NSString stringWithFormat:@"%ld %@", self.parent.size, self.parent.size > 1 ? @"items" : @"item"];
+    
+    self.lbTitle.textColor = [UIColor whiteColor];
+    self.lbSubtitle.textColor = self.parent.tintColor;
+    
+    self.artworkView.layer.cornerRadius = 8;
+    self.artworkView.layer.borderColor = self.parent.tintColor.CGColor;
+    self.artworkView.layer.borderWidth = 1;
+    
+    if (!UIAccessibilityIsReduceTransparencyEnabled()) {
+        self.headerView.backgroundColor = [UIColor clearColor];
+        
+        UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
+        UIVisualEffectView *blurEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
+        blurEffectView.frame = self.view.bounds;
+        blurEffectView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        blurEffectView.alpha = 0.96;
+        [self.headerView insertSubview:blurEffectView aboveSubview:self.backgroundHeaderImageView];
+    }
+
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
+                                                  forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.shadowImage = [UIImage new];
+    [UIView animateWithDuration:0.2 animations:^{
+        self.navigationController.navigationBar.translucent = YES;
+        self.navigationController.navigationBar.barTintColor = self.parent.tintColor;
+        self.navigationController.navigationBar.tintColor = self.parent.tintColor;
+    }];
+    [super viewWillAppear:animated];
+}
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self.navigationController.navigationBar setBackgroundImage:nil
+                                                  forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.shadowImage = nil;
+    self.navigationController.navigationBar.translucent = NO;
+    self.navigationController.navigationBar.barTintColor = nil;
+    self.navigationController.navigationBar.tintColor = nil;
+
 }
 
 -(void)loadData {
