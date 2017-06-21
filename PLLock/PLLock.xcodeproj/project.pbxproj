@@ -271,6 +271,9 @@
 		C99244DF1ED5FB57005C94D1 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C99244DE1ED5FB57005C94D1 /* AssetsLibrary.framework */; };
 		C99244E41ED6009E005C94D1 /* PLAlbumCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C99244E21ED6009D005C94D1 /* PLAlbumCollectionViewCell.m */; };
 		C99244E51ED6009E005C94D1 /* PLAlbumCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C99244E31ED6009E005C94D1 /* PLAlbumCollectionViewCell.xib */; };
+		C9A653111EF92D8F00045BA2 /* checked.png in Resources */ = {isa = PBXBuildFile; fileRef = C9A6530E1EF92D8F00045BA2 /* checked.png */; };
+		C9A653121EF92D8F00045BA2 /* checked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9A6530F1EF92D8F00045BA2 /* checked@2x.png */; };
+		C9A653131EF92D8F00045BA2 /* checked@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9A653101EF92D8F00045BA2 /* checked@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -590,6 +593,9 @@
 		C99244E11ED6009D005C94D1 /* PLAlbumCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLAlbumCollectionViewCell.h; sourceTree = "<group>"; };
 		C99244E21ED6009D005C94D1 /* PLAlbumCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLAlbumCollectionViewCell.m; sourceTree = "<group>"; };
 		C99244E31ED6009E005C94D1 /* PLAlbumCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLAlbumCollectionViewCell.xib; sourceTree = "<group>"; };
+		C9A6530E1EF92D8F00045BA2 /* checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checked.png; sourceTree = "<group>"; };
+		C9A6530F1EF92D8F00045BA2 /* checked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checked@2x.png"; sourceTree = "<group>"; };
+		C9A653101EF92D8F00045BA2 /* checked@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checked@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -795,6 +801,9 @@
 		C957AA261EF1A81F0035C3BF /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				C9A6530E1EF92D8F00045BA2 /* checked.png */,
+				C9A6530F1EF92D8F00045BA2 /* checked@2x.png */,
+				C9A653101EF92D8F00045BA2 /* checked@3x.png */,
 				C925052D1EF853D000971C6C /* 3-cham.png */,
 				C925052E1EF853D000971C6C /* 3-cham@2x.png */,
 				C925052F1EF853D000971C6C /* 3-cham@3x.png */,
@@ -1384,6 +1393,7 @@
 				C92505ED1EF853D100971C6C /* fromcamera.png in Resources */,
 				C925063A1EF853D100971C6C /* X-navigation-bar@3x.png in Resources */,
 				C97264FF1ED35CE300D185E1 /* Circle_Highlighted-2.png in Resources */,
+				C9A653111EF92D8F00045BA2 /* checked.png in Resources */,
 				C92505F91EF853D100971C6C /* Iconigto-Browser-icon.png in Resources */,
 				C92506041EF853D100971C6C /* list-icon@3x.png in Resources */,
 				C92505C81EF853D100971C6C /* Add-Icon@3x.png in Resources */,
@@ -1443,6 +1453,7 @@
 				C96BCEEC1ED3311200648F8D /* LaunchScreen.storyboard in Resources */,
 				C957AA3E1EF1A8460035C3BF /* ic_previous@3x.png in Resources */,
 				C96BCEFC1ED334E600648F8D /* PLRootViewController.xib in Resources */,
+				C9A653121EF92D8F00045BA2 /* checked@2x.png in Resources */,
 				C97264B21ED343FF00D185E1 /* PLSettingsViewController.xib in Resources */,
 				C92505D41EF853D100971C6C /* categories@3x.png in Resources */,
 				C957AA3F1EF1A8460035C3BF /* ic_share.png in Resources */,
@@ -1523,6 +1534,7 @@
 				C92505F71EF853D100971C6C /* hamburger-menu@2x.png in Resources */,
 				C92506391EF853D100971C6C /* X-navigation-bar@2x.png in Resources */,
 				C907FA7A1EE153C700FE8475 /* UIBarButtonItemArrowRight.png in Resources */,
+				C9A653131EF92D8F00045BA2 /* checked@3x.png in Resources */,
 				C97265041ED35CEC00D185E1 /* Circle_Normal-1.png in Resources */,
 				C92505EA1EF853D100971C6C /* from-wifi.png in Resources */,
 				C92505BC1EF853D100971C6C /* account-large@3x.png in Resources */,

@@ -22,11 +22,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     </imageView>
+                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1R9-Sf-X2w">
+                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="checked.png" translatesAutoresizingMaskIntoConstraints="NO" id="vlc-3j-eSW">
+                        <rect key="frame" x="24" y="2" width="24" height="24"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                    </imageView>
                 </subviews>
             </view>
             <connections>
+                <outlet property="editView" destination="1R9-Sf-X2w" id="lWL-tJ-8IG"/>
                 <outlet property="imgArtwork" destination="dyT-Ke-9sN" id="VK6-ib-11m"/>
+                <outlet property="selectView" destination="vlc-3j-eSW" id="Xq1-Wa-4Tx"/>
             </connections>
+            <point key="canvasLocation" x="-27" y="-9"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="checked.png" width="21" height="21"/>
+    </resources>
 </document>

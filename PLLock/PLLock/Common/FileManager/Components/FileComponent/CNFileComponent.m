@@ -17,6 +17,7 @@
 
 #define kSupportZipExtensions @[@"zip"]
 #define kSupportRarExtensions @[@"rar"]
+#define kSupportPNGExtensions @[@"png",@"jpg",@"jpeg"]
 
 @implementation CNFileComponent
 
@@ -24,7 +25,7 @@
     self = [super initWithFullFileName:fullFileName parent:parent];
     if (self) {
         NSString *extension = [fullFileName pathExtension];
-        if ([extension isEqualToString:@"png"]) {
+        if ([kSupportPNGExtensions containsObject:extension.lowercaseString]) {
             self.type = ComponentTypePhoto;
         }
     }

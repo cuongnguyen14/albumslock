@@ -84,14 +84,16 @@ completedBlock:(void (^)(NSError *error))completedBlock {
        assets:(PHAsset *)asset
   destination:(CNFolderComponent *)folder
 completedBlock:(void (^)(NSError *error))completedBlock {
-    double timestamp = [[NSDate date] timeIntervalSince1970];
     
+    NSArray *resources = [PHAssetResource assetResourcesForAsset:asset];
+    NSString *orgFilename = ((PHAssetResource*)resources[0]).originalFilename;
+
     //Photo Name
-    NSString *imageName = [NSString stringWithFormat:@"%f.png", timestamp];
+    NSString *imageName = orgFilename;
     NSString *filePath = [[folder absolutePath] stringByAppendingPathComponent:imageName];
     
     //Photo thumbnail name
-    NSString *imageThumbnailName = [NSString stringWithFormat:@".%f.png", timestamp];
+    NSString *imageThumbnailName = [NSString stringWithFormat:@".%@", imageName];
     NSString *thumbnailFilePath = [[folder absolutePath] stringByAppendingPathComponent:imageThumbnailName];
     
     //1.Write a thumbnail

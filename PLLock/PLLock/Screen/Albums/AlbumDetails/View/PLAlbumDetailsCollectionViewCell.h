@@ -11,5 +11,6 @@
 @interface PLAlbumDetailsCollectionViewCell : UICollectionViewCell
 
 -(void)setupUIWith:(CNFileComponent *)file;
+- (void)setEditing:(BOOL)editing;
 
 @end

@@ -14,4 +14,6 @@
 
 - (UIImage *)imageWithColor:(UIColor *)color;
 
++ (UIImage *)imageFromColor:(UIColor *)color;
+
 @end

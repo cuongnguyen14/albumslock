@@ -13,8 +13,7 @@
 #import <Photos/Photos.h>
 #import "MWPhotoBrowser.h"
 #import "MWPhotoBrowserPrivate.h"
-
-#define NAVBAR_CHANGE_POINT 50
+#import "UIImage+CNImage.h"
 
 @interface PLAlbumDetailsViewController () <TZImagePickerControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, MWPhotoBrowserDelegate>
 
@@ -42,6 +41,11 @@
 
 @property (nonatomic) BOOL isThreeColumn;
 @property (nonatomic) BOOL sortAcending;
+
+
+@property (nonatomic) BOOL isEdit;
+@property (nonatomic, strong) NSMutableArray<CNFileComponent *> *selectData;
+
 @end
 
 @implementation PLAlbumDetailsViewController
@@ -74,6 +78,10 @@
     [self touchAtButton2:nil];
     
     [self setupHeaderView];
+    
+    self.isEdit = NO;
+    [self.collectionView setAllowsMultipleSelection:YES];
+    
 }
 
 -(void)setupHeaderView {
@@ -105,19 +113,30 @@
         blurEffectView.alpha = 0.99;
         [self.headerView insertSubview:blurEffectView aboveSubview:self.backgroundHeaderImageView];
     }
-
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated {
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
-                                                  forBarMetrics:UIBarMetricsDefault];
-    self.navigationController.navigationBar.shadowImage = [UIImage new];
-    [UIView animateWithDuration:0.2 animations:^{
-        self.navigationController.navigationBar.translucent = YES;
-        self.navigationController.navigationBar.barTintColor = self.parent.tintColor;
-        self.navigationController.navigationBar.tintColor = self.parent.tintColor;
-    }];
     [super viewWillAppear:animated];
+    
+    CATransition *animation = [CATransition animation];
+    animation.duration = 0.3;
+    animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    animation.type = kCATransitionFade;
+    
+    [self.navigationController.navigationBar.layer removeAllAnimations];
+    [self.navigationController.navigationBar.layer addAnimation:animation forKey:nil];
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        
+        [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
+                                                      forBarMetrics:UIBarMetricsDefault];
+    }];
+    self.navigationController.navigationBar.shadowImage = [UIImage new];
+    self.navigationController.navigationBar.translucent = YES;
+    self.navigationController.navigationBar.barTintColor = self.parent.tintColor;
+    self.navigationController.navigationBar.tintColor = self.parent.tintColor;
+    
 }
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
@@ -125,21 +144,28 @@
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    [self.navigationController.navigationBar setBackgroundImage:nil
-                                                  forBarMetrics:UIBarMetricsDefault];
-    self.navigationController.navigationBar.shadowImage = nil;
-    self.navigationController.navigationBar.translucent = NO;
-    self.navigationController.navigationBar.barTintColor = nil;
-    self.navigationController.navigationBar.tintColor = nil;
-
 }
 
 -(void)loadData:(BOOL)acending {
+    
     NSArray *allFile = [sFileManager componentForComponent:self.parent mode:YES];
-    NSSortDescriptor *date = [[NSSortDescriptor alloc] initWithKey:@"dateCreated" ascending:acending];
-    self.data = [allFile sortedArrayUsingDescriptors:[NSArray arrayWithObjects:date, nil]];
+    
+    self.data = [allFile sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
+        NSString *first = [[(CNFileComponent *)a fullFileName] stringByDeletingPathExtension];
+        NSString *second = [[(CNFileComponent *)b fullFileName] stringByDeletingPathExtension];
+        if ([first compare:second options:NSNumericSearch] == NSOrderedAscending) {
+            return acending ? NSOrderedAscending : NSOrderedDescending;
+        } else {
+            return acending ? NSOrderedDescending : NSOrderedAscending;
+        }
+    }];
+    
     [self.collectionView reloadData];
+//    [self.collectionView performBatchUpdates:^{
+//        [self.collectionView reloadSections:[NSIndexSet indexSetWithIndex:0]];
+//    } completion:nil];
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -163,7 +189,35 @@
     self.actionButton = nil;
 }
 
+- (void)activateEditMode
+{
+    self.isEdit = !self.isEdit;
+    
+    if (self.isEdit) {
+        self.selectData = [NSMutableArray new];
+    }
+
+    [self.collectionView reloadData];
+
+}
+
+- (void)activateDelete {
+    
+    [sFileManager deleteComponent:self.selectData];
+    
+    self.selectData = [NSMutableArray new];
+
+    [self loadData:_sortAcending];
+    
+    [self activateEditMode];
+}
+
+
 #pragma mark - UICollectionViewDataSource
+
+- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
+    [self.selectData removeObject:[self.data objectAtIndex:indexPath.row]];
+}
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return [self.data count];
@@ -177,46 +231,47 @@
     
     [cell setupUIWith:model];
     
+    [cell setEditing:self.isEdit];
+    
     return cell;
 }
 
 #pragma mark - UICollectionViewDelegateFlowLayout
 
-//- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-//    int padding = 10;
-//    return CGSizeMake(self.view.bounds.size.width/3 - padding,
-//                      self.view.bounds.size.width/3 - padding);
-//}
-
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    [collectionView deselectItemAtIndexPath:indexPath animated:NO];
     
-    NSMutableArray *viewPhoto = [NSMutableArray new];
-    for (CNFileComponent *file in self.data) {
-        MWPhoto *photo = [[MWPhoto alloc] initWithURL:[NSURL fileURLWithPath:file.absolutePath]];
-        [viewPhoto addObject:photo];
-    }
-    self.viewData = [viewPhoto mutableCopy];
-    
-    
-    MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithDelegate:self];
-
-    browser.displayActionButton = YES; // Show action button to allow sharing, copying, etc (defaults to YES)
-    browser.displayNavArrows = NO; // Whether to display left and right nav arrows on toolbar (defaults to NO)
-    browser.zoomPhotosToFill = YES; // Images that almost fill the screen will be initially zoomed to fill (defaults to YES)
-    browser.alwaysShowControls = NO; // Allows to control whether the bars and controls are always visible or whether they fade away to show the photo full (defaults to NO)
-    browser.enableGrid = NO; // Whether to allow the viewing of all the photo thumbnails on a grid (defaults to YES)
-    browser.startOnGrid = NO; // Whether to start on the grid of thumbnails instead of the first photo (defaults to NO)
-    browser.autoPlayOnAppear = NO; // Auto-play first video
+    if (self.isEdit) {
+        [self.selectData addObject:[self.data objectAtIndex:indexPath.row]];
+    } else {
+        [collectionView deselectItemAtIndexPath:indexPath animated:NO];
         
-    // Optionally set the current visible photo before displaying
-    [browser setCurrentPhotoIndex:indexPath.row];
+        NSMutableArray *viewPhoto = [NSMutableArray new];
+        for (CNFileComponent *file in self.data) {
+            MWPhoto *photo = [[MWPhoto alloc] initWithURL:[NSURL fileURLWithPath:file.absolutePath]];
+            [viewPhoto addObject:photo];
+        }
+        self.viewData = [viewPhoto mutableCopy];
+        
+        
+        MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithDelegate:self];
+        
+        browser.displayActionButton = YES; // Show action button to allow sharing, copying, etc (defaults to YES)
+        browser.displayNavArrows = NO; // Whether to display left and right nav arrows on toolbar (defaults to NO)
+        browser.zoomPhotosToFill = YES; // Images that almost fill the screen will be initially zoomed to fill (defaults to YES)
+        browser.alwaysShowControls = NO; // Allows to control whether the bars and controls are always visible or whether they fade away to show the photo full (defaults to NO)
+        browser.enableGrid = NO; // Whether to allow the viewing of all the photo thumbnails on a grid (defaults to YES)
+        browser.startOnGrid = NO; // Whether to start on the grid of thumbnails instead of the first photo (defaults to NO)
+        browser.autoPlayOnAppear = NO; // Auto-play first video
+        
+        // Optionally set the current visible photo before displaying
+        [browser setCurrentPhotoIndex:indexPath.row];
+        
+        browser.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+        
+        // Present
+        [self.navigationController pushViewController:browser animated:YES];
+    }
     
-    browser.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-    
-    // Present
-    [self.navigationController pushViewController:browser animated:YES];
-
 }
 
 #pragma mark TZImagePickerControllerDelegate
@@ -315,7 +370,7 @@
     [self.view addSubview:self.actionButton];
 }
 
-#pragma mark 
+#pragma mark
 
 - (NSUInteger)numberOfPhotosInPhotoBrowser:(MWPhotoBrowser *)photoBrowser {
     return [self.viewData count];
@@ -356,14 +411,15 @@
 }
 
 - (IBAction)touchAtButton2:(id)sender {
-    [self loadData:!_sortAcending];
+    self.sortAcending = !self.sortAcending;
+    [self loadData:self.sortAcending];
 }
 
 - (IBAction)touchAtButton3:(id)sender {
-    
+    [self activateEditMode];
 }
 - (IBAction)touchAtButton4:(id)sender {
-    
+    [self activateDelete];
 }
 
 @end

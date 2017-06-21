@@ -11,6 +11,8 @@
 #import "PLActionButton.h"
 #import "PLAlbumCollectionViewCell.h"
 #import "PLAlbumDetailsViewController.h"
+#import "UIImage+CNImage.h"
+
 
 @interface PLAlbumsViewController () <TZImagePickerControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
 
@@ -39,6 +41,27 @@
     [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([PLAlbumCollectionViewCell class]) bundle:nil] forCellWithReuseIdentifier:@"kCellReuseID"];
 
     [self getAllFolder];
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    CATransition *animation = [CATransition animation];
+    animation.duration = 0.3;
+    animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    animation.type = kCATransitionFade;
+    
+    [self.navigationController.navigationBar.layer removeAllAnimations];
+    [self.navigationController.navigationBar.layer addAnimation:animation forKey:nil];
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        [self.navigationController.navigationBar setBackgroundImage:nil
+                                                      forBarMetrics:UIBarMetricsDefault];
+    }];
+    self.navigationController.navigationBar.shadowImage = nil;
+    self.navigationController.navigationBar.translucent = YES;
+    self.navigationController.navigationBar.barTintColor = nil;
+    self.navigationController.navigationBar.tintColor = nil;
+
 }
 
 -(void)dealloc {
