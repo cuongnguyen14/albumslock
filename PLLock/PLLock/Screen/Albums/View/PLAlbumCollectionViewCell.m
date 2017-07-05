@@ -28,8 +28,8 @@
 
     dispatch_async(dispatch_get_main_queue(), ^{
         CALayer * layer = [self layer];
-        [layer setShadowOffset:CGSizeMake(2, 2)];
-        [layer setShadowRadius:1.5];
+        [layer setShadowOffset:CGSizeMake(0.5, 0.5)];
+        [layer setShadowRadius:2.0];
         [layer setShadowColor:[UIColor grayColor].CGColor] ;
         [layer setShadowOpacity:0.3];
         [layer setMasksToBounds:NO];

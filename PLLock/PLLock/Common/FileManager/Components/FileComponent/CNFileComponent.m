@@ -18,25 +18,23 @@
 #define kSupportZipExtensions @[@"zip"]
 #define kSupportRarExtensions @[@"rar"]
 #define kSupportPNGExtensions @[@"png",@"jpg",@"jpeg"]
+#define kSupportVideoExtensions @[@"mp4",@"mov",@"avi"]
 
 @implementation CNFileComponent
 
 - (instancetype)initWithFullFileName:(NSString *)fullFileName parent:(CNComponent *)parent {
     self = [super initWithFullFileName:fullFileName parent:parent];
     if (self) {
-        NSString *extension = [fullFileName pathExtension];
-        if ([kSupportPNGExtensions containsObject:extension.lowercaseString]) {
-            self.type = ComponentTypePhoto;
-        }
+
     }
     return self;
 }
 
 - (void)setFullFileName:(NSString *)fullFileName {
     [super setFullFileName:fullFileName];
-    //set type
     
-    NSString *extension = [fullFileName pathExtension];
+    //set type
+    NSString *extension = [fullFileName pathExtension].lowercaseString;
     
     if ([extension isEqualToString:@"html"] || [extension isEqualToString:@"htm"]) {
         self.type = ComponentTypeHTML;
@@ -50,6 +48,16 @@
     
     if ([kSupportRarExtensions containsObject:extension]) {
         self.type = ComponentTypeRar;
+        return;
+    }
+
+    if ([kSupportPNGExtensions containsObject:extension]) {
+        self.type = ComponentTypePhoto;
+        return;
+    }
+    
+    if ([kSupportVideoExtensions containsObject:extension]) {
+        self.type = ComponentTypeVideo;
         return;
     }
 

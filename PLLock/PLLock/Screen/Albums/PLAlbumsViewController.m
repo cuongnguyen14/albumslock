@@ -14,7 +14,7 @@
 #import "UIImage+CNImage.h"
 
 
-@interface PLAlbumsViewController () <TZImagePickerControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
+@interface PLAlbumsViewController () <TZImagePickerControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, CNFileManagerDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
@@ -41,6 +41,8 @@
     [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([PLAlbumCollectionViewCell class]) bundle:nil] forCellWithReuseIdentifier:@"kCellReuseID"];
 
     [self getAllFolder];
+    
+    [sFileManager addDelegate:self];
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -56,12 +58,13 @@
     [UIView animateWithDuration:0.3 animations:^{
         [self.navigationController.navigationBar setBackgroundImage:nil
                                                       forBarMetrics:UIBarMetricsDefault];
+        self.navigationController.navigationBar.shadowImage = nil;
     }];
-    self.navigationController.navigationBar.shadowImage = nil;
     self.navigationController.navigationBar.translucent = YES;
     self.navigationController.navigationBar.barTintColor = nil;
     self.navigationController.navigationBar.tintColor = nil;
 
+    [self.collectionView reloadData];
 }
 
 -(void)dealloc {
@@ -79,6 +82,8 @@
     
     [self.actionButton removeFromSuperview];
     self.actionButton = nil;
+    
+    [sFileManager removeDelegate:self];
 }
 
 -(void)getAllFolder {
@@ -170,7 +175,6 @@
     
 }
 
-
 #pragma mark TZImagePickerControllerDelegate
 
 - (void)imagePickerController:(TZImagePickerController *)picker didFinishPickingPhotos:(NSArray<UIImage *> *)photos sourceAssets:(NSArray *)assets isSelectOriginalPhoto:(BOOL)isSelectOriginalPhoto {
@@ -260,4 +264,13 @@
     [self.view addSubview:self.actionButton];
 }
 
+#pragma mark - File Manager delegate 
+- (void)fileManager:(CNFileManager *)fileManager
+         actionType:(CNFileManagerActionType)actionType
+effectiveComponents:(NSArray <__kindof CNComponent *> *)components
+    falureComponent:(NSArray<__kindof CNComponent *> *)errorCopyComponents {
+    if (actionType == CNFileManagerActionTypeNew) {
+        [self getAllFolder];
+    }
+}
 @end

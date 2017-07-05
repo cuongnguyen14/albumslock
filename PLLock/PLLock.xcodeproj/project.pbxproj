@@ -192,6 +192,20 @@
 		C92506381EF853D100971C6C /* X-navigation-bar.png in Resources */ = {isa = PBXBuildFile; fileRef = C92505B11EF853D100971C6C /* X-navigation-bar.png */; };
 		C92506391EF853D100971C6C /* X-navigation-bar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C92505B21EF853D100971C6C /* X-navigation-bar@2x.png */; };
 		C925063A1EF853D100971C6C /* X-navigation-bar@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C92505B31EF853D100971C6C /* X-navigation-bar@3x.png */; };
+		C94ADE981F0C0AAD00A3051D /* NSBundle+TZImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = C94ADE7E1F0C0AAD00A3051D /* NSBundle+TZImagePicker.m */; };
+		C94ADE991F0C0AAD00A3051D /* TZAssetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C94ADE801F0C0AAD00A3051D /* TZAssetCell.m */; };
+		C94ADE9A1F0C0AAD00A3051D /* TZAssetModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C94ADE821F0C0AAD00A3051D /* TZAssetModel.m */; };
+		C94ADE9B1F0C0AAD00A3051D /* TZGifPhotoPreviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C94ADE841F0C0AAD00A3051D /* TZGifPhotoPreviewController.m */; };
+		C94ADE9C1F0C0AAD00A3051D /* TZImageCropManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C94ADE861F0C0AAD00A3051D /* TZImageCropManager.m */; };
+		C94ADE9D1F0C0AAD00A3051D /* TZImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C94ADE881F0C0AAD00A3051D /* TZImageManager.m */; };
+		C94ADE9E1F0C0AAD00A3051D /* TZImagePickerController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C94ADE891F0C0AAD00A3051D /* TZImagePickerController.bundle */; };
+		C94ADE9F1F0C0AAD00A3051D /* TZImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = C94ADE8B1F0C0AAD00A3051D /* TZImagePickerController.m */; };
+		C94ADEA01F0C0AAD00A3051D /* TZPhotoPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = C94ADE8D1F0C0AAD00A3051D /* TZPhotoPickerController.m */; };
+		C94ADEA11F0C0AAE00A3051D /* TZPhotoPreviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C94ADE8F1F0C0AAD00A3051D /* TZPhotoPreviewCell.m */; };
+		C94ADEA21F0C0AAE00A3051D /* TZPhotoPreviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C94ADE911F0C0AAD00A3051D /* TZPhotoPreviewController.m */; };
+		C94ADEA31F0C0AAE00A3051D /* TZProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = C94ADE931F0C0AAD00A3051D /* TZProgressView.m */; };
+		C94ADEA41F0C0AAE00A3051D /* TZVideoPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = C94ADE951F0C0AAD00A3051D /* TZVideoPlayerController.m */; };
+		C94ADEA51F0C0AAE00A3051D /* UIView+Layout.m in Sources */ = {isa = PBXBuildFile; fileRef = C94ADE971F0C0AAD00A3051D /* UIView+Layout.m */; };
 		C957A8C81EF0049E0035C3BF /* PLLeftMenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C957A8C61EF0049E0035C3BF /* PLLeftMenuTableViewCell.m */; };
 		C957A8C91EF0049E0035C3BF /* PLLeftMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C957A8C71EF0049E0035C3BF /* PLLeftMenuTableViewCell.xib */; };
 		C957A8CD1EF005CE0035C3BF /* PLLeftMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C957A8CC1EF005CE0035C3BF /* PLLeftMenuItem.m */; };
@@ -271,9 +285,28 @@
 		C99244DF1ED5FB57005C94D1 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C99244DE1ED5FB57005C94D1 /* AssetsLibrary.framework */; };
 		C99244E41ED6009E005C94D1 /* PLAlbumCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C99244E21ED6009D005C94D1 /* PLAlbumCollectionViewCell.m */; };
 		C99244E51ED6009E005C94D1 /* PLAlbumCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C99244E31ED6009E005C94D1 /* PLAlbumCollectionViewCell.xib */; };
-		C9A653111EF92D8F00045BA2 /* checked.png in Resources */ = {isa = PBXBuildFile; fileRef = C9A6530E1EF92D8F00045BA2 /* checked.png */; };
-		C9A653121EF92D8F00045BA2 /* checked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9A6530F1EF92D8F00045BA2 /* checked@2x.png */; };
-		C9A653131EF92D8F00045BA2 /* checked@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9A653101EF92D8F00045BA2 /* checked@3x.png */; };
+		C9A6536C1EFBE9F800045BA2 /* UIAlertView+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A6536B1EFBE9F800045BA2 /* UIAlertView+Blocks.m */; };
+		C9A653821EFBFA5E00045BA2 /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = C9A6536D1EFBFA5E00045BA2 /* check.png */; };
+		C9A653831EFBFA5E00045BA2 /* check@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9A6536E1EFBFA5E00045BA2 /* check@2x.png */; };
+		C9A653841EFBFA5E00045BA2 /* check@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9A6536F1EFBFA5E00045BA2 /* check@3x.png */; };
+		C9A653851EFBFA5E00045BA2 /* Delete.png in Resources */ = {isa = PBXBuildFile; fileRef = C9A653701EFBFA5E00045BA2 /* Delete.png */; };
+		C9A653861EFBFA5E00045BA2 /* Delete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9A653711EFBFA5E00045BA2 /* Delete@2x.png */; };
+		C9A653871EFBFA5E00045BA2 /* Delete@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9A653721EFBFA5E00045BA2 /* Delete@3x.png */; };
+		C9A653881EFBFA5E00045BA2 /* Deselect-All.png in Resources */ = {isa = PBXBuildFile; fileRef = C9A653731EFBFA5E00045BA2 /* Deselect-All.png */; };
+		C9A653891EFBFA5E00045BA2 /* Deselect-All@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9A653741EFBFA5E00045BA2 /* Deselect-All@2x.png */; };
+		C9A6538A1EFBFA5E00045BA2 /* Deselect-All@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9A653751EFBFA5E00045BA2 /* Deselect-All@3x.png */; };
+		C9A6538B1EFBFA5E00045BA2 /* Select-All.png in Resources */ = {isa = PBXBuildFile; fileRef = C9A653761EFBFA5E00045BA2 /* Select-All.png */; };
+		C9A6538C1EFBFA5E00045BA2 /* Select-All@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9A653771EFBFA5E00045BA2 /* Select-All@2x.png */; };
+		C9A6538D1EFBFA5E00045BA2 /* Select-All@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9A653781EFBFA5E00045BA2 /* Select-All@3x.png */; };
+		C9A6538E1EFBFA5E00045BA2 /* select.png in Resources */ = {isa = PBXBuildFile; fileRef = C9A653791EFBFA5E00045BA2 /* select.png */; };
+		C9A6538F1EFBFA5E00045BA2 /* select@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9A6537A1EFBFA5E00045BA2 /* select@2x.png */; };
+		C9A653901EFBFA5E00045BA2 /* select@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9A6537B1EFBFA5E00045BA2 /* select@3x.png */; };
+		C9A653911EFBFA5E00045BA2 /* sharered.png in Resources */ = {isa = PBXBuildFile; fileRef = C9A6537C1EFBFA5E00045BA2 /* sharered.png */; };
+		C9A653921EFBFA5E00045BA2 /* sharered@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9A6537D1EFBFA5E00045BA2 /* sharered@2x.png */; };
+		C9A653931EFBFA5E00045BA2 /* sharered@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9A6537E1EFBFA5E00045BA2 /* sharered@3x.png */; };
+		C9A653941EFBFA5E00045BA2 /* uncheck.png in Resources */ = {isa = PBXBuildFile; fileRef = C9A6537F1EFBFA5E00045BA2 /* uncheck.png */; };
+		C9A653951EFBFA5E00045BA2 /* uncheck@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9A653801EFBFA5E00045BA2 /* uncheck@2x.png */; };
+		C9A653961EFBFA5E00045BA2 /* uncheck@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C9A653811EFBFA5E00045BA2 /* uncheck@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -479,6 +512,33 @@
 		C92505B11EF853D100971C6C /* X-navigation-bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "X-navigation-bar.png"; sourceTree = "<group>"; };
 		C92505B21EF853D100971C6C /* X-navigation-bar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "X-navigation-bar@2x.png"; sourceTree = "<group>"; };
 		C92505B31EF853D100971C6C /* X-navigation-bar@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "X-navigation-bar@3x.png"; sourceTree = "<group>"; };
+		C94ADE7D1F0C0AAD00A3051D /* NSBundle+TZImagePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+TZImagePicker.h"; sourceTree = "<group>"; };
+		C94ADE7E1F0C0AAD00A3051D /* NSBundle+TZImagePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+TZImagePicker.m"; sourceTree = "<group>"; };
+		C94ADE7F1F0C0AAD00A3051D /* TZAssetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZAssetCell.h; sourceTree = "<group>"; };
+		C94ADE801F0C0AAD00A3051D /* TZAssetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZAssetCell.m; sourceTree = "<group>"; };
+		C94ADE811F0C0AAD00A3051D /* TZAssetModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZAssetModel.h; sourceTree = "<group>"; };
+		C94ADE821F0C0AAD00A3051D /* TZAssetModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZAssetModel.m; sourceTree = "<group>"; };
+		C94ADE831F0C0AAD00A3051D /* TZGifPhotoPreviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZGifPhotoPreviewController.h; sourceTree = "<group>"; };
+		C94ADE841F0C0AAD00A3051D /* TZGifPhotoPreviewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZGifPhotoPreviewController.m; sourceTree = "<group>"; };
+		C94ADE851F0C0AAD00A3051D /* TZImageCropManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZImageCropManager.h; sourceTree = "<group>"; };
+		C94ADE861F0C0AAD00A3051D /* TZImageCropManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZImageCropManager.m; sourceTree = "<group>"; };
+		C94ADE871F0C0AAD00A3051D /* TZImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZImageManager.h; sourceTree = "<group>"; };
+		C94ADE881F0C0AAD00A3051D /* TZImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZImageManager.m; sourceTree = "<group>"; };
+		C94ADE891F0C0AAD00A3051D /* TZImagePickerController.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TZImagePickerController.bundle; sourceTree = "<group>"; };
+		C94ADE8A1F0C0AAD00A3051D /* TZImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZImagePickerController.h; sourceTree = "<group>"; };
+		C94ADE8B1F0C0AAD00A3051D /* TZImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZImagePickerController.m; sourceTree = "<group>"; };
+		C94ADE8C1F0C0AAD00A3051D /* TZPhotoPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZPhotoPickerController.h; sourceTree = "<group>"; };
+		C94ADE8D1F0C0AAD00A3051D /* TZPhotoPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZPhotoPickerController.m; sourceTree = "<group>"; };
+		C94ADE8E1F0C0AAD00A3051D /* TZPhotoPreviewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZPhotoPreviewCell.h; sourceTree = "<group>"; };
+		C94ADE8F1F0C0AAD00A3051D /* TZPhotoPreviewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZPhotoPreviewCell.m; sourceTree = "<group>"; };
+		C94ADE901F0C0AAD00A3051D /* TZPhotoPreviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZPhotoPreviewController.h; sourceTree = "<group>"; };
+		C94ADE911F0C0AAD00A3051D /* TZPhotoPreviewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZPhotoPreviewController.m; sourceTree = "<group>"; };
+		C94ADE921F0C0AAD00A3051D /* TZProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZProgressView.h; sourceTree = "<group>"; };
+		C94ADE931F0C0AAD00A3051D /* TZProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZProgressView.m; sourceTree = "<group>"; };
+		C94ADE941F0C0AAD00A3051D /* TZVideoPlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZVideoPlayerController.h; sourceTree = "<group>"; };
+		C94ADE951F0C0AAD00A3051D /* TZVideoPlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZVideoPlayerController.m; sourceTree = "<group>"; };
+		C94ADE961F0C0AAD00A3051D /* UIView+Layout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Layout.h"; sourceTree = "<group>"; };
+		C94ADE971F0C0AAD00A3051D /* UIView+Layout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Layout.m"; sourceTree = "<group>"; };
 		C957A8C51EF0049E0035C3BF /* PLLeftMenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLLeftMenuTableViewCell.h; sourceTree = "<group>"; };
 		C957A8C61EF0049E0035C3BF /* PLLeftMenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLLeftMenuTableViewCell.m; sourceTree = "<group>"; };
 		C957A8C71EF0049E0035C3BF /* PLLeftMenuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLLeftMenuTableViewCell.xib; sourceTree = "<group>"; };
@@ -593,9 +653,29 @@
 		C99244E11ED6009D005C94D1 /* PLAlbumCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLAlbumCollectionViewCell.h; sourceTree = "<group>"; };
 		C99244E21ED6009D005C94D1 /* PLAlbumCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLAlbumCollectionViewCell.m; sourceTree = "<group>"; };
 		C99244E31ED6009E005C94D1 /* PLAlbumCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLAlbumCollectionViewCell.xib; sourceTree = "<group>"; };
-		C9A6530E1EF92D8F00045BA2 /* checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checked.png; sourceTree = "<group>"; };
-		C9A6530F1EF92D8F00045BA2 /* checked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checked@2x.png"; sourceTree = "<group>"; };
-		C9A653101EF92D8F00045BA2 /* checked@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checked@3x.png"; sourceTree = "<group>"; };
+		C9A6536A1EFBE9F800045BA2 /* UIAlertView+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Blocks.h"; sourceTree = "<group>"; };
+		C9A6536B1EFBE9F800045BA2 /* UIAlertView+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Blocks.m"; sourceTree = "<group>"; };
+		C9A6536D1EFBFA5E00045BA2 /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check.png; sourceTree = "<group>"; };
+		C9A6536E1EFBFA5E00045BA2 /* check@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check@2x.png"; sourceTree = "<group>"; };
+		C9A6536F1EFBFA5E00045BA2 /* check@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check@3x.png"; sourceTree = "<group>"; };
+		C9A653701EFBFA5E00045BA2 /* Delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Delete.png; sourceTree = "<group>"; };
+		C9A653711EFBFA5E00045BA2 /* Delete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Delete@2x.png"; sourceTree = "<group>"; };
+		C9A653721EFBFA5E00045BA2 /* Delete@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Delete@3x.png"; sourceTree = "<group>"; };
+		C9A653731EFBFA5E00045BA2 /* Deselect-All.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Deselect-All.png"; sourceTree = "<group>"; };
+		C9A653741EFBFA5E00045BA2 /* Deselect-All@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Deselect-All@2x.png"; sourceTree = "<group>"; };
+		C9A653751EFBFA5E00045BA2 /* Deselect-All@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Deselect-All@3x.png"; sourceTree = "<group>"; };
+		C9A653761EFBFA5E00045BA2 /* Select-All.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Select-All.png"; sourceTree = "<group>"; };
+		C9A653771EFBFA5E00045BA2 /* Select-All@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Select-All@2x.png"; sourceTree = "<group>"; };
+		C9A653781EFBFA5E00045BA2 /* Select-All@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Select-All@3x.png"; sourceTree = "<group>"; };
+		C9A653791EFBFA5E00045BA2 /* select.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = select.png; sourceTree = "<group>"; };
+		C9A6537A1EFBFA5E00045BA2 /* select@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "select@2x.png"; sourceTree = "<group>"; };
+		C9A6537B1EFBFA5E00045BA2 /* select@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "select@3x.png"; sourceTree = "<group>"; };
+		C9A6537C1EFBFA5E00045BA2 /* sharered.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sharered.png; sourceTree = "<group>"; };
+		C9A6537D1EFBFA5E00045BA2 /* sharered@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sharered@2x.png"; sourceTree = "<group>"; };
+		C9A6537E1EFBFA5E00045BA2 /* sharered@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sharered@3x.png"; sourceTree = "<group>"; };
+		C9A6537F1EFBFA5E00045BA2 /* uncheck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = uncheck.png; sourceTree = "<group>"; };
+		C9A653801EFBFA5E00045BA2 /* uncheck@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "uncheck@2x.png"; sourceTree = "<group>"; };
+		C9A653811EFBFA5E00045BA2 /* uncheck@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "uncheck@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -747,6 +827,40 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
+		C94ADE7C1F0C0AAD00A3051D /* TZImagePickerController */ = {
+			isa = PBXGroup;
+			children = (
+				C94ADE7D1F0C0AAD00A3051D /* NSBundle+TZImagePicker.h */,
+				C94ADE7E1F0C0AAD00A3051D /* NSBundle+TZImagePicker.m */,
+				C94ADE7F1F0C0AAD00A3051D /* TZAssetCell.h */,
+				C94ADE801F0C0AAD00A3051D /* TZAssetCell.m */,
+				C94ADE811F0C0AAD00A3051D /* TZAssetModel.h */,
+				C94ADE821F0C0AAD00A3051D /* TZAssetModel.m */,
+				C94ADE831F0C0AAD00A3051D /* TZGifPhotoPreviewController.h */,
+				C94ADE841F0C0AAD00A3051D /* TZGifPhotoPreviewController.m */,
+				C94ADE851F0C0AAD00A3051D /* TZImageCropManager.h */,
+				C94ADE861F0C0AAD00A3051D /* TZImageCropManager.m */,
+				C94ADE871F0C0AAD00A3051D /* TZImageManager.h */,
+				C94ADE881F0C0AAD00A3051D /* TZImageManager.m */,
+				C94ADE891F0C0AAD00A3051D /* TZImagePickerController.bundle */,
+				C94ADE8A1F0C0AAD00A3051D /* TZImagePickerController.h */,
+				C94ADE8B1F0C0AAD00A3051D /* TZImagePickerController.m */,
+				C94ADE8C1F0C0AAD00A3051D /* TZPhotoPickerController.h */,
+				C94ADE8D1F0C0AAD00A3051D /* TZPhotoPickerController.m */,
+				C94ADE8E1F0C0AAD00A3051D /* TZPhotoPreviewCell.h */,
+				C94ADE8F1F0C0AAD00A3051D /* TZPhotoPreviewCell.m */,
+				C94ADE901F0C0AAD00A3051D /* TZPhotoPreviewController.h */,
+				C94ADE911F0C0AAD00A3051D /* TZPhotoPreviewController.m */,
+				C94ADE921F0C0AAD00A3051D /* TZProgressView.h */,
+				C94ADE931F0C0AAD00A3051D /* TZProgressView.m */,
+				C94ADE941F0C0AAD00A3051D /* TZVideoPlayerController.h */,
+				C94ADE951F0C0AAD00A3051D /* TZVideoPlayerController.m */,
+				C94ADE961F0C0AAD00A3051D /* UIView+Layout.h */,
+				C94ADE971F0C0AAD00A3051D /* UIView+Layout.m */,
+			);
+			path = TZImagePickerController;
+			sourceTree = "<group>";
+		};
 		C957A8C31EF0044F0035C3BF /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -801,9 +915,27 @@
 		C957AA261EF1A81F0035C3BF /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				C9A6530E1EF92D8F00045BA2 /* checked.png */,
-				C9A6530F1EF92D8F00045BA2 /* checked@2x.png */,
-				C9A653101EF92D8F00045BA2 /* checked@3x.png */,
+				C9A6536D1EFBFA5E00045BA2 /* check.png */,
+				C9A6536E1EFBFA5E00045BA2 /* check@2x.png */,
+				C9A6536F1EFBFA5E00045BA2 /* check@3x.png */,
+				C9A653701EFBFA5E00045BA2 /* Delete.png */,
+				C9A653711EFBFA5E00045BA2 /* Delete@2x.png */,
+				C9A653721EFBFA5E00045BA2 /* Delete@3x.png */,
+				C9A653731EFBFA5E00045BA2 /* Deselect-All.png */,
+				C9A653741EFBFA5E00045BA2 /* Deselect-All@2x.png */,
+				C9A653751EFBFA5E00045BA2 /* Deselect-All@3x.png */,
+				C9A653761EFBFA5E00045BA2 /* Select-All.png */,
+				C9A653771EFBFA5E00045BA2 /* Select-All@2x.png */,
+				C9A653781EFBFA5E00045BA2 /* Select-All@3x.png */,
+				C9A653791EFBFA5E00045BA2 /* select.png */,
+				C9A6537A1EFBFA5E00045BA2 /* select@2x.png */,
+				C9A6537B1EFBFA5E00045BA2 /* select@3x.png */,
+				C9A6537C1EFBFA5E00045BA2 /* sharered.png */,
+				C9A6537D1EFBFA5E00045BA2 /* sharered@2x.png */,
+				C9A6537E1EFBFA5E00045BA2 /* sharered@3x.png */,
+				C9A6537F1EFBFA5E00045BA2 /* uncheck.png */,
+				C9A653801EFBFA5E00045BA2 /* uncheck@2x.png */,
+				C9A653811EFBFA5E00045BA2 /* uncheck@3x.png */,
 				C925052D1EF853D000971C6C /* 3-cham.png */,
 				C925052E1EF853D000971C6C /* 3-cham@2x.png */,
 				C925052F1EF853D000971C6C /* 3-cham@3x.png */,
@@ -1069,6 +1201,7 @@
 		C96BCEF51ED334D000648F8D /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				C94ADE7C1F0C0AAD00A3051D /* TZImagePickerController */,
 				C957AA4B1EF1AB860035C3BF /* LTNavigationBar */,
 				C907FA251EE153C700FE8475 /* MWPhotoBrowser */,
 			);
@@ -1185,6 +1318,8 @@
 		C97264D51ED34B8800D185E1 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				C9A6536A1EFBE9F800045BA2 /* UIAlertView+Blocks.h */,
+				C9A6536B1EFBE9F800045BA2 /* UIAlertView+Blocks.m */,
 				C97264E91ED358DC00D185E1 /* UIView+CNView.m */,
 				C97264EA1ED358DC00D185E1 /* UIViewController+Extra.h */,
 				C97264EB1ED358DC00D185E1 /* UIViewController+Extra.m */,
@@ -1345,6 +1480,7 @@
 				C92505B51EF853D100971C6C /* 3-cham@2x.png in Resources */,
 				C925060C1EF853D100971C6C /* next@2x.png in Resources */,
 				C907FA1A1EE0AAC800FE8475 /* PLAlbumDetailsViewController.xib in Resources */,
+				C9A653851EFBFA5E00045BA2 /* Delete.png in Resources */,
 				C92505C31EF853D100971C6C /* add-..png in Resources */,
 				C925060F1EF853D100971C6C /* notes-icon-large@2x.png in Resources */,
 				C92506111EF853D100971C6C /* notes-icon.png in Resources */,
@@ -1357,12 +1493,15 @@
 				C925061F1EF853D100971C6C /* recycle@3x.png in Resources */,
 				C92505E41EF853D100971C6C /* from-itune.png in Resources */,
 				C97264A81ED3439700D185E1 /* PLLeftMenuTableViewController.xib in Resources */,
+				C9A6538C1EFBFA5E00045BA2 /* Select-All@2x.png in Resources */,
 				C92505F31EF853D100971C6C /* hambugur-menu.png in Resources */,
 				C92506371EF853D100971C6C /* X-Button@3x.png in Resources */,
 				C92506101EF853D100971C6C /* notes-icon-large@3x.png in Resources */,
+				C9A653881EFBFA5E00045BA2 /* Deselect-All.png in Resources */,
 				C972650C1ED35CF600D185E1 /* Message@3x.png in Resources */,
 				C907FA641EE153C700FE8475 /* ImageError@3x.png in Resources */,
 				C957A8C91EF0049E0035C3BF /* PLLeftMenuTableViewCell.xib in Resources */,
+				C9A653931EFBFA5E00045BA2 /* sharered@3x.png in Resources */,
 				C92505BF1EF853D100971C6C /* account@3x.png in Resources */,
 				C97264F81ED35CDA00D185E1 /* Camera.png in Resources */,
 				C907FA7D1EE153C700FE8475 /* UIBarButtonItemGrid.png in Resources */,
@@ -1380,8 +1519,10 @@
 				C92506141EF853D100971C6C /* notes.png in Resources */,
 				C92506221EF853D100971C6C /* reload@3x.png in Resources */,
 				C92505CF1EF853D100971C6C /* browser-icon.png in Resources */,
+				C94ADE9E1F0C0AAD00A3051D /* TZImagePickerController.bundle in Resources */,
 				C92505C01EF853D100971C6C /* Accounts-Icon.png in Resources */,
 				C92505FF1EF853D100971C6C /* Itune-Icon.png in Resources */,
+				C9A653891EFBFA5E00045BA2 /* Deselect-All@2x.png in Resources */,
 				C92505C91EF853D100971C6C /* back-pink.png in Resources */,
 				C92506201EF853D100971C6C /* reload.png in Resources */,
 				C957A8D51EF00FB50035C3BF /* btn_left_menu@3x.png in Resources */,
@@ -1393,9 +1534,10 @@
 				C92505ED1EF853D100971C6C /* fromcamera.png in Resources */,
 				C925063A1EF853D100971C6C /* X-navigation-bar@3x.png in Resources */,
 				C97264FF1ED35CE300D185E1 /* Circle_Highlighted-2.png in Resources */,
-				C9A653111EF92D8F00045BA2 /* checked.png in Resources */,
 				C92505F91EF853D100971C6C /* Iconigto-Browser-icon.png in Resources */,
+				C9A653861EFBFA5E00045BA2 /* Delete@2x.png in Resources */,
 				C92506041EF853D100971C6C /* list-icon@3x.png in Resources */,
+				C9A6538D1EFBFA5E00045BA2 /* Select-All@3x.png in Resources */,
 				C92505C81EF853D100971C6C /* Add-Icon@3x.png in Resources */,
 				C907FA6C1EE153C700FE8475 /* ImageSelectedSmallOff@2x.png in Resources */,
 				C925061A1EF853D100971C6C /* quick-add-from..png in Resources */,
@@ -1407,6 +1549,7 @@
 				C907FA7C1EE153C700FE8475 /* UIBarButtonItemArrowRight@3x.png in Resources */,
 				C97265061ED35CEC00D185E1 /* Circle_Normal.png in Resources */,
 				C92505F41EF853D100971C6C /* hambugur-menu@2x.png in Resources */,
+				C9A6538B1EFBFA5E00045BA2 /* Select-All.png in Resources */,
 				C957A8D41EF00FB50035C3BF /* btn_left_menu@2x.png in Resources */,
 				C957AA421EF1A8460035C3BF /* movie-recorder.png in Resources */,
 				C92505C61EF853D100971C6C /* Add-Icon.png in Resources */,
@@ -1426,6 +1569,8 @@
 				C92505D21EF853D100971C6C /* categories.png in Resources */,
 				C925060D1EF853D100971C6C /* next@3x.png in Resources */,
 				C92506161EF853D100971C6C /* notes@3x.png in Resources */,
+				C9A653841EFBFA5E00045BA2 /* check@3x.png in Resources */,
+				C9A653941EFBFA5E00045BA2 /* uncheck.png in Resources */,
 				C957AA461EF1A8460035C3BF /* safari@2x.png in Resources */,
 				C907FA651EE153C700FE8475 /* ImageSelectedOff.png in Resources */,
 				C92506301EF853D100971C6C /* unlock-icon@2x.png in Resources */,
@@ -1434,6 +1579,7 @@
 				C97265051ED35CEC00D185E1 /* Circle_Normal-2.png in Resources */,
 				C957AA441EF1A8460035C3BF /* movie-recorder@3x.png in Resources */,
 				C92505E71EF853D100971C6C /* from-library.png in Resources */,
+				C9A653921EFBFA5E00045BA2 /* sharered@2x.png in Resources */,
 				C92505F21EF853D100971C6C /* Hambergur-menu@3x.png in Resources */,
 				C92505F81EF853D100971C6C /* hamburger-menu@3x.png in Resources */,
 				C97264FA1ED35CDA00D185E1 /* Camera@3x.png in Resources */,
@@ -1442,9 +1588,12 @@
 				C92506261EF853D100971C6C /* setting.png in Resources */,
 				C92505CA1EF853D100971C6C /* back-pink@2x.png in Resources */,
 				C907FA681EE153C700FE8475 /* ImageSelectedOn.png in Resources */,
+				C9A6538F1EFBFA5E00045BA2 /* select@2x.png in Resources */,
+				C9A653901EFBFA5E00045BA2 /* select@3x.png in Resources */,
 				C957AA401EF1A8460035C3BF /* ic_share@2x.png in Resources */,
 				C92506131EF853D100971C6C /* notes-icon@3x.png in Resources */,
 				C92505D81EF853D100971C6C /* create-new-one.png in Resources */,
+				C9A653951EFBFA5E00045BA2 /* uncheck@2x.png in Resources */,
 				C925062B1EF853D100971C6C /* share@3x.png in Resources */,
 				C99244E51ED6009E005C94D1 /* PLAlbumCollectionViewCell.xib in Resources */,
 				C92505D91EF853D100971C6C /* create-new-one@2x.png in Resources */,
@@ -1453,7 +1602,6 @@
 				C96BCEEC1ED3311200648F8D /* LaunchScreen.storyboard in Resources */,
 				C957AA3E1EF1A8460035C3BF /* ic_previous@3x.png in Resources */,
 				C96BCEFC1ED334E600648F8D /* PLRootViewController.xib in Resources */,
-				C9A653121EF92D8F00045BA2 /* checked@2x.png in Resources */,
 				C97264B21ED343FF00D185E1 /* PLSettingsViewController.xib in Resources */,
 				C92505D41EF853D100971C6C /* categories@3x.png in Resources */,
 				C957AA3F1EF1A8460035C3BF /* ic_share.png in Resources */,
@@ -1491,6 +1639,8 @@
 				C907FA741EE153C700FE8475 /* PlayButtonOverlayLargeTap.png in Resources */,
 				C925061B1EF853D100971C6C /* quick-add-from.@2x.png in Resources */,
 				C92506321EF853D100971C6C /* Video.png in Resources */,
+				C9A653821EFBFA5E00045BA2 /* check.png in Resources */,
+				C9A6538E1EFBFA5E00045BA2 /* select.png in Resources */,
 				C92505BA1EF853D100971C6C /* account-large.png in Resources */,
 				C97264AD1ED343A900D185E1 /* PLRightTableTableViewController.xib in Resources */,
 				C907FA6D1EE153C700FE8475 /* ImageSelectedSmallOff@3x.png in Resources */,
@@ -1515,6 +1665,7 @@
 				C92506091EF853D100971C6C /* My-file-icon@2x.png in Resources */,
 				C92505E81EF853D100971C6C /* from-library@2x.png in Resources */,
 				C92506031EF853D100971C6C /* list-icon@2x.png in Resources */,
+				C9A653871EFBFA5E00045BA2 /* Delete@3x.png in Resources */,
 				C925062A1EF853D100971C6C /* share@2x.png in Resources */,
 				C972649E1ED342EB00D185E1 /* PLAlbumsViewController.xib in Resources */,
 				C92506061EF853D100971C6C /* more@2x.png in Resources */,
@@ -1525,6 +1676,7 @@
 				C907FA711EE153C700FE8475 /* PlayButtonOverlayLarge.png in Resources */,
 				C97265111ED35CFE00D185E1 /* Picture@2x.png in Resources */,
 				C92506121EF853D100971C6C /* notes-icon@2x.png in Resources */,
+				C9A653911EFBFA5E00045BA2 /* sharered.png in Resources */,
 				C92506251EF853D100971C6C /* search@3x.png in Resources */,
 				C92505B91EF853D100971C6C /* account-icon@3x.png in Resources */,
 				C92505D31EF853D100971C6C /* categories@2x.png in Resources */,
@@ -1532,18 +1684,20 @@
 				C92506271EF853D100971C6C /* setting@2x.png in Resources */,
 				C92506331EF853D100971C6C /* Video@2x.png in Resources */,
 				C92505F71EF853D100971C6C /* hamburger-menu@2x.png in Resources */,
+				C9A653961EFBFA5E00045BA2 /* uncheck@3x.png in Resources */,
 				C92506391EF853D100971C6C /* X-navigation-bar@2x.png in Resources */,
 				C907FA7A1EE153C700FE8475 /* UIBarButtonItemArrowRight.png in Resources */,
-				C9A653131EF92D8F00045BA2 /* checked@3x.png in Resources */,
 				C97265041ED35CEC00D185E1 /* Circle_Normal-1.png in Resources */,
 				C92505EA1EF853D100971C6C /* from-wifi.png in Resources */,
 				C92505BC1EF853D100971C6C /* account-large@3x.png in Resources */,
 				C907FA7F1EE153C700FE8475 /* UIBarButtonItemGrid@3x.png in Resources */,
 				C925060B1EF853D100971C6C /* next.png in Resources */,
+				C9A6538A1EFBFA5E00045BA2 /* Deselect-All@3x.png in Resources */,
 				C92505BE1EF853D100971C6C /* account@2x.png in Resources */,
 				C96BCEE91ED3311200648F8D /* Assets.xcassets in Resources */,
 				C92506231EF853D100971C6C /* search.png in Resources */,
 				C925062D1EF853D100971C6C /* sort-icon@2x.png in Resources */,
+				C9A653831EFBFA5E00045BA2 /* check@2x.png in Resources */,
 				C92505E61EF853D100971C6C /* from-itune@3x.png in Resources */,
 				C92505FB1EF853D100971C6C /* Iconigto-Browser-icon@3x.png in Resources */,
 				C92505BB1EF853D100971C6C /* account-large@2x.png in Resources */,
@@ -1608,18 +1762,28 @@
 			files = (
 				C97264F01ED358DC00D185E1 /* UIViewController+Extra.m in Sources */,
 				C907FA871EE153C700FE8475 /* MWPhotoBrowser.m in Sources */,
+				C94ADE981F0C0AAD00A3051D /* NSBundle+TZImagePicker.m in Sources */,
 				C907FA841EE153C700FE8475 /* MWGridCell.m in Sources */,
+				C94ADE9D1F0C0AAD00A3051D /* TZImageManager.m in Sources */,
 				C99244CB1ED5F726005C94D1 /* PLAlbumModel.m in Sources */,
 				C957A8E11EF023FC0035C3BF /* DZNWebView.m in Sources */,
 				C957A8E41EF028550035C3BF /* NSString+DLStringValidater.m in Sources */,
+				C94ADEA51F0C0AAE00A3051D /* UIView+Layout.m in Sources */,
 				C957A8C81EF0049E0035C3BF /* PLLeftMenuTableViewCell.m in Sources */,
+				C94ADEA31F0C0AAE00A3051D /* TZProgressView.m in Sources */,
 				C96BCEFB1ED334E600648F8D /* PLRootViewController.m in Sources */,
+				C94ADEA01F0C0AAD00A3051D /* TZPhotoPickerController.m in Sources */,
 				C96BCEE11ED3311200648F8D /* AppDelegate.m in Sources */,
 				C907FA8C1EE153C700FE8475 /* README.md in Sources */,
 				C97264B11ED343FF00D185E1 /* PLSettingsViewController.m in Sources */,
+				C94ADE9B1F0C0AAD00A3051D /* TZGifPhotoPreviewController.m in Sources */,
+				C94ADE991F0C0AAD00A3051D /* TZAssetCell.m in Sources */,
 				C97264C61ED344AD00D185E1 /* UIColor+HDExtensions.m in Sources */,
+				C9A6536C1EFBE9F800045BA2 /* UIAlertView+Blocks.m in Sources */,
 				C99244E41ED6009E005C94D1 /* PLAlbumCollectionViewCell.m in Sources */,
+				C94ADE9C1F0C0AAD00A3051D /* TZImageCropManager.m in Sources */,
 				C957A8DA1EF013360035C3BF /* PLBrowserViewController.m in Sources */,
+				C94ADEA11F0C0AAE00A3051D /* TZPhotoPreviewCell.m in Sources */,
 				C97264EF1ED358DC00D185E1 /* UIView+CNView.m in Sources */,
 				C972649D1ED342EB00D185E1 /* PLAlbumsViewController.m in Sources */,
 				C97264C71ED344AD00D185E1 /* CNThemeManager.m in Sources */,
@@ -1627,13 +1791,17 @@
 				C907FA851EE153C700FE8475 /* MWGridViewController.m in Sources */,
 				C957AA4E1EF1AB860035C3BF /* UINavigationBar+Awesome.m in Sources */,
 				C907FA191EE0AAC800FE8475 /* PLAlbumDetailsViewController.m in Sources */,
+				C94ADE9A1F0C0AAD00A3051D /* TZAssetModel.m in Sources */,
 				C99244DC1ED5F7A9005C94D1 /* CNFolderComponent.m in Sources */,
+				C94ADEA41F0C0AAE00A3051D /* TZVideoPlayerController.m in Sources */,
 				C907FA241EE13E6600FE8475 /* PLImportPhotoManager.m in Sources */,
 				C907FA861EE153C700FE8475 /* MWPhoto.m in Sources */,
+				C94ADEA21F0C0AAE00A3051D /* TZPhotoPreviewController.m in Sources */,
 				C907FA881EE153C700FE8475 /* MWTapDetectingImageView.m in Sources */,
 				C957A8D11EF00DD20035C3BF /* PLNavigationViewController.m in Sources */,
 				C957A8DE1EF022F90035C3BF /* DLAddressBarView.m in Sources */,
 				C97264CA1ED346D500D185E1 /* PLApplication.m in Sources */,
+				C94ADE9F1F0C0AAD00A3051D /* TZImagePickerController.m in Sources */,
 				C97264AC1ED343A900D185E1 /* PLRightTableTableViewController.m in Sources */,
 				C97264BB1ED3443800D185E1 /* PLNoteViewController.m in Sources */,
 				C97264F41ED358F300D185E1 /* PLActionButton.m in Sources */,

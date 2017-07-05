@@ -28,12 +28,10 @@ typedef enum{
 @protocol CNFileManagerDelegate <NSObject>
 
 @required
+
 - (void)fileManager:(CNFileManager *)fileManager
          actionType:(CNFileManagerActionType)actionType
 effectiveComponents:(NSArray <__kindof CNComponent *> *)components
     falureComponent:(NSArray<__kindof CNComponent *> *)errorCopyComponents;
-
-- (void)fileManager:(CNFileManager *)fileManager
-         deleteCloudFolder:(NSString *)cloudFolderPath;
 
 @end

@@ -14,6 +14,7 @@
 #import "MWPhotoBrowser.h"
 #import "MWPhotoBrowserPrivate.h"
 #import "UIImage+CNImage.h"
+#import "UIAlertView+Blocks.h"
 
 @interface PLAlbumDetailsViewController () <TZImagePickerControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, MWPhotoBrowserDelegate>
 
@@ -38,13 +39,19 @@
 
 @property (nonatomic, strong) PLActionButton *actionButton;
 
-
 @property (nonatomic) BOOL isThreeColumn;
 @property (nonatomic) BOOL sortAcending;
 
 
 @property (nonatomic) BOOL isEdit;
 @property (nonatomic, strong) NSMutableArray<CNFileComponent *> *selectData;
+
+@property (nonatomic) CNFileComponent *firstModel;
+
+@property (nonatomic, strong) UIBarButtonItem *selectAll;
+@property (nonatomic, strong) UIBarButtonItem *share;
+@property (nonatomic, strong) UIBarButtonItem *deleteAll;
+@property (nonatomic, strong) UIBarButtonItem *doneEdit;
 
 @end
 
@@ -61,7 +68,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;
@@ -80,16 +86,35 @@
     [self setupHeaderView];
     
     self.isEdit = NO;
+    
     [self.collectionView setAllowsMultipleSelection:YES];
     
 }
 
 -(void)setupHeaderView {
     CNFileComponent *model = [self.data firstObject];
-    
+
     if (model.thumbnailPath.length == 0) {
         return;
     }
+
+    if ([_firstModel isEqual:model]) {
+        return;
+    } else {
+        _firstModel = [model copy];
+    }
+    
+    CATransition *transition = [CATransition animation];
+    transition.duration = 0.25;
+    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    transition.type = kCATransitionFade;
+    
+    [self.backgroundHeaderImageView.layer removeAllAnimations];
+    [self.artworkView.layer removeAllAnimations];
+
+    [self.backgroundHeaderImageView.layer addAnimation:transition forKey:nil];
+    [self.artworkView.layer addAnimation:transition forKey:nil];
+
     
     [self.backgroundHeaderImageView setImageWithURL:[NSURL fileURLWithPath:model.thumbnailPath] placeholderImage:nil];
     [self.artworkView setImageWithURL:[NSURL fileURLWithPath:model.thumbnailPath] placeholderImage:nil];
@@ -105,12 +130,16 @@
     
     if (!UIAccessibilityIsReduceTransparencyEnabled()) {
         self.headerView.backgroundColor = [UIColor clearColor];
-        
         UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
         UIVisualEffectView *blurEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
         blurEffectView.frame = self.view.bounds;
         blurEffectView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         blurEffectView.alpha = 0.99;
+        for (UIView *view in self.headerView.subviews) {
+            if ([view isKindOfClass:[UIVisualEffectView class]]) {
+                [view removeFromSuperview];
+            }
+        }
         [self.headerView insertSubview:blurEffectView aboveSubview:self.backgroundHeaderImageView];
     }
     
@@ -138,12 +167,14 @@
     self.navigationController.navigationBar.tintColor = self.parent.tintColor;
     
 }
+
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
+    [self.navigationController setToolbarHidden:YES animated:YES];
 }
 
 -(void)loadData:(BOOL)acending {
@@ -164,6 +195,8 @@
 //    [self.collectionView performBatchUpdates:^{
 //        [self.collectionView reloadSections:[NSIndexSet indexSetWithIndex:0]];
 //    } completion:nil];
+    
+    [self setupHeaderView];
 }
 
 
@@ -189,6 +222,124 @@
     self.actionButton = nil;
 }
 
+- (UIBarButtonItem *)selectAll
+{
+    if (!_selectAll)
+    {
+        _selectAll = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Select-All"] landscapeImagePhone:nil style:0 target:self action:@selector(doSelectAll:)];
+        _selectAll.accessibilityLabel = @"Select All";
+        _selectAll.enabled = YES;
+    }
+    return _selectAll;
+}
+
+- (UIBarButtonItem *)share
+{
+    if (!_share)
+    {
+        _share = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"sharered"] landscapeImagePhone:nil style:0 target:self action:@selector(doShare:)];
+        _share.accessibilityLabel = @"Select All";
+        _share.enabled = NO;
+    }
+    return _share;
+}
+
+- (UIBarButtonItem *)deleteAll
+{
+    if (!_deleteAll)
+    {
+        _deleteAll = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Delete"] landscapeImagePhone:nil style:0 target:self action:@selector(doDeleteAll:)];
+        _deleteAll.accessibilityLabel = @"Delete All";
+        _deleteAll.enabled = NO;
+    }
+    return _deleteAll;
+}
+
+- (UIBarButtonItem *)doneEdit
+{
+    if (!_doneEdit)
+    {
+        _doneEdit = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"select"] landscapeImagePhone:nil style:0 target:self action:@selector(doDoneEdit:)];
+        _doneEdit.accessibilityLabel = @"Done";
+        _doneEdit.enabled = YES;
+    }
+    return _doneEdit;
+}
+
+- (NSArray *)navigationToolItems
+{
+    NSMutableArray *items = [NSMutableArray new];
+    
+    UIBarButtonItem *flexibleSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:NULL];
+    
+    [items addObject:self.selectAll];
+    
+    [items addObject:flexibleSpace];
+    [items addObject:self.deleteAll];
+    
+    [items addObject:flexibleSpace];
+    [items addObject:self.share];
+
+    [items addObject:flexibleSpace];
+    [items addObject:self.doneEdit];
+        
+    return items;
+}
+
+-(void)doSelectAll:(id)sender {
+    BOOL isSelectAll = self.data.count == [self.collectionView indexPathsForSelectedItems].count;
+    if (!isSelectAll) {
+        for (NSInteger row = 0; row < [self.collectionView numberOfItemsInSection:0]; row++) {
+            [self.collectionView selectItemAtIndexPath:[NSIndexPath indexPathForRow:row inSection:0] animated:NO scrollPosition:UICollectionViewScrollPositionNone];
+        }
+        self.selectAll.image = [UIImage imageNamed:@"Deselect-All"];
+    } else {
+        for (NSInteger row = 0; row < [self.collectionView numberOfItemsInSection:0]; row++) {
+            [self.collectionView deselectItemAtIndexPath:[NSIndexPath indexPathForRow:row inSection:0] animated:NO];
+        }
+        self.selectAll.image = [UIImage imageNamed:@"Select-All"];
+
+    }
+}
+
+-(void)doDeleteAll:(id)sender {
+    [self activateDelete];
+}
+
+-(void)doDoneEdit:(id)sender {
+    [self activateEditMode];
+}
+
+-(void)doShare:(id)sender {
+
+    if (self.selectData.count == 0) {
+        return;
+    }
+    
+    NSMutableArray *sharePhoto = [NSMutableArray new];
+    for (CNFileComponent *file in self.selectData) {
+        UIImage *image = [UIImage imageWithContentsOfFile:file.absolutePath];
+        [sharePhoto addObject:image];
+    }
+    
+    // build an activity view controller
+    UIActivityViewController *controller = [[UIActivityViewController alloc]initWithActivityItems:sharePhoto applicationActivities:nil];
+    
+    // and present it
+    [self presentViewController:controller animated:YES completion:^{
+        // executes after the user selects something
+    }];
+
+}
+
+-(void)setActionViewEnable:(BOOL)enable {
+    for (UIButton *button in self.actionView.subviews) {
+        if ([button isKindOfClass:[UIButton class]]) {
+            [button setEnabled:enable];
+        }
+    }
+}
+
 - (void)activateEditMode
 {
     self.isEdit = !self.isEdit;
@@ -197,6 +348,16 @@
         self.selectData = [NSMutableArray new];
     }
 
+    self.navigationController.toolbar.translucent = NO;
+    [self.navigationController setToolbarHidden:!self.isEdit animated:YES];
+    [self.navigationController.toolbar setTintColor:MakeColor(255, 26, 85, 1)];
+    [self setToolbarItems:[self navigationToolItems]];
+    self.actionButton.alpha = self.isEdit ? 0 : 1;
+    self.deleteAll.enabled = [self.collectionView indexPathsForSelectedItems].count == 0 ? NO : YES;
+    self.share.enabled = [self.collectionView indexPathsForSelectedItems].count == 0 ? NO : YES;
+
+    [self setActionViewEnable:!self.isEdit];
+    
     [self.collectionView reloadData];
 
 }
@@ -210,6 +371,7 @@
     [self loadData:_sortAcending];
     
     [self activateEditMode];
+    
 }
 
 
@@ -217,6 +379,9 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
     [self.selectData removeObject:[self.data objectAtIndex:indexPath.row]];
+    self.deleteAll.enabled = [collectionView indexPathsForSelectedItems].count == 0 ? NO : YES;
+    self.share.enabled = [collectionView indexPathsForSelectedItems].count == 0 ? NO : YES;
+
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
@@ -242,6 +407,9 @@
     
     if (self.isEdit) {
         [self.selectData addObject:[self.data objectAtIndex:indexPath.row]];
+        self.deleteAll.enabled = [collectionView indexPathsForSelectedItems].count == 0 ? NO : YES;
+        self.share.enabled = [collectionView indexPathsForSelectedItems].count == 0 ? NO : YES;
+
     } else {
         [collectionView deselectItemAtIndexPath:indexPath animated:NO];
         
@@ -278,18 +446,26 @@
 
 - (void)imagePickerController:(TZImagePickerController *)picker didFinishPickingPhotos:(NSArray<UIImage *> *)photos sourceAssets:(NSArray *)assets isSelectOriginalPhoto:(BOOL)isSelectOriginalPhoto {
     
-    UIViewController *root = [[[UIApplication sharedApplication].delegate window] rootViewController];
-    [MBProgressHUD showHUDAddedTo:root.view animated:YES];
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        weakify(self);
-        [sImport import:photos assets:assets destination:self.parent completedBlock:^(NSError *error) {
-            if (!error) {
-                [self_weak_ loadData:_sortAcending];
+    weakify(self);
+    [UIAlertView showWithTitle:@"Delete" message:@"Do you want to delete these photos from Photos Library? \n (It will still show in Recently Deleted album)" cancelButtonTitle:@"NO" otherButtonTitles:@[@"YES"] tapBlock:^(UIAlertView * _Nonnull alertView, NSInteger buttonIndex) {
+        
+        BOOL isDeleted = buttonIndex != alertView.cancelButtonIndex;
+        
+        UIViewController *root = [[[UIApplication sharedApplication].delegate window] rootViewController];
+        
+        [MBProgressHUD showHUDAddedTo:root.view animated:YES];
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [sImport import:photos assets:assets destination:self_weak_.parent deletedAfterSuccess:isDeleted completedBlock:^(NSError *error) {
                 [MBProgressHUD hideHUDForView:root.view animated:YES];
-            }
-        }];
-    });
+                if (!error) {
+                    [self_weak_ loadData:_sortAcending];
+                }
+            }];
+        });
+        
+    }];
+    
 }
 
 - (void)imagePickerController:(TZImagePickerController *)picker didFinishPickingPhotos:(NSArray<UIImage *> *)photos sourceAssets:(NSArray *)assets isSelectOriginalPhoto:(BOOL)isSelectOriginalPhoto infos:(NSArray<NSDictionary *> *)infos {
@@ -302,6 +478,26 @@
 
 - (void)imagePickerController:(TZImagePickerController *)picker didFinishPickingVideo:(UIImage *)coverImage sourceAssets:(id)asset {
     
+    weakify(self);
+    [UIAlertView showWithTitle:@"Delete" message:@"Do you want to delete these videos from Library? \n (It will still show in Recently Deleted album)" cancelButtonTitle:@"NO" otherButtonTitles:@[@"YES"] tapBlock:^(UIAlertView * _Nonnull alertView, NSInteger buttonIndex) {
+        
+        BOOL isDeleted = buttonIndex != alertView.cancelButtonIndex;
+        
+        UIViewController *root = [[[UIApplication sharedApplication].delegate window] rootViewController];
+        
+        [MBProgressHUD showHUDAddedTo:root.view animated:YES];
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [sImport importVideo:coverImage assets:asset destination:self_weak_.parent deletedAfterSuccess:isDeleted completedBlock:^(NSError *error) {
+                [MBProgressHUD hideHUDForView:root.view animated:YES];
+                if (!error) {
+                    [self_weak_ loadData:_sortAcending];
+                }
+            }];
+        });
+        
+    }];
+
 }
 
 - (void)imagePickerController:(TZImagePickerController *)picker didFinishPickingGifImage:(UIImage *)animatedImage sourceAssets:(id)asset {
@@ -347,12 +543,24 @@
                  imagePickerVc.allowTakePicture = NO;
                  imagePickerVc.allowPickingOriginalPhoto = YES;
                  imagePickerVc.allowPreview = NO;
-                 imagePickerVc.allowPickingVideo = NO;
+                 
+                 if (self_weak_.parent.folderType == FolderTypeVideo) {
+                     imagePickerVc.allowPickingImage = NO;
+                     imagePickerVc.allowPickingVideo = YES;
+                 } else if (self_weak_.parent.folderType == FolderTypePhoto) {
+                     imagePickerVc.allowPickingImage = YES;
+                     imagePickerVc.allowPickingVideo = NO;
+                 } else {
+                     imagePickerVc.allowPickingImage = YES;
+                     imagePickerVc.allowPickingVideo = YES;
+                 }
+                 
                  imagePickerVc.hideWhenCanNotSelect = YES;
+                 
                  [self_weak_ presentViewController:imagePickerVc animated:YES completion:nil];
                  
              }];
-             
+           
          }
          
      }];
@@ -382,9 +590,9 @@
 
 #pragma mark - Button action
 -(void)updateThreecolumn {
-    int padding = 10;
-    CGSize size = CGSizeMake(self.view.bounds.size.width/3 - padding,
-                             self.view.bounds.size.width/3 - padding);
+    int padding = 12;
+    CGSize size = CGSizeMake((self.view.bounds.size.width - padding)/3.,
+                             (self.view.bounds.size.width - padding)/3.);
     
     [self.collectionView performBatchUpdates:^{
         ((UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout).itemSize = size;
@@ -392,13 +600,14 @@
 }
 
 -(void)updateFourColumn {
-    int padding = 8;
-    CGSize size = CGSizeMake(self.view.bounds.size.width/4 - padding,
-                             self.view.bounds.size.width/4 - padding);
+    int padding = 15;
+    CGSize size = CGSizeMake((self.view.bounds.size.width - padding)/4.,
+                             (self.view.bounds.size.width - padding)/4.);
     [self.collectionView performBatchUpdates:^{
         ((UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout).itemSize = size;
     } completion:nil];
 }
+
 - (IBAction)touchAtButton1:(id)sender {
     if (_isThreeColumn == YES) {
         [self updateFourColumn];
@@ -407,7 +616,6 @@
         [self updateThreecolumn];
         _isThreeColumn = YES;
     }
-    
 }
 
 - (IBAction)touchAtButton2:(id)sender {
@@ -419,7 +627,7 @@
     [self activateEditMode];
 }
 - (IBAction)touchAtButton4:(id)sender {
-    [self activateDelete];
+
 }
 
 @end

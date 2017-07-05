@@ -110,8 +110,8 @@
                     <rect key="frame" x="0.0" y="190" width="375" height="477"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <inset key="contentInset" minX="7.5" minY="7.5" maxX="7.5" maxY="7.5"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="4" minimumInteritemSpacing="0.0" id="dXw-L1-5Of">
+                    <inset key="contentInset" minX="3" minY="3" maxX="3" maxY="3"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="3" minimumInteritemSpacing="0.0" id="dXw-L1-5Of">
                         <size key="itemSize" width="50" height="50"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>

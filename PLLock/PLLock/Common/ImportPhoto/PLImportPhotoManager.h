@@ -18,10 +18,17 @@
 -(void)import:(NSArray <UIImage *> *)photos
        assets:(NSArray<PHAsset *> *)assets
   destination:(CNFolderComponent *)folder
+deletedAfterSuccess:(BOOL)deleted
 completedBlock:(void (^)(NSError *error))completedBlock;
 
 -(void)takePhoto:(UIViewController *)vc
      destination:(CNFolderComponent *)folder
   completedBlock:(void (^)(NSError *error))completedBlock;
+
+-(void)importVideo:(UIImage *)cover
+       assets:(PHAsset *)asset
+  destination:(CNFolderComponent *)folder
+deletedAfterSuccess:(BOOL)deleted
+completedBlock:(void (^)(NSError *error))completedBlock;
 
 @end

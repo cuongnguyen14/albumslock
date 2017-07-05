@@ -25,7 +25,7 @@
     [super awakeFromNib];
     // Initialization code
     self.backgroundColor = [UIColor whiteColor];
-    self.selectView.image = [[UIImage imageNamed:@"checked"] imageWithColor:[UIColor whiteColor]];
+    self.selectView.image = [UIImage imageNamed:@"check"];
     [self updateView];
 }
 
@@ -53,7 +53,7 @@
     }
 }
 -(void)setupUIWith:(CNFileComponent *)file {
-    if (file.type == ComponentTypePhoto) {
+    if (file.type == ComponentTypePhoto || file.type == ComponentTypeVideo) {
         [self.imgArtwork setImageWithURL:[NSURL fileURLWithPath:file.thumbnailPath] placeholderImage:nil];
     }
 }

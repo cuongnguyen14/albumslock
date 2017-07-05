@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface PLAlbumDetailsViewController : UIViewController
 
 - (instancetype)initWithFolder:(CNFolderComponent *)folder;
